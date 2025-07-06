@@ -8,7 +8,7 @@
     <meta name="keywords" content="西滉太, フットサル, ゴレイロ, しながわシティ, Fリーグ, パーソナルトレーニング">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -211,6 +211,11 @@
             position: relative;
             overflow: hidden;
             text-decoration: none;
+            /* height: 100%; /* 必要に応じて高さを揃える */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .activity-card:hover {
@@ -231,7 +236,7 @@
         .activity-card:hover::after { transform: translate(-50%, -50%) scale(2); }
         .activity-card .icon { font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
         .activity-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
-        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; /* min-height: 50px; /* 必要に応じてテキストエリアの最低限の高さを設定 */ }
 
         #contact { background: var(--bg-dark); }
         .contact-wrapper p { max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary); }
@@ -331,19 +336,26 @@
                     <h3 class="title">パーソナルトレーニング</h3>
                     <p class="description">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</p>
                 </a>
+
                 <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.2s;">
-                    <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                    <div class="icon"><i class="fa-solid fa-users"></i></div>
                     <h3 class="title">チームサポート</h3>
                     <p class="description">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</p>
                 </a>
                 
                 <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.3s;">
+                    <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3 class="title">個人・チーム単発指導</h3>
+                    <p class="description">単発での個人指導、チームへのスポット指導も承ります。</p>
+                </a>
+                
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.4s;">
                     <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
                     <h3 class="title">練習会開催</h3>
                     <p class="description">技術向上と交流を目的としたゴレイロ限定の練習会を定期的に開催。</p>
                 </a>
 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.4s;">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.5s;">
                      <div class="icon"><i class="fa-solid fa-comments"></i></div>
                     <h3 class="title">コミュニティ運営</h3>
                     <p class="description">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</p>
