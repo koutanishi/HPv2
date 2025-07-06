@@ -3,402 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>西 滉太 - 現役フットサル選手</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <title>西 滉太 - 現役フットサル選手 オフィシャルサイト</title>
+    <meta name="description" content="現役フットサル選手、西滉太のオフィシャルウェブサイト。プロフィール、選手としての想い、主な活動内容、SNSリンクなどを掲載しています。">
+    <meta name="keywords" content="西滉太, フットサル, ゴレイロ, しながわシティ, Fリーグ, パーソナルトレーニング">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
+        /* CSSリセットと基本設定 */
         :root {
-            --accent: #0066ff;
-            --profile-img-size: 180px;
+            --main-color: #005c99; /* 深みのある青 */
+            --accent-color: #007bff; /* 明るいアクセントの青 */
+            --bg-light: #f7f9fc;
+            --bg-white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #5a6a7a;
+            --border-color: #e9ecef;
+            --shadow-light: rgba(0, 0, 0, 0.06);
+            --shadow-medium: rgba(0, 92, 153, 0.15);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box;}
-        html { scroll-behavior: smooth; }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Noto Sans JP', 'Open Sans', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             line-height: 1.8;
-            color: #222;
-            background-color: #fff;
-            word-break: keep-all;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        /* コンテナ */
         .container {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 clamp(1rem, 5vw, 2.5rem);
         }
 
-        #hero {
-            min-height: 100vh;
-            background: 
-                linear-gradient(rgba(0, 60, 130, 0.27),rgba(0,102,255,0.07)),
-                url('https://drive.google.com/uc?export=view&id=1n-xb2d_j_wmkIs4lnLZMnziTxzK3trJb') center center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero-content h1 {
-            font-size: clamp(2.2rem, 6vw, 3.6rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.23);
-        }
-        .hero-content h2 {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 400;
-            margin-bottom: 2rem;
-            color: #e4f0ff;
-            text-shadow: 0 2px 8px rgba(0,102,255,0.09);
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-block;
-            padding: 13px 36px;
-            background: rgba(255,255,255,0.18);
-            color: var(--accent);
-            text-decoration: none;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.08rem;
-            transition: all 0.23s cubic-bezier(.4,1,.3,1);
-            box-shadow: 0 2px 8px rgba(0,102,255,0.08);
-        }
-        .btn:hover {
-            background-color: var(--accent);
-            color: #fff;
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 10px 32px rgba(0, 102, 255, 0.14);
-        }
-
+        /* セクション共通スタイル */
         section {
-            padding: clamp(48px, 8vw, 80px) 0;
+            padding: clamp(4rem, 10vw, 6.5rem) 0;
+            overflow: hidden;
         }
+
         .section-title {
             text-align: center;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: clamp(2.2rem, 5vw, 3rem);
             font-weight: 700;
-            margin-bottom: 2.2rem;
-            color: #232323;
-            letter-spacing: 0.01em;
+            margin-bottom: clamp(3rem, 6vw, 4.5rem);
+            color: var(--text-dark);
             position: relative;
         }
+
         .section-title::after {
             content: '';
             display: block;
-            width: 62px;
-            height: 3px;
-            background-color: var(--accent);
-            margin: 1rem auto 0.3rem;
-            border-radius: 4px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
         }
 
-        #profile {
-            background-color: #f8f9fa;
-        }
-        .profile-flex {
-            display: flex;
-            gap: 2.5rem;
-            align-items: flex-start;
-            justify-content: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 3rem 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.09);
-        }
-        .profile-img-wrap {
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        .profile-img {
-            width: var(--profile-img-size);
-            height: var(--profile-img-size);
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid #e6ecfa;
-            box-shadow: 0 3px 20px rgba(0,102,255,0.09);
-            background: #e9f0fa;
-        }
-        .profile-content {
-            flex: 1;
-        }
-        .profile-item {
-            margin-bottom: 1.1rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid #eee;
-        }
-        .profile-item:last-child { border-bottom: none; }
-        .profile-label {
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-            font-size: 1.05rem;
-        }
-        .profile-value {
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            line-height: 1.65;
-        }
-
-        #mission { background: #fff; }
-        .mission-content {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 10px;
-        }
-        .mission-text {
-            background: #f4f7fd;
-            border-radius: 11px;
-            font-size: clamp(1.03rem, 2.6vw, 1.18rem);
-            line-height: 2;
-            margin-bottom: 1.45rem;
-            padding: 1.6rem 1.7rem;
-            box-shadow: 0 2px 13px rgba(0,102,255,0.05);
-            color: #273146;
-            text-align: left;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            word-break: break-word;
-        }
-        .mission-text:last-child { margin-bottom: 0; }
-
-        #activities { background: #f8f9fa; }
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .activity-card {
-            background: #fff;
-            padding: 2rem 1.2rem 1.5rem 1.2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
-            transition: transform 0.23s, box-shadow 0.23s;
-            text-align: center;
-        }
-        .activity-card:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 14px 38px rgba(0, 102, 255, 0.11);
-        }
-        .activity-icon {
-            font-size: 2.3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .activity-title {
-            font-size: 1.14rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        #contact { background: #fff; }
-        .contact-content { text-align: center; }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 15px 32px;
-            background-color: #f8f9fa;
-            color: #222;
-            text-decoration: none;
+        /* ボタン共通スタイル */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 2px solid var(--accent-color);
             border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.23s cubic-bezier(.4,1,.3,1);
-            border: 2px solid transparent;
-            box-shadow: 0 2px 9px rgba(0,102,255,0.08);
-        }
-        .social-link:hover, .social-link:focus {
-            background-color: var(--accent);
-            color: #fff;
-            border: 2px solid var(--accent);
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.17);
-        }
-        .social-link i {
-            font-size: 1.35rem;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            background-color: transparent;
+            color: var(--accent-color);
         }
 
-        @media (max-width: 950px) {
-            .container { padding: 0 10px;}
-            .profile-flex { padding: 2rem 1rem; }
-            .mission-content { padding: 0 3vw;}
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-white);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px var(--shadow-medium);
         }
-        @media (max-width: 768px) {
-            section { padding: 44px 0; }
-            .profile-flex {
-                flex-direction: column;
-                align-items: center;
-                gap: 1.2rem;
-                padding: 2rem 0.7rem;
-            }
-            .profile-img-wrap { justify-content: center;}
-            .profile-img { width: 140px; height: 140px;}
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            .social-link { width: 92vw; max-width: 310px; justify-content: center; }
-            .btn { width: 180px;}
-            .hero-content h1 { font-size: clamp(1.5rem, 5vw, 2.2rem);}
-            .hero-content h2 { font-size: clamp(1.03rem, 2.3vw, 1.25rem);}
-        }
-        @media (max-width: 500px) {
-            .container { padding: 0 4vw;}
-            .profile-img { width: 100px; height: 100px;}
-            .profile-flex { padding: 1.1rem 0.1rem;}
-            .mission-content { padding: 0 1vw;}
-            .mission-text { font-size: 0.99rem; padding: 1.1rem 1.1rem;}
-        }
+
+        /* スクロールアニメーション */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0);}
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ヒーローセクション */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--bg-white);
+            background: linear-gradient(rgba(0, 40, 80, 0.5), rgba(0, 40, 80, 0.7)), url('https://drive.google.com/uc?export=view&id=1n-xb2d_j_wmkIs4lnLZMnziTxzK3trJb') no-repeat center center/cover;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(1.25rem, 4vw, 2rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: clamp(1rem, 3vw, 1.5rem);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero-buttons .btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: var(--bg-white);
+        }
+        .hero-buttons .btn:hover {
+            background-color: var(--bg-white);
+            color: var(--main-color);
+        }
+
+
+        /* プロフィールセクション */
+        #profile {
+            background-color: var(--bg-light);
+        }
+
+        .profile-wrapper {
+            display: flex;
+            gap: clamp(2rem, 6vw, 4rem);
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            border-radius: 16px;
+            box-shadow: 0 15px 40px var(--shadow-light);
+        }
+
+        .profile-image-container {
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: clamp(120px, 25vw, 180px);
+            height: clamp(120px, 25vw, 180px);
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--bg-white);
+            box-shadow: 0 5px 25px var(--shadow-medium);
+        }
+
+        .profile-details {
+            flex-grow: 1;
+        }
+
+        .profile-item {
+            margin-bottom: 1.25rem;
+        }
+        .profile-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .profile-label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-value {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+
+        /* 想いとミッションセクション */
+        .mission-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .mission-text {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 2.2;
+            margin-bottom: 2rem;
+            text-align: left;
+            color: var(--text-dark);
+            padding: 1.5rem 0;
+        }
+
+        .mission-text:not(:last-child) {
+             border-bottom: 1px solid var(--border-color);
+        }
+
+
+        /* 主な活動セクション */
+        #activities {
+            background-color: var(--bg-light);
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .activity-card {
+            background-color: var(--bg-white);
+            padding: clamp(1.8rem, 5vw, 2.5rem);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px var(--shadow-light);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid var(--border-color);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-medium);
+        }
+
+        .activity-card .icon {
+            font-size: clamp(2.5rem, 6vw, 3.2rem);
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .activity-card .title {
+            font-size: clamp(1.15rem, 3vw, 1.3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-card .description {
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        /* カードの背景画像（例として一部に適用） */
+        .activity-card.card-f-league {
+             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://drive.google.com/uc?export=view&id=1mIEAz4jus4O3nU8B5g0nUbI-Ui0rCIyg');
+             background-size: cover;
+             background-position: center;
+        }
+        .activity-card.card-training {
+             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://drive.google.com/uc?export=view&id=1iFASD6x2zjj2WcfloIi9lyN_0oJYaR1Z');
+             background-size: cover;
+             background-position: center;
+        }
+
+
+        /* つながるセクション */
+        .contact-wrapper {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: clamp(2rem, 5vw, 3rem);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            transition: all 0.3s ease-in-out;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .social-link i {
+            font-size: 1.4rem;
+        }
+        
+        /* 各SNSのホバーカラー */
+        .social-link.instagram:hover { background-color: #e4405f; color: white; transform: translateY(-4px); }
+        .social-link.x-twitter:hover { background-color: #1DA1F2; color: white; transform: translateY(-4px); }
+        .social-link.gmail:hover { background-color: #DB4437; color: white; transform: translateY(-4px); }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background-color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: clamp(3rem, 8vw, 5rem);
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .profile-wrapper {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .profile-details {
+                text-align: left;
+            }
+            .activities-grid {
+                 grid-template-columns: 1fr;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .social-link {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
+
     <section id="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>現役フットサル選手　西 滉太</h1>
-                <h2>ゴレイロの未来を、僕が変える。</h2>
-                <div class="hero-buttons">
-                    <a href="#profile" class="btn">プロフィールを見る</a>
-                    <a href="#activities" class="btn">活動を見る</a>
-                </div>
+        <div class="hero-content fade-in">
+            <h1>現役フットサル選手 西 滉太</h1>
+            <h2>ゴレイロの未来を、僕が変える。</h2>
+            <div class="hero-buttons">
+                <a href="#profile" class="btn">プロフィールを見る</a>
+                <a href="#activities" class="btn">活動を見る</a>
             </div>
         </div>
     </section>
+
     <section id="profile">
         <div class="container">
-            <h2 class="section-title">プロフィール</h2>
-            <div class="profile-flex fade-in">
-                <div class="profile-img-wrap">
-                    <img src="https://drive.google.com/uc?export=view&id=13J9cedGcK37EPTDm1S9XLXMZR48rPfnN" alt="西滉太 プロフィール写真" class="profile-img">
+            <h2 class="section-title fade-in">PROFILE</h2>
+            <div class="profile-wrapper fade-in">
+                <div class="profile-image-container">
+                    <img src="https://drive.google.com/uc?export=view&id=13J9cedGcK37EPTDm1S9XLXMZR48rPfnN" alt="西滉太選手のプロフィール写真" class="profile-image">
                 </div>
-                <div class="profile-content">
+                <div class="profile-details">
                     <div class="profile-item">
-                        <div class="profile-label">名前</div>
-                        <div class="profile-value">西 滉太（にし こうた）</div>
+                        <div class="profile-label">NAME</div>
+                        <div class="profile-value">西 滉太 (にし こうた)</div>
                     </div>
                     <div class="profile-item">
-                        <div class="profile-label">生年月日</div>
+                        <div class="profile-label">DATE OF BIRTH</div>
                         <div class="profile-value">2000年5月4日</div>
                     </div>
                     <div class="profile-item">
-                        <div class="profile-label">出身地</div>
+                        <div class="profile-label">HOMETOWN</div>
                         <div class="profile-value">香川県</div>
                     </div>
                     <div class="profile-item">
-                        <div class="profile-label">経歴</div>
+                        <div class="profile-label">CAREER</div>
                         <div class="profile-value">
                             香川県立高松商業高校卒業<br>
                             府中アスレティックFCサテライト<br>
                             立川・府中アスレティックFC<br>
                             立川アスレティックFC<br>
-                            現在：しながわシティ所属
+                            <b>現在：しながわシティ所属</b>
                         </div>
                     </div>
                     <div class="profile-item">
-                        <div class="profile-label">実績</div>
+                        <div class="profile-label">ACHIEVEMENT</div>
                         <div class="profile-value">2024年ブラジル武者修行 → クラウドファンディング開始6時間で60万円達成</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="mission">
         <div class="container">
-            <h2 class="section-title">想いとミッション</h2>
-            <div class="mission-content fade-in">
-                <div class="mission-text">
-                    僕は、ゴレイロって本当の意味で孤独なポジションだと思っています。<br>
-                    試合に出られるのは1人だけ。<br>
-                    チームに仲間がいなかったり、教えてくれる人すらいないこともある。
-                </div>
-                <div class="mission-text">
-                    でも、僕は人より恵まれていた。<br>
-                    だからこそ僕が、「成長したい」「学びたい」って願うゴレイロにこそ、正しい環境と繋がりが必要なんです。
-                </div>
-                <div class="mission-text">
-                    資格を勉強したい人に講座があるように、<br>
-                    ゴレイロにも、ちゃんと学べる場所があっていい。<br>
-                    情報がなくて迷って、悩んで、諦める人を、僕はこれ以上見たくない。
-                </div>
-                <div class="mission-text">
-                    僕の目標は、日本中のゴレイロがつながれる大きなコミュニティをつくることです。<br>
-                    孤独なポジションだからこそ、助け合える仕組みを僕が作ります。
-                </div>
-                <div class="mission-text">
-                    これはその第一歩。<br>
-                    自分自身が悩んできたからこそ、次は僕が誰かの力になりたい。
-                </div>
+            <h2 class="section-title fade-in">MISSION</h2>
+            <div class="mission-wrapper fade-in">
+                <p class="mission-text">僕は、ゴレイロって本当の意味で孤独なポジションだと思っています。試合に出られるのは1人だけ。チームに仲間がいなかったり、教えてくれる人すらいないことも。</p>
+                <p class="mission-text">でも、僕は人より恵まれていた。だからこそ僕が、「成長したい」「学びたい」って願うゴレイロにこそ、正しい環境と繋がりを提供したいんです。</p>
+                <p class="mission-text">資格を勉強したい人に講座があるように、ゴレイロにも、ちゃんと学べる場所があっていい。情報がなくて迷って、悩んで、諦める人を、僕はこれ以上見たくない。</p>
+                <p class="mission-text">僕の目標は、日本中のゴレイロがつながれる大きなコミュニティをつくること。孤独なポジションだからこそ、助け合える仕組みを僕が作ります。</p>
+                <p class="mission-text">これはその第一歩。自分自身が悩んできたからこそ、次は僕が誰かの力になりたい。</p>
             </div>
         </div>
     </section>
+
     <section id="activities">
         <div class="container">
-            <h2 class="section-title">主な活動</h2>
+            <h2 class="section-title fade-in">ACTIVITIES</h2>
             <div class="activities-grid">
-                <div class="activity-card fade-in">
-                    <div class="activity-icon">
-                        <i class="fas fa-futbol"></i>
-                    </div>
-                    <div class="activity-title">Fリーグ活動</div>
-                    <div>現役選手として活動中</div>
+                <div class="activity-card card-f-league fade-in" style="transition-delay: 0.1s;">
+                    <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3 class="title">Fリーグ活動</h3>
+                    <p class="description">トップリーグ「しながわシティ」の現役ゴレイロとして活動中。</p>
                 </div>
-                <div class="activity-card fade-in">
-                    <div class="activity-icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <div class="activity-title">パーソナルトレーニング</div>
-                    <div>対面・オンライン指導</div>
+                <div class="activity-card card-training fade-in" style="transition-delay: 0.2s;">
+                    <div class="icon"><i class="fa-solid fa-user-group"></i></div>
+                    <h3 class="title">パーソナルトレーニング</h3>
+                    <p class="description">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</p>
                 </div>
-                <div class="activity-card fade-in">
-                    <div class="activity-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="activity-title">チームサポート</div>
-                    <div>対面・オンライン対応</div>
+                <div class="activity-card fade-in" style="transition-delay: 0.3s;">
+                    <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3 class="title">チームサポート</h3>
+                    <p class="description">ゴレイロ育成に悩むチームへ、専門的な知見からサポート（対面・オンライン）。</p>
                 </div>
-                <div class="activity-card fade-in">
-                    <div class="activity-icon">
-                        <i class="fas fa-calendar"></i>
-                    </div>
-                    <div class="activity-title">練習会の開催</div>
-                    <div>定期的な練習会を実施</div>
+                <div class="activity-card fade-in" style="transition-delay: 0.4s;">
+                    <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3 class="title">練習会開催</h3>
+                    <p class="description">技術向上と交流を目的としたゴレイロ限定の練習会を定期的に開催。</p>
                 </div>
-                <div class="activity-card fade-in">
-                    <div class="activity-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="activity-title">コミュニティ運営</div>
-                    <div>ゴレイロ向けコミュニティ</div>
+                <div class="activity-card fade-in" style="transition-delay: 0.5s;">
+                    <div class="icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3 class="title">コミュニティ運営</h3>
+                    <p class="description">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</p>
                 </div>
             </div>
         </div>
@@ -406,56 +462,50 @@
 
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">つながる</h2>
-            <div class="contact-content fade-in">
+            <h2 class="section-title fade-in">CONNECT</h2>
+            <div class="contact-wrapper fade-in">
+                <p>活動の様子や最新情報はSNSで発信しています。お仕事のご依頼、ご相談は各種SNSのDM、またはGmailにてお気軽にご連絡ください。</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/futsal_nishi24?igsh=Zm0xdnRkbjl4YmZy&utm_source=qr" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                        Instagram
+                    <a href="https://www.instagram.com/futsal_nishi24?igsh=Zm0xdnRkbjl4YmZy&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+                        <i class="fab fa-instagram"></i> Instagram
                     </a>
-                    <a href="https://x.com/fafcs_nishi?s=21" target="_blank" class="social-link">
-                        <i class="fab fa-x-twitter"></i>
-                        X (Twitter)
+                    <a href="https://x.com/fafcs_nishi?s=21" target="_blank" rel="noopener noreferrer" class="social-link x-twitter">
+                        <i class="fab fa-x-twitter"></i> X (旧Twitter)
                     </a>
-                    <a href="mailto:nishi24.official@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                        Gmail
+                    <a href="mailto:nishi24.official@gmail.com" class="social-link gmail">
+                        <i class="fas fa-envelope"></i> Gmail
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer>
+        <p>&copy; 2025 KOTA NISHI. All Rights Reserved.</p>
+    </footer>
+
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Intersection Observerでスクロールに応じたアニメーションを実行
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
                 });
+            }, {
+                rootMargin: '0px 0px -50px 0px', // 画面下50pxの位置で検知開始
+                threshold: 0.1
             });
-        });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = '0.2s';
-                    entry.target.classList.add('fade-in');
-                }
+            targets.forEach(target => {
+                observer.observe(target);
             });
-        }, observerOptions);
-
-        // Observe all elements that should fade in
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
         });
     </script>
+
 </body>
 </html>
