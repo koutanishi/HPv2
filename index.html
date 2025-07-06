@@ -1,482 +1,461 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西 滉太 - 現役フットサル選手</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --accent: #0066ff;
+            --profile-img-size: 180px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans JP', 'Open Sans', sans-serif;
+            line-height: 1.8;
+            color: #222;
+            background-color: #fff;
+            word-break: keep-all;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #hero {
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 60, 130, 0.27),rgba(0,102,255,0.07)),
+                url('https://drive.google.com/uc?export=view&id=1n-xb2d_j_wmkIs4lnLZMnziTxzK3trJb') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: clamp(2.2rem, 6vw, 3.6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.23);
+        }
+        .hero-content h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #e4f0ff;
+            text-shadow: 0 2px 8px rgba(0,102,255,0.09);
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 13px 36px;
+            background: rgba(255,255,255,0.18);
+            color: var(--accent);
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.08rem;
+            transition: all 0.23s cubic-bezier(.4,1,.3,1);
+            box-shadow: 0 2px 8px rgba(0,102,255,0.08);
+        }
+        .btn:hover {
+            background-color: var(--accent);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 10px 32px rgba(0, 102, 255, 0.14);
+        }
+
+        section {
+            padding: clamp(48px, 8vw, 80px) 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2.2rem;
+            color: #232323;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 62px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 1rem auto 0.3rem;
+            border-radius: 4px;
+        }
+
+        #profile {
+            background-color: #f8f9fa;
+        }
+        .profile-flex {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+        }
+        .profile-img-wrap {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .profile-img {
+            width: var(--profile-img-size);
+            height: var(--profile-img-size);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #e6ecfa;
+            box-shadow: 0 3px 20px rgba(0,102,255,0.09);
+            background: #e9f0fa;
+        }
+        .profile-content {
+            flex: 1;
+        }
+        .profile-item {
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid #eee;
+        }
+        .profile-item:last-child { border-bottom: none; }
+        .profile-label {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            font-size: 1.05rem;
+        }
+        .profile-value {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.65;
+        }
+
+        #mission { background: #fff; }
+        .mission-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        .mission-text {
+            background: #f4f7fd;
+            border-radius: 11px;
+            font-size: clamp(1.03rem, 2.6vw, 1.18rem);
+            line-height: 2;
+            margin-bottom: 1.45rem;
+            padding: 1.6rem 1.7rem;
+            box-shadow: 0 2px 13px rgba(0,102,255,0.05);
+            color: #273146;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            word-break: break-word;
+        }
+        .mission-text:last-child { margin-bottom: 0; }
+
+        #activities { background: #f8f9fa; }
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .activity-card {
+            background: #fff;
+            padding: 2rem 1.2rem 1.5rem 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+            transition: transform 0.23s, box-shadow 0.23s;
+            text-align: center;
+        }
+        .activity-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 14px 38px rgba(0, 102, 255, 0.11);
+        }
+        .activity-icon {
+            font-size: 2.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .activity-title {
+            font-size: 1.14rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        #contact { background: #fff; }
+        .contact-content { text-align: center; }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 15px 32px;
+            background-color: #f8f9fa;
+            color: #222;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.23s cubic-bezier(.4,1,.3,1);
+            border: 2px solid transparent;
+            box-shadow: 0 2px 9px rgba(0,102,255,0.08);
+        }
+        .social-link:hover, .social-link:focus {
+            background-color: var(--accent);
+            color: #fff;
+            border: 2px solid var(--accent);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.17);
+        }
+        .social-link i {
+            font-size: 1.35rem;
+        }
+
+        @media (max-width: 950px) {
+            .container { padding: 0 10px;}
+            .profile-flex { padding: 2rem 1rem; }
+            .mission-content { padding: 0 3vw;}
+        }
+        @media (max-width: 768px) {
+            section { padding: 44px 0; }
+            .profile-flex {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+                padding: 2rem 0.7rem;
+            }
+            .profile-img-wrap { justify-content: center;}
+            .profile-img { width: 140px; height: 140px;}
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .social-link { width: 92vw; max-width: 310px; justify-content: center; }
+            .btn { width: 180px;}
+            .hero-content h1 { font-size: clamp(1.5rem, 5vw, 2.2rem);}
+            .hero-content h2 { font-size: clamp(1.03rem, 2.3vw, 1.25rem);}
+        }
+        @media (max-width: 500px) {
+            .container { padding: 0 4vw;}
+            .profile-img { width: 100px; height: 100px;}
+            .profile-flex { padding: 1.1rem 0.1rem;}
+            .mission-content { padding: 0 1vw;}
+            .mission-text { font-size: 0.99rem; padding: 1.1rem 1.1rem;}
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;西 滉太 - 現役フットサル選手&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&amp;family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent: #0066ff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--profile-img-size: 180px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>html { scroll-behavior: smooth; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Noto Sans JP', 'Open Sans', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #222;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>word-break: keep-all;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>-webkit-font-smoothing: antialiased;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1120px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>#hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background:<span class="Apple-converted-space"> </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>linear-gradient(rgba(0, 60, 130, 0.27),rgba(0,102,255,0.07)),</p>
-<p class="p1"><span class="Apple-converted-space">                </span>url('https://drive.google.com/uc?export=view&amp;id=1n-xb2d_j_wmkIs4lnLZMnziTxzK3trJb') center center/cover no-repeat;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(2.2rem, 6vw, 3.6rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 2px 10px rgba(0,0,0,0.23);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.2rem, 3vw, 1.8rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 400;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #e4f0ff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 2px 8px rgba(0,102,255,0.09);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 13px 36px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.18);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.08rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.23s cubic-bezier(.4,1,.3,1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 8px rgba(0,102,255,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px) scale(1.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 32px rgba(0, 102, 255, 0.14);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: clamp(48px, 8vw, 80px) 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.8rem, 4vw, 2.5rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #232323;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.01em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title::after {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 62px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 1rem auto 0.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>#profile {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-flex {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 28px rgba(0,0,0,0.09);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-img-wrap {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: var(--profile-img-size);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: var(--profile-img-size);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 5px solid #e6ecfa;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 3px 20px rgba(0,102,255,0.09);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #e9f0fa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eee;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-item:last-child { border-bottom: none; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-value {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1rem, 2vw, 1.1rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.65;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>#mission { background: #fff; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.mission-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 700px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.mission-text {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #f4f7fd;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 11px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(1.03rem, 2.6vw, 1.18rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.45rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.6rem 1.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 13px rgba(0,102,255,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #273146;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 700px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>word-break: break-word;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.mission-text:last-child { margin-bottom: 0; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>#activities { background: #f8f9fa; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.activities-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.activity-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem 1.2rem 1.5rem 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.23s, box-shadow 0.23s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.activity-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-6px) scale(1.01);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 14px 38px rgba(0, 102, 255, 0.11);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.activity-icon {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.activity-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.14rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>#contact { background: #fff; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-content { text-align: center; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-links {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-link {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #222;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.23s cubic-bezier(.4,1,.3,1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 9px rgba(0,102,255,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-link:hover, .social-link:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px) scale(1.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 24px rgba(0, 102, 255, 0.17);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-link i {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.35rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 950px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.container { padding: 0 10px;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-flex { padding: 2rem 1rem; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.mission-content { padding: 0 3vw;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>section { padding: 44px 0; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-flex {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 2rem 0.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-img-wrap { justify-content: center;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-img { width: 140px; height: 140px;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.social-links {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.social-link { width: 92vw; max-width: 310px; justify-content: center; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.btn { width: 180px;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-content h1 { font-size: clamp(1.5rem, 5vw, 2.2rem);}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-content h2 { font-size: clamp(1.03rem, 2.3vw, 1.25rem);}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 500px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.container { padding: 0 4vw;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-img { width: 100px; height: 100px;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-flex { padding: 1.1rem 0.1rem;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.mission-content { padding: 0 1vw;}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.mission-text { font-size: 0.99rem; padding: 1.1rem 1.1rem;}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(30px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeInUp 0.8s ease forwards;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeInUp {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0);}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-content fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1&gt;現役フットサル選手　西 滉太&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;ゴレイロの未来を、僕が変える。&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hero-buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#profile" class="btn"&gt;プロフィールを見る&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#activities" class="btn"&gt;活動を見る&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Profile Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="profile"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;プロフィール&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="profile-flex fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="profile-img-wrap"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://drive.google.com/uc?export=view&amp;id=13J9cedGcK37EPTDm1S9XLXMZR48rPfnN" alt="西滉太 プロフィール写真" class="profile-img"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="profile-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-label"&gt;名前&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-value"&gt;西 滉太（にし こうた）&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-label"&gt;生年月日&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-value"&gt;2000年5月4日&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-label"&gt;出身地&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-value"&gt;香川県&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-label"&gt;経歴&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-value"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>香川県立高松商業高校卒業&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>府中アスレティックFCサテライト&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>立川・府中アスレティックFC&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>立川アスレティックFC&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>現在：しながわシティ所属</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="profile-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-label"&gt;実績&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="profile-value"&gt;2024年ブラジル武者修行 → クラウドファンディング開始6時間で60万円達成&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Mission Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="mission"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;想いとミッション&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mission-content fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mission-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>僕は、ゴレイロって本当の意味で孤独なポジションだと思っています。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>試合に出られるのは1人だけ。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>チームに仲間がいなかったり、教えてくれる人すらいないこともある。</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mission-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>でも、僕は人より恵まれていた。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>だからこそ僕が、「成長したい」「学びたい」って願うゴレイロにこそ、正しい環境と繋がりが必要なんです。</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mission-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>資格を勉強したい人に講座があるように、&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>ゴレイロにも、ちゃんと学べる場所があっていい。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>情報がなくて迷って、悩んで、諦める人を、僕はこれ以上見たくない。</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mission-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>僕の目標は、日本中のゴレイロがつながれる大きなコミュニティをつくることです。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>孤独なポジションだからこそ、助け合える仕組みを僕が作ります。</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mission-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>これはその第一歩。&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>自分自身が悩んできたからこそ、次は僕が誰かの力になりたい。</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Activities Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="activities"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;主な活動&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="activities-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="activity-card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-icon"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-futbol"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-title"&gt;Fリーグ活動&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;現役選手として活動中&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="activity-card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-icon"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-dumbbell"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-title"&gt;パーソナルトレーニング&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;対面・オンライン指導&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="activity-card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-icon"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-users"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-title"&gt;チームサポート&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;対面・オンライン対応&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="activity-card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-icon"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-calendar"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-title"&gt;練習会の開催&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;定期的な練習会を実施&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="activity-card fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-icon"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-comments"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="activity-title"&gt;コミュニティ運営&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;ゴレイロ向けコミュニティ&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Contact Section --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;つながる&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="contact-content fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="social-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://www.instagram.com/futsal_nishi24?igsh=Zm0xdnRkbjl4YmZy&amp;utm_source=qr" target="_blank" class="social-link"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>Instagram</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://x.com/fafcs_nishi?s=21" target="_blank" class="social-link"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fab fa-x-twitter"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>X (Twitter)</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="mailto:nishi24.official@gmail.com" class="social-link"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-envelope"&gt;&lt;/i&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>Gmail</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Smooth scrolling for anchor links</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('a[href^="#"]').forEach(anchor =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>anchor.addEventListener('click', function (e) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">                </span>document.querySelector(this.getAttribute('href')).scrollIntoView({</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>behavior: 'smooth'</p>
-<p class="p1"><span class="Apple-converted-space">                </span>});</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Intersection Observer for fade-in animations</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const observerOptions = {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>threshold: 0.1,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>rootMargin: '0px 0px -50px 0px'</p>
-<p class="p1"><span class="Apple-converted-space">        </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const observer = new IntersectionObserver((entries) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>entries.forEach(entry =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (entry.isIntersecting) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>entry.target.style.animationDelay = '0.2s';</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>entry.target.classList.add('fade-in');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}, observerOptions);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Observe all elements that should fade in</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('.fade-in').forEach(el =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>observer.observe(el);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>現役フットサル選手　西 滉太</h1>
+                <h2>ゴレイロの未来を、僕が変える。</h2>
+                <div class="hero-buttons">
+                    <a href="#profile" class="btn">プロフィールを見る</a>
+                    <a href="#activities" class="btn">活動を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="profile">
+        <div class="container">
+            <h2 class="section-title">プロフィール</h2>
+            <div class="profile-flex fade-in">
+                <div class="profile-img-wrap">
+                    <img src="https://drive.google.com/uc?export=view&id=13J9cedGcK37EPTDm1S9XLXMZR48rPfnN" alt="西滉太 プロフィール写真" class="profile-img">
+                </div>
+                <div class="profile-content">
+                    <div class="profile-item">
+                        <div class="profile-label">名前</div>
+                        <div class="profile-value">西 滉太（にし こうた）</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="profile-label">生年月日</div>
+                        <div class="profile-value">2000年5月4日</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="profile-label">出身地</div>
+                        <div class="profile-value">香川県</div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="profile-label">経歴</div>
+                        <div class="profile-value">
+                            香川県立高松商業高校卒業<br>
+                            府中アスレティックFCサテライト<br>
+                            立川・府中アスレティックFC<br>
+                            立川アスレティックFC<br>
+                            現在：しながわシティ所属
+                        </div>
+                    </div>
+                    <div class="profile-item">
+                        <div class="profile-label">実績</div>
+                        <div class="profile-value">2024年ブラジル武者修行 → クラウドファンディング開始6時間で60万円達成</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mission">
+        <div class="container">
+            <h2 class="section-title">想いとミッション</h2>
+            <div class="mission-content fade-in">
+                <div class="mission-text">
+                    僕は、ゴレイロって本当の意味で孤独なポジションだと思っています。<br>
+                    試合に出られるのは1人だけ。<br>
+                    チームに仲間がいなかったり、教えてくれる人すらいないこともある。
+                </div>
+                <div class="mission-text">
+                    でも、僕は人より恵まれていた。<br>
+                    だからこそ僕が、「成長したい」「学びたい」って願うゴレイロにこそ、正しい環境と繋がりが必要なんです。
+                </div>
+                <div class="mission-text">
+                    資格を勉強したい人に講座があるように、<br>
+                    ゴレイロにも、ちゃんと学べる場所があっていい。<br>
+                    情報がなくて迷って、悩んで、諦める人を、僕はこれ以上見たくない。
+                </div>
+                <div class="mission-text">
+                    僕の目標は、日本中のゴレイロがつながれる大きなコミュニティをつくることです。<br>
+                    孤独なポジションだからこそ、助け合える仕組みを僕が作ります。
+                </div>
+                <div class="mission-text">
+                    これはその第一歩。<br>
+                    自分自身が悩んできたからこそ、次は僕が誰かの力になりたい。
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="activities">
+        <div class="container">
+            <h2 class="section-title">主な活動</h2>
+            <div class="activities-grid">
+                <div class="activity-card fade-in">
+                    <div class="activity-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="activity-title">Fリーグ活動</div>
+                    <div>現役選手として活動中</div>
+                </div>
+                <div class="activity-card fade-in">
+                    <div class="activity-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="activity-title">パーソナルトレーニング</div>
+                    <div>対面・オンライン指導</div>
+                </div>
+                <div class="activity-card fade-in">
+                    <div class="activity-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="activity-title">チームサポート</div>
+                    <div>対面・オンライン対応</div>
+                </div>
+                <div class="activity-card fade-in">
+                    <div class="activity-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="activity-title">練習会の開催</div>
+                    <div>定期的な練習会を実施</div>
+                </div>
+                <div class="activity-card fade-in">
+                    <div class="activity-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="activity-title">コミュニティ運営</div>
+                    <div>ゴレイロ向けコミュニティ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">つながる</h2>
+            <div class="contact-content fade-in">
+                <div class="social-links">
+                    <a href="https://www.instagram.com/futsal_nishi24?igsh=Zm0xdnRkbjl4YmZy&utm_source=qr" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <a href="https://x.com/fafcs_nishi?s=21" target="_blank" class="social-link">
+                        <i class="fab fa-x-twitter"></i>
+                        X (Twitter)
+                    </a>
+                    <a href="mailto:nishi24.official@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        Gmail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements that should fade in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
