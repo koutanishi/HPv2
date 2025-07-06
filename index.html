@@ -156,7 +156,6 @@
             display: block;
             border-radius: 8px;
         }
-        /* コーナーフレームのデザイン */
         .profile-image-container::before, .profile-image-container::after {
             content: '';
             position: absolute;
@@ -200,7 +199,9 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
-        .activity-card {
+
+        .activity-card, a.activity-card {
+            display: block;
             background-color: var(--bg-card);
             padding: 2.5rem;
             border-radius: 12px;
@@ -209,12 +210,14 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
         }
+
         .activity-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
-        .activity-card::after { /* ホバー時の光のエフェクト */
+        .activity-card::after {
             content: '';
             position: absolute;
             top: 50%;
@@ -316,31 +319,36 @@
         <div class="container">
             <h2 class="section-title fade-in">ACTIVITIES</h2>
             <div class="activities-grid">
-                <div class="activity-card fade-in">
+                
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in">
                     <div class="icon"><i class="fa-solid fa-trophy"></i></div>
                     <h3 class="title">Fリーグ活動</h3>
                     <p class="description">トップリーグ「しながわシティ」の現役ゴレイロとして活動中。</p>
-                </div>
-                <div class="activity-card fade-in" style="transition-delay: 0.1s;">
+                </a>
+                
+                <a href="https://forms.gle/udvA4iWUyt1TJ6Qo9" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.1s;">
                     <div class="icon"><i class="fa-solid fa-user-group"></i></div>
                     <h3 class="title">パーソナルトレーニング</h3>
                     <p class="description">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</p>
-                </div>
-                <div class="activity-card fade-in" style="transition-delay: 0.2s;">
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.2s;">
                     <div class="icon"><i class="fa-solid fa-people-group"></i></div>
                     <h3 class="title">チームサポート</h3>
                     <p class="description">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</p>
-                </div>
-                <div class="activity-card fade-in" style="transition-delay: 0.3s;">
+                </a>
+                
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.3s;">
                     <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
                     <h3 class="title">練習会開催</h3>
                     <p class="description">技術向上と交流を目的としたゴレイロ限定の練習会を定期的に開催。</p>
-                </div>
-                <div class="activity-card fade-in" style="transition-delay: 0.4s;">
+                </a>
+
+                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.4s;">
                      <div class="icon"><i class="fa-solid fa-comments"></i></div>
                     <h3 class="title">コミュニティ運営</h3>
                     <p class="description">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</p>
-                </div>
+                </a>
+
             </div>
         </div>
     </section>
