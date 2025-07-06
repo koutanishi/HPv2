@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* CSSリセットと基本設定 */
         :root {
             --main-color: #005c99; /* 深みのある青 */
             --accent-color: #007bff; /* 明るいアクセントの青 */
@@ -46,7 +45,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* コンテナ */
         .container {
             max-width: 1100px;
             margin-left: auto;
@@ -54,7 +52,6 @@
             padding: 0 clamp(1rem, 5vw, 2.5rem);
         }
 
-        /* セクション共通スタイル */
         section {
             padding: clamp(4rem, 10vw, 6.5rem) 0;
             overflow: hidden;
@@ -79,7 +76,6 @@
             border-radius: 2px;
         }
 
-        /* ボタン共通スタイル */
         .btn {
             display: inline-block;
             padding: 14px 36px;
@@ -101,7 +97,6 @@
             box-shadow: 0 10px 25px var(--shadow-medium);
         }
 
-        /* スクロールアニメーション */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -112,7 +107,6 @@
             transform: translateY(0);
         }
 
-        /* ヒーローセクション */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -120,8 +114,7 @@
             justify-content: center;
             text-align: center;
             color: var(--bg-white);
-            /* ★★★ 修正点 ★★★ */
-            background: linear-gradient(rgba(0, 40, 80, 0.5), rgba(0, 40, 80, 0.7)), url('https://drive.google.com/uc?id=1n-xb2d_j_wmkIs4lnLZMnziTxzK3trJb') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 40, 80, 0.5), rgba(0, 40, 80, 0.7)), url('https://i.postimg.cc/0yct36Rq/EF6-CDA26-1139-4083-9-A31-8180-FE597-FF3.jpg') no-repeat center center/cover;
             padding: 0 1rem;
         }
 
@@ -156,8 +149,6 @@
             color: var(--main-color);
         }
 
-
-        /* プロフィールセクション */
         #profile {
             background-color: var(--bg-light);
         }
@@ -213,8 +204,6 @@
             color: var(--text-dark);
         }
 
-
-        /* 想いとミッションセクション */
         .mission-wrapper {
             max-width: 800px;
             margin: 0 auto;
@@ -233,8 +222,6 @@
              border-bottom: 1px solid var(--border-color);
         }
 
-
-        /* 主な活動セクション */
         #activities {
             background-color: var(--bg-light);
         }
@@ -277,22 +264,18 @@
             color: var(--text-light);
             line-height: 1.6;
         }
-        /* カードの背景画像（例として一部に適用） */
+        
         .activity-card.card-f-league {
-            /* ★★★ 修正点 ★★★ */
-             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://drive.google.com/uc?id=1mIEAz4jus4O3nU8B5g0nUbI-Ui0rCIyg');
+             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://i.postimg.cc/BnqYMTzg/IMG-9338.jpg');
              background-size: cover;
              background-position: center;
         }
         .activity-card.card-training {
-            /* ★★★ 修正点 ★★★ */
-             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://drive.google.com/uc?id=1iFASD6x2zjj2WcfloIi9lyN_0oJYaR1Z');
+             background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg');
              background-size: cover;
              background-position: center;
         }
 
-
-        /* つながるセクション */
         .contact-wrapper {
             text-align: center;
             max-width: 800px;
@@ -325,12 +308,10 @@
             font-size: 1.4rem;
         }
         
-        /* 各SNSのホバーカラー */
         .social-link.instagram:hover { background-color: #e4405f; color: white; transform: translateY(-4px); }
         .social-link.x-twitter:hover { background-color: #1DA1F2; color: white; transform: translateY(-4px); }
         .social-link.gmail:hover { background-color: #DB4437; color: white; transform: translateY(-4px); }
 
-        /* フッター */
         footer {
             text-align: center;
             padding: 2.5rem 1rem;
@@ -340,7 +321,6 @@
             margin-top: clamp(3rem, 8vw, 5rem);
         }
 
-        /* レスポンシブ対応 */
         @media (max-width: 768px) {
             .profile-wrapper {
                 flex-direction: column;
@@ -383,7 +363,7 @@
             <h2 class="section-title fade-in">PROFILE</h2>
             <div class="profile-wrapper fade-in">
                 <div class="profile-image-container">
-                    <img src="https://drive.google.com/uc?id=13J9cedGcK37EPTDm1S9XLXMZR48rPfnN" alt="西滉太選手のプロフィール写真" class="profile-image">
+                    <img src="https://i.postimg.cc/VL9ZqGKv/IMG-9327.jpg" alt="西滉太選手のプロフィール写真" class="profile-image">
                 </div>
                 <div class="profile-details">
                     <div class="profile-item">
@@ -488,7 +468,6 @@
     </footer>
 
     <script>
-        // Intersection Observerでスクロールに応じたアニメーションを実行
         document.addEventListener("DOMContentLoaded", () => {
             const targets = document.querySelectorAll('.fade-in');
 
@@ -500,7 +479,7 @@
                     }
                 });
             }, {
-                rootMargin: '0px 0px -50px 0px', // 画面下50pxの位置で検知開始
+                rootMargin: '0px 0px -50px 0px',
                 threshold: 0.1
             });
 
