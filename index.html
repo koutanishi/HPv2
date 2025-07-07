@@ -25,7 +25,6 @@
             --border-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* (基本スタイルは変更なし) */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: var(--main-font); line-height: 1.8; color: var(--text-primary); background-color: var(--bg-dark); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -65,8 +64,6 @@
         .profile-image-container::after { bottom: -12px; right: -12px; border-width: 0 4px 4px 0; }
         #mission { background-color: var(--bg-card); }
         .mission-wrapper { max-width: 850px; margin: 0 auto; }
-        
-        /* ▼▼▼ CSS変更点 ▼▼▼ */
         .mission-statement {
             font-size: clamp(1.5rem, 4vw, 2.2rem);
             font-weight: 700;
@@ -75,8 +72,6 @@
             margin-bottom: 4rem;
             line-height: 1.5;
         }
-        /* ▲▲▲ CSS変更点 ▲▲▲ */
-
         .mission-text { font-size: clamp(1.1rem, 2.5vw, 1.25rem); margin-bottom: 3rem; padding: 0 1rem 0 2rem; position: relative; color: var(--text-secondary); }
         .mission-text::before { content: '“'; font-family: serif; font-size: 5rem; color: var(--accent-cyan); position: absolute; left: -1rem; top: -1.5rem; opacity: 0.5; }
         .activities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
@@ -86,7 +81,7 @@
         .activity-card:hover::after { transform: translate(-50%, -50%) scale(2); }
         .activity-card .icon { flex-shrink: 0; font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
         .activity-card .title { flex-shrink: 0; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); white-space: nowrap; }
-        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; text-align: left; width: 100%; }
+        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; text-align: left; width: 100%; word-break: break-word; }
         #contact { background: var(--bg-dark); }
         .contact-wrapper p { max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary); }
         .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
@@ -113,15 +108,30 @@
             </div>
         </div>
     </section>
-    
+
     <section id="profile">
         <div class="container">
             <div class="profile-grid">
                 <div class="profile-details fade-in">
                     <h2>ABOUT ME</h2>
                     <p>
-                        西 滉太（にし こうた）。Fリーグ「しながわシティ」所属のプロフットサル選手。ポジション、ゴレイロ。<br>
-                        最後の砦としてゴールを守る冷静さと、内に秘めた熱い情熱を武器に、自身のプレー向上はもちろん、次世代のゴレイロ育成にも力を注いでいる。
+                        僕は、特別な才能があるわけじゃない。<br>
+                        だけど、ゴール前で何度も立ち上がってきた。<br>
+                        時には1人で悩んだけど、支えてくれる仲間や、<br>
+                        導いてくれたコーチがいたから、僕は前に進み続けられた。<br><br>
+
+                        同じように壁にぶつかっているゴレイロに、<br>
+                        「一歩踏み出していいんだよ」と言える存在でいたい。<br><br>
+
+                        僕は、ゴレイロがもっと自由に、<br>
+                        もっと自分らしくプレーできる場所を作りたい。<br><br>
+                        
+                        うまくいかない日も、迷うこともある。<br>
+                        でも、そんな時こそ、支え合える仲間や、<br>
+                        頼れる“場所”が必要なんだと思う。<br><br>
+
+                        今の自分にできることを、全部使って届けていく。<br>
+                        僕自身が、それを証明していきたい。
                     </p>
                     <a href="#activities" class="btn">My Activities</a>
                 </div>
@@ -131,7 +141,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">MY MISSION</h2>
@@ -149,6 +159,7 @@
             </div>
         </div>
     </section>
+
     <section id="activities">
         <div class="container">
             <h2 class="section-title fade-in">ACTIVITIES</h2>
@@ -226,10 +237,9 @@
             }, { threshold: 0.1 });
             fadeTargets.forEach(target => fadeObserver.observe(target));
 
-            // ▼▼▼ JavaScript変更点 ▼▼▼
             const hero = document.getElementById('hero');
             const images = [
-                'https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg',    // 以前の1枚目
+                'https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg',
                 'https://i.postimg.cc/sgYDQzw0/IMG-9333.jpg',
                 'https://i.postimg.cc/kg3ggGFb/IMG-9341.jpg',
                 'https://i.postimg.cc/CKwMb22M/IMG-9342.jpg',
@@ -247,7 +257,6 @@
             }
             changeBackground();
             setInterval(changeBackground, 5000);
-            // ▲▲▲ JavaScript変更点 ▲▲▲
         });
     </script>
 </body>
