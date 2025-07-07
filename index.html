@@ -35,7 +35,25 @@
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent-cyan); margin: 1rem auto 0; border-radius: 2px; box-shadow: 0 0 15px var(--accent-cyan); }
         .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.is-visible { opacity: 1; transform: translateY(0); }
-        #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.9)), url('https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg') no-repeat center center/cover; padding: 1rem; }
+        
+        /* ▼▼▼ CSS変更点 ▼▼▼ */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-color: var(--bg-dark); /* 画像読み込みまでの背景色 */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            padding: 1rem;
+            transition: background-image 1s ease-in-out; /* 背景画像の切り替えを滑らかに */
+        }
+        /* ▲▲▲ CSS変更点 ▲▲▲ */
+
         .hero-content h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 700; text-shadow: 0 4px 25px rgba(0,0,0,0.6); margin-bottom: 1.5rem; line-height: 1.3; }
         .hero-content h2 { font-size: clamp(1.1rem, 3vw, 1.3rem); font-weight: 500; color: var(--text-secondary); text-shadow: 0 2px 10px rgba(0,0,0,0.5); margin-bottom: 3rem; letter-spacing: 1px; font-family: var(--title-font); }
         .btn { display: inline-block; padding: 14px 38px; border: 2px solid var(--accent-cyan); border-radius: 50px; text-decoration: none; font-weight: 700; font-size: clamp(1rem, 2.5vw, 1.1rem); transition: all 0.3s ease; background: transparent; color: var(--accent-cyan); letter-spacing: 1px; }
@@ -63,6 +81,7 @@
         .activity-card, a.activity-card {
             display: flex; 
             flex-direction: column;
+            justify-content: center;
             height: 100%;
             background-color: var(--bg-card);
             padding: 2.5rem;
@@ -78,19 +97,15 @@
         .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
         .activity-card::after { content: ''; position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent 70%); transform: translate(-50%, -50%) scale(0); transition: transform 0.5s ease; }
         .activity-card:hover::after { transform: translate(-50%, -50%) scale(2); }
-        
         .activity-card .icon { flex-shrink: 0; font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
         .activity-card .title { flex-shrink: 0; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); white-space: nowrap; }
-        
-        /* ▼▼▼ CSS変更点 ▼▼▼ */
         .activity-card .description { 
             font-size: 0.95rem; 
             color: var(--text-secondary); 
             line-height: 1.6; 
-            text-align: left; /* 説明文を左揃えにする */
-            width: 100%; /* 幅を100%に設定 */
+            text-align: left;
+            width: 100%; 
         }
-        /* ▲▲▲ CSS変更点 ▲▲▲ */
 
         #contact { background: var(--bg-dark); }
         .contact-wrapper p { max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary); }
@@ -153,7 +168,6 @@
             </div>
         </div>
     </section>
-
     <section id="activities">
         <div class="container">
             <h2 class="section-title fade-in">ACTIVITIES</h2>
@@ -216,20 +230,45 @@
         <div class="signature">Kota Nishi</div>
         <p>&copy; 2025 KOTA NISHI. All Rights Reserved.</p>
     </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const targets = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
+            // スクロール時のフェードインアニメーション
+            const fadeTargets = document.querySelectorAll('.fade-in');
+            const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                        fadeObserver.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-            targets.forEach(target => observer.observe(target));
+            fadeTargets.forEach(target => fadeObserver.observe(target));
+
+            // ヒーローセクションの背景スライドショー
+            const hero = document.getElementById('hero');
+            const images = [
+                'https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg',
+                'https://i.postimg.cc/0yct36Rq/EF6-CDA26-1139-4083-9-A31-8180-FE597-FF3.jpg',
+                'https://i.postimg.cc/BnqYMTzg/IMG-9338.jpg'
+            ];
+            let currentIndex = 0;
+
+            function changeBackground() {
+                // グラデーションと新しい画像を組み合わせる
+                hero.style.backgroundImage = `linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.9)), url('${images[currentIndex]}')`;
+                
+                currentIndex++;
+                if (currentIndex >= images.length) {
+                    currentIndex = 0;
+                }
+            }
+
+            // 最初の画像を設定
+            changeBackground();
+            // 5秒ごとに画像を変更 (5000ミリ秒)
+            setInterval(changeBackground, 5000);
         });
     </script>
-
-</body>
+    </body>
 </html>
