@@ -63,7 +63,6 @@
         .activity-card, a.activity-card {
             display: flex; 
             flex-direction: column;
-            justify-content: center;
             height: 100%;
             background-color: var(--bg-card);
             padding: 2.5rem;
@@ -79,15 +78,17 @@
         .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
         .activity-card::after { content: ''; position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent 70%); transform: translate(-50%, -50%) scale(0); transition: transform 0.5s ease; }
         .activity-card:hover::after { transform: translate(-50%, -50%) scale(2); }
-        .activity-card .icon { font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
-        .activity-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); white-space: nowrap; }
+        
+        .activity-card .icon { flex-shrink: 0; font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
+        .activity-card .title { flex-shrink: 0; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary); white-space: nowrap; }
         
         /* ▼▼▼ CSS変更点 ▼▼▼ */
         .activity-card .description { 
             font-size: 0.95rem; 
             color: var(--text-secondary); 
             line-height: 1.6; 
-            word-break: keep-all; /* 不自然な改行を防止 */
+            text-align: left; /* 説明文を左揃えにする */
+            width: 100%; /* 幅を100%に設定 */
         }
         /* ▲▲▲ CSS変更点 ▲▲▲ */
 
@@ -119,7 +120,6 @@
             </div>
         </div>
     </section>
-
     <section id="profile">
         <div class="container">
             <div class="profile-grid">
@@ -137,7 +137,6 @@
             </div>
         </div>
     </section>
-    
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">MY MISSION</h2>
@@ -213,12 +212,10 @@
             </div>
         </div>
     </section>
-    
     <footer>
         <div class="signature">Kota Nishi</div>
         <p>&copy; 2025 KOTA NISHI. All Rights Reserved.</p>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const targets = document.querySelectorAll('.fade-in');
