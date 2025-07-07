@@ -8,7 +8,7 @@
     <meta name="keywords" content="西滉太, フットサル, ゴレイロ, しながわシティ, Fリーグ, パーソナルトレーニング">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,174 +25,34 @@
             --border-color: rgba(255, 255, 255, 0.1);
         }
 
+        /* (基本スタイルは変更なしのため省略) */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--main-font);
-            line-height: 1.8;
-            color: var(--text-primary);
-            background-color: var(--bg-dark);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 clamp(1.5rem, 5vw, 2.5rem);
-        }
-
-        section {
-            padding: clamp(6rem, 12vw, 8rem) 0;
-            overflow: hidden;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--title-font);
-            font-size: clamp(2.5rem, 6vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 4rem;
-            color: var(--text-primary);
-            position: relative;
-            letter-spacing: 2px;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-cyan);
-            margin: 1rem auto 0;
-            border-radius: 2px;
-            box-shadow: 0 0 15px var(--accent-cyan);
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+        body { font-family: var(--main-font); line-height: 1.8; color: var(--text-primary); background-color: var(--bg-dark); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .container { max-width: 1100px; margin-left: auto; margin-right: auto; padding: 0 clamp(1.5rem, 5vw, 2.5rem); }
+        section { padding: clamp(6rem, 12vw, 8rem) 0; overflow: hidden; }
+        .section-title { text-align: center; font-family: var(--title-font); font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 4rem; color: var(--text-primary); position: relative; letter-spacing: 2px; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent-cyan); margin: 1rem auto 0; border-radius: 2px; box-shadow: 0 0 15px var(--accent-cyan); }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.is-visible { opacity: 1; transform: translateY(0); }
-
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.9)), url('https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg') no-repeat center center/cover;
-            padding: 1rem;
-        }
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 7vw, 4.5rem);
-            font-weight: 700;
-            text-shadow: 0 4px 25px rgba(0,0,0,0.6);
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-        .hero-content h2 {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-bottom: 3rem;
-            letter-spacing: 1px;
-            font-family: var(--title-font);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 38px;
-            border: 2px solid var(--accent-cyan);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            transition: all 0.3s ease;
-            background: transparent;
-            color: var(--accent-cyan);
-            letter-spacing: 1px;
-        }
-        .btn:hover {
-            background: var(--accent-cyan);
-            color: var(--bg-dark);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.4);
-        }
-        
+        #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; background: linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.9)), url('https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg') no-repeat center center/cover; padding: 1rem; }
+        .hero-content h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 700; text-shadow: 0 4px 25px rgba(0,0,0,0.6); margin-bottom: 1.5rem; line-height: 1.3; }
+        .hero-content h2 { font-size: clamp(1.1rem, 3vw, 1.3rem); font-weight: 500; color: var(--text-secondary); text-shadow: 0 2px 10px rgba(0,0,0,0.5); margin-bottom: 3rem; letter-spacing: 1px; font-family: var(--title-font); }
+        .btn { display: inline-block; padding: 14px 38px; border: 2px solid var(--accent-cyan); border-radius: 50px; text-decoration: none; font-weight: 700; font-size: clamp(1rem, 2.5vw, 1.1rem); transition: all 0.3s ease; background: transparent; color: var(--accent-cyan); letter-spacing: 1px; }
+        .btn:hover { background: var(--accent-cyan); color: var(--bg-dark); transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 191, 255, 0.4); }
         #profile { padding-bottom: 0; }
-        .profile-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-        }
-        .profile-details h2 {
-            font-family: var(--title-font);
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        .profile-details p {
-            font-size: clamp(1rem, 2.5vw, 1.05rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.9;
-        }
-        .profile-image-container {
-            position: relative;
-            width: fit-content;
-        }
-        .profile-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-        .profile-image-container::before, .profile-image-container::after {
-            content: '';
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border-color: var(--accent-cyan);
-            border-style: solid;
-            transition: all 0.3s ease;
-        }
-        .profile-image-container::before {
-            top: -12px; left: -12px;
-            border-width: 4px 0 0 4px;
-        }
-        .profile-image-container::after {
-            bottom: -12px; right: -12px;
-            border-width: 0 4px 4px 0;
-        }
-
+        .profile-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+        .profile-details h2 { font-family: var(--title-font); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2; }
+        .profile-details p { font-size: clamp(1rem, 2.5vw, 1.05rem); color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.9; }
+        .profile-image-container { position: relative; width: fit-content; }
+        .profile-image { width: 100%; max-width: 400px; height: auto; display: block; border-radius: 8px; }
+        .profile-image-container::before, .profile-image-container::after { content: ''; position: absolute; width: 30px; height: 30px; border-color: var(--accent-cyan); border-style: solid; transition: all 0.3s ease; }
+        .profile-image-container::before { top: -12px; left: -12px; border-width: 4px 0 0 4px; }
+        .profile-image-container::after { bottom: -12px; right: -12px; border-width: 0 4px 4px 0; }
         #mission { background-color: var(--bg-card); }
         .mission-wrapper { max-width: 850px; margin: 0 auto; }
-        .mission-text {
-            font-size: clamp(1.1rem, 2.5vw, 1.25rem);
-            margin-bottom: 3rem;
-            padding: 0 1rem 0 2rem;
-            position: relative;
-            color: var(--text-secondary);
-        }
-        .mission-text::before {
-            content: '“';
-            font-family: serif;
-            font-size: 5rem;
-            color: var(--accent-cyan);
-            position: absolute;
-            left: -1rem;
-            top: -1.5rem;
-            opacity: 0.5;
-        }
+        .mission-text { font-size: clamp(1.1rem, 2.5vw, 1.25rem); margin-bottom: 3rem; padding: 0 1rem 0 2rem; position: relative; color: var(--text-secondary); }
+        .mission-text::before { content: '“'; font-family: serif; font-size: 5rem; color: var(--accent-cyan); position: absolute; left: -1rem; top: -1.5rem; opacity: 0.5; }
         
         .activities-grid {
             display: grid;
@@ -201,7 +61,10 @@
         }
 
         .activity-card, a.activity-card {
-            display: block;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
             background-color: var(--bg-card);
             padding: 2.5rem;
             border-radius: 12px;
@@ -210,60 +73,24 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            text-decoration: none;
-            /* height: 100%; /* 必要に応じて高さを揃える */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-decoration: none; 
         }
 
-        .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-        .activity-card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent 70%);
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.5s ease;
-        }
+        .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+        .activity-card::after { content: ''; position: absolute; top: 50%; left: 50%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent 70%); transform: translate(-50%, -50%) scale(0); transition: transform 0.5s ease; }
         .activity-card:hover::after { transform: translate(-50%, -50%) scale(2); }
         .activity-card .icon { font-size: 3rem; color: var(--accent-cyan); margin-bottom: 1rem; }
-        .activity-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
-        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; /* min-height: 50px; /* 必要に応じてテキストエリアの最低限の高さを設定 */ }
+        .activity-card .title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); word-break: keep-all; /* ▼▼▼ 改行修正 ▼▼▼ */ }
+        .activity-card .description { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
 
         #contact { background: var(--bg-dark); }
         .contact-wrapper p { max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary); }
         .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
-        .social-link {
-            font-size: 2rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-link:hover {
-            color: var(--accent-cyan);
-            transform: translateY(-5px);
-        }
+        .social-link { font-size: 2rem; color: var(--text-secondary); transition: color 0.3s ease, transform 0.3s ease; }
+        .social-link:hover { color: var(--accent-cyan); transform: translateY(-5px); }
         
-        footer {
-            text-align: center;
-            padding: 4rem 1rem 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-        }
-        .signature {
-            font-family: 'Cedarville Cursive', cursive;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
-        }
+        footer { text-align: center; padding: 4rem 1rem 2rem; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid var(--border-color); }
+        .signature { font-family: 'Cedarville Cursive', cursive; font-size: 1.5rem; color: var(--text-primary); margin-bottom: 2rem; }
 
         @media (max-width: 768px) {
             .profile-grid { grid-template-columns: 1fr; text-align: center;}
@@ -284,7 +111,6 @@
             </div>
         </div>
     </section>
-
     <section id="profile">
         <div class="container">
             <div class="profile-grid">
@@ -302,7 +128,6 @@
             </div>
         </div>
     </section>
-    
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">MY MISSION</h2>
@@ -325,41 +150,41 @@
             <h2 class="section-title fade-in">ACTIVITIES</h2>
             <div class="activities-grid">
                 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in">
+                <div class="activity-card fade-in">
                     <div class="icon"><i class="fa-solid fa-trophy"></i></div>
                     <h3 class="title">Fリーグ活動</h3>
                     <p class="description">トップリーグ「しながわシティ」の現役ゴレイロとして活動中。</p>
-                </a>
+                </div>
                 
-                <a href="https://forms.gle/udvA4iWUyt1TJ6Qo9" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.1s;">
+                <a href="https://forms.gle/t5UGFewdMrDmwtor6" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.1s;">
                     <div class="icon"><i class="fa-solid fa-user-group"></i></div>
                     <h3 class="title">パーソナルトレーニング</h3>
                     <p class="description">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</p>
                 </a>
 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.2s;">
+                <a href="https://forms.gle/8wgLZmDzMnyttfuy5" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.2s;">
                     <div class="icon"><i class="fa-solid fa-users"></i></div>
                     <h3 class="title">チームサポート</h3>
                     <p class="description">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</p>
                 </a>
                 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.3s;">
+                <a href="https://forms.gle/Aiqmtkv8FDaTVj2G8" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.3s;">
                     <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
                     <h3 class="title">個人・チーム単発指導</h3>
                     <p class="description">単発での個人指導、チームへのスポット指導も承ります。</p>
                 </a>
                 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.4s;">
+                <div class="activity-card fade-in" style="transition-delay: 0.4s;">
                     <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
                     <h3 class="title">練習会開催</h3>
                     <p class="description">技術向上と交流を目的としたゴレイロ限定の練習会を定期的に開催。</p>
-                </a>
+                </div>
 
-                <a href="#" target="_blank" rel="noopener noreferrer" class="activity-card fade-in" style="transition-delay: 0.5s;">
+                <div class="activity-card fade-in" style="transition-delay: 0.5s;">
                      <div class="icon"><i class="fa-solid fa-comments"></i></div>
                     <h3 class="title">コミュニティ運営</h3>
                     <p class="description">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</p>
-                </a>
+                </div>
 
             </div>
         </div>
@@ -378,12 +203,10 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="signature">Kota Nishi</div>
         <p>&copy; 2025 KOTA NISHI. All Rights Reserved.</p>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const targets = document.querySelectorAll('.fade-in');
