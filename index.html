@@ -25,6 +25,7 @@
             --border-color: rgba(255, 255, 255, 0.1);
         }
 
+        /* (基本スタイルは変更なし) */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: var(--main-font); line-height: 1.8; color: var(--text-primary); background-color: var(--bg-dark); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -94,6 +95,60 @@
             .profile-image-container { margin: 0 auto 2rem; }
             .profile-details { text-align: center; }
         }
+
+        /* ▼▼▼ バナー広告 CSS ▼▼▼ */
+        .tj-banner-monitor {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9999;
+            width: 300px;
+            background-color: #FFD700;
+            text-decoration: none;
+            color: #000;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            padding: 15px 10px;
+            border-radius: 8px 0 0 8px;
+            box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: block;
+            line-height: 1.4;
+        }
+        .tj-banner-monitor:hover {
+            background-color: #FFC700;
+            transform: translateY(-50%) scale(1.05);
+            text-decoration: none;
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            .tj-banner-monitor {
+                position: fixed;
+                bottom: 20px;
+                right: 10%;
+                left: 10%;
+                top: auto;
+                transform: none;
+                width: 80%;
+                border-radius: 8px;
+                font-size: 16px;
+                padding: 12px 8px;
+            }
+            
+            .tj-banner-monitor:hover {
+                transform: scale(1.02);
+            }
+        }
+        @media (max-width: 480px) {
+            .tj-banner-monitor {
+                font-size: 14px;
+                padding: 10px 6px;
+            }
+        }
+        /* ▲▲▲ バナー広告 CSS ▲▲▲ */
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
 </head>
@@ -108,7 +163,6 @@
             </div>
         </div>
     </section>
-
     <section id="profile">
         <div class="container">
             <div class="profile-grid">
@@ -141,7 +195,6 @@
             </div>
         </div>
     </section>
-    
     <section id="mission">
         <div class="container">
             <h2 class="section-title fade-in">MY MISSION</h2>
@@ -159,7 +212,6 @@
             </div>
         </div>
     </section>
-
     <section id="activities">
         <div class="container">
             <h2 class="section-title fade-in">ACTIVITIES</h2>
@@ -204,7 +256,6 @@
             </div>
         </div>
     </section>
-
     <section id="contact">
         <div class="container">
             <div class="contact-wrapper fade-in" style="text-align: center;">
@@ -224,8 +275,12 @@
         <p>&copy; 2025 KOTA NISHI. All Rights Reserved.</p>
     </footer>
 
+    <a href="https://forms.gle/t5UGFewdMrDmwtor6" class="tj-banner-monitor" role="banner" aria-label="モニター募集" target="_blank" rel="noopener noreferrer">
+      モニター募集！
+    </a>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // スクロール時のフェードインアニメーション
             const fadeTargets = document.querySelectorAll('.fade-in');
             const fadeObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -237,6 +292,7 @@
             }, { threshold: 0.1 });
             fadeTargets.forEach(target => fadeObserver.observe(target));
 
+            // ヒーローセクションの背景スライドショー
             const hero = document.getElementById('hero');
             const images = [
                 'https://i.postimg.cc/NfvPrq7Z/IMG-9359.jpg',
@@ -257,6 +313,16 @@
             }
             changeBackground();
             setInterval(changeBackground, 5000);
+
+            // ▼▼▼ バナー広告 JavaScript ▼▼▼
+            const banner = document.querySelector('.tj-banner-monitor');
+            if (banner) {
+                banner.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(this.href, '_blank', 'noopener,noreferrer');
+                });
+            }
+            // ▲▲▲ バナー広告 JavaScript ▲▲▲
         });
     </script>
 </body>
