@@ -420,22 +420,41 @@ nav.scrolled{ background:rgba(10,10,10,0.97); border-bottom-color:var(--line); }
 /* ============ GALLERY ============ */
 #gallery{ background:var(--black-2); overflow:hidden; padding-bottom:0; }
 #gallery .container{ padding-bottom:48px; }
-.gallery-track-wrap{ overflow:hidden; }
-.gallery-track{
-  display:flex; gap:12px; width:max-content;
-  animation:slide 32s linear infinite;
-  will-change:transform;
+.gallery-track-wrap{
+  overflow:hidden;
+  cursor:grab;
+  -webkit-user-select:none; user-select:none;
 }
-.gallery-track:hover{ animation-play-state:paused; }
+.gallery-track-wrap:active{ cursor:grabbing; }
+.gallery-track{
+  display:flex; gap:12px;
+  width:max-content;
+  will-change:transform;
+  /* NO CSS animation — driven by JS */
+}
 .gallery-track img{
   height:300px; width:230px; flex-shrink:0;
   border-radius:2px; object-fit:cover; object-position:top;
   filter:brightness(0.82) saturate(0.95);
   transition:filter 0.35s ease;
+  pointer-events:none;
 }
-@media (min-width:768px){ .gallery-track img{ height:380px; width:290px; } }
+@media (min-width:768px){ .gallery-track img{ height:400px; width:300px; } }
 .gallery-track img:hover{ filter:brightness(1) saturate(1.1); }
-@keyframes slide{ from{ transform:translateX(0); } to{ transform:translateX(calc(-50% - 6px)); } }
+
+/* ============ ACT CARD BUTTON ============ */
+.act-cta-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:14px; align-self:flex-start;
+  font-family:var(--ff-head); font-size:11px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--black); background:var(--orange);
+  padding:9px 18px; border-radius:2px;
+  border:none; cursor:pointer;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.act-cta-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,106,26,0.35); }
+.act-cta-btn svg{ width:12px; height:12px; fill:currentColor; }
 
 /* ============ CONTACT ============ */
 #contact{ background:var(--black); text-align:center; }
@@ -722,19 +741,28 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
         <div class="act-num">02</div>
         <div class="act-title">パーソナルトレーニング</div>
         <div class="act-desc">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</div>
-        <div class="act-tag">お申し込み受付中</div>
+        <button class="act-cta-btn" onclick="openModal('personal')">
+          お申し込みはこちら
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
       </div>
       <div class="act-card clickable reveal" data-modal="team">
         <div class="act-num">03</div>
         <div class="act-title">チームサポート</div>
         <div class="act-desc">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</div>
-        <div class="act-tag">お問い合わせ受付中</div>
+        <button class="act-cta-btn" onclick="openModal('team')">
+          お問い合わせはこちら
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
       </div>
       <div class="act-card clickable reveal" data-modal="single">
         <div class="act-num">04</div>
         <div class="act-title">単発指導</div>
         <div class="act-desc">個人・チームへのスポット指導。気軽に一度試してみたい方にも。</div>
-        <div class="act-tag">随時受付中</div>
+        <button class="act-cta-btn" onclick="openModal('single')">
+          お申し込みはこちら
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
       </div>
       <div class="act-card reveal">
         <div class="act-num">05</div>
@@ -800,7 +828,7 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
       <h2 class="section-title">SCENES</h2>
     </div>
   </div>
-  <div class="gallery-track-wrap reveal">
+  <div class="gallery-track-wrap" id="galleryWrap">
     <div class="gallery-track" id="galleryTrack">
       <img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太">
@@ -1067,7 +1095,64 @@ function staggerGroup(selector, gap){
 staggerGroup('.career-rail', 110);
 staggerGroup('.act-grid', 70);
 
-// ── MODAL ──────────────────────────────────────
+// ── GALLERY infinite scroll (JS-driven, bulletproof) ──
+(function initGallery() {
+  const wrap  = document.getElementById('galleryWrap');
+  const track = document.getElementById('galleryTrack');
+  if (!wrap || !track) return;
+
+  // clone all images for seamless loop
+  const imgs = Array.from(track.children);
+  imgs.forEach(img => track.appendChild(img.cloneNode(true)));
+
+  const SPEED = 0.55; // px per frame  ← adjust speed here
+  let offset   = 0;
+  let paused   = false;
+  let rafId    = null;
+  let halfW    = 0;
+
+  function measure() {
+    // half = width of original set (before clone)
+    halfW = imgs.reduce((sum, el) => sum + el.offsetWidth + 12, 0);
+  }
+  measure();
+  window.addEventListener('resize', measure);
+
+  function tick() {
+    if (!paused) {
+      offset += SPEED;
+      if (offset >= halfW) offset -= halfW;
+      track.style.transform = `translateX(${-offset}px)`;
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+  rafId = requestAnimationFrame(tick);
+
+  // pause on hover (desktop)
+  wrap.addEventListener('mouseenter', () => { paused = true; });
+  wrap.addEventListener('mouseleave', () => { paused = false; });
+
+  // drag to scrub (touch + mouse)
+  let dragStart = null, dragOffset = 0;
+  function onDragStart(x) { dragStart = x; dragOffset = offset; paused = true; }
+  function onDragMove(x)  {
+    if (dragStart === null) return;
+    const delta = dragStart - x;
+    offset = ((dragOffset + delta) % halfW + halfW) % halfW;
+    track.style.transform = `translateX(${-offset}px)`;
+  }
+  function onDragEnd()    { dragStart = null; paused = false; }
+
+  wrap.addEventListener('mousedown',  e => onDragStart(e.clientX));
+  window.addEventListener('mousemove', e => { if (dragStart !== null) onDragMove(e.clientX); });
+  window.addEventListener('mouseup',   onDragEnd);
+
+  wrap.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive:true });
+  wrap.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive:true });
+  wrap.addEventListener('touchend',   onDragEnd);
+})();
+
+
 const overlay = document.getElementById('modalOverlay');
 let currentModal = null;
 
