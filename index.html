@@ -270,55 +270,55 @@ nav.scrolled{ background:rgba(10,10,10,0.97); border-bottom-color:var(--line); }
 /* ============ CAREER ============ */
 #career{ background:var(--black); }
 .career-rail{
-  position:relative; margin-top:56px; padding-left:32px;
+  position:relative; margin-top:40px; padding-left:28px;
 }
-@media (min-width:768px){ .career-rail{ padding-left:0; margin-left:160px; } }
+@media (min-width:768px){ .career-rail{ padding-left:0; margin-left:140px; } }
 
 .career-rail::before{
-  content:''; position:absolute; top:6px; bottom:6px; left:5px; width:2px;
+  content:''; position:absolute; top:6px; bottom:6px; left:4px; width:2px;
   background:linear-gradient(to bottom, var(--orange) 0%, var(--blue) 100%);
   opacity:0.35;
 }
-@media (min-width:768px){ .career-rail::before{ left:-32px; } }
+@media (min-width:768px){ .career-rail::before{ left:-28px; } }
 
 .rail-item{
-  position:relative; padding:0 0 52px 28px;
+  position:relative; padding:0 0 28px 24px;
 }
 .rail-item:last-child{ padding-bottom:0; }
-@media (min-width:768px){ .rail-item{ padding-left:0; display:grid; grid-template-columns:160px 1fr; column-gap:0; } }
+@media (min-width:768px){ .rail-item{ padding-left:0; display:grid; grid-template-columns:140px 1fr; column-gap:0; } }
 
 .rail-item .ri-node{
-  position:absolute; left:-32px; top:4px; width:12px; height:12px; border-radius:50%;
+  position:absolute; left:-28px; top:5px; width:10px; height:10px; border-radius:50%;
   background:var(--black); border:2px solid var(--blue); z-index:2;
   transition:background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-@media (min-width:768px){ .rail-item .ri-node{ left:-37px; } }
+@media (min-width:768px){ .rail-item .ri-node{ left:-33px; } }
 .rail-item:hover .ri-node{ background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 4px rgba(255,106,26,0.18); }
 .rail-item.current .ri-node{ background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 5px rgba(255,106,26,0.22); }
 
 .rail-item .ri-year{
-  font-family:var(--ff-head); font-size:12px; font-weight:700; letter-spacing:1.5px;
+  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:1.5px;
   color:var(--grey); white-space:nowrap;
 }
 .rail-item.current .ri-year{ color:var(--orange); }
 @media (min-width:768px){
-  .rail-item .ri-year{ position:absolute; left:-160px; top:2px; width:140px; text-align:right; padding-right:24px; }
+  .rail-item .ri-year{ position:absolute; left:-140px; top:3px; width:120px; text-align:right; padding-right:20px; }
 }
 
-.rail-item .ri-body{ margin-top:6px; }
-@media (min-width:768px){ .rail-item .ri-body{ margin-top:0; padding-left:36px; } }
+.rail-item .ri-body{ margin-top:4px; }
+@media (min-width:768px){ .rail-item .ri-body{ margin-top:0; padding-left:32px; } }
 
 .rail-item .ri-club{
-  font-family:var(--ff-display); font-size:clamp(1.5rem,4vw,2.1rem); letter-spacing:0.5px;
+  font-family:var(--ff-display); font-size:clamp(1.3rem,3.5vw,1.75rem); letter-spacing:0.5px;
   color:var(--white); line-height:1.15; transition:color 0.25s ease;
 }
 .rail-item:hover .ri-club{ color:var(--orange); }
 .rail-item.current .ri-club{ color:var(--white); }
 
 .rail-item .ri-badge{
-  display:inline-block; margin-top:10px;
+  display:inline-block; margin-top:8px;
   font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--black); background:var(--orange); padding:4px 10px; border-radius:2px;
+  color:var(--black); background:var(--orange); padding:3px 9px; border-radius:2px;
 }
 
 /* ============ MISSION ============ */
@@ -339,34 +339,83 @@ nav.scrolled{ background:rgba(10,10,10,0.97); border-bottom-color:var(--line); }
 /* ============ ACTIVITIES ============ */
 #activities{ background:var(--black); }
 .act-grid{
-  display:grid; grid-template-columns:1fr; gap:1px;
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
   background:var(--line); border:1px solid var(--line); margin-top:48px; border-radius:2px; overflow:hidden;
 }
-@media (min-width:640px){ .act-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .act-grid{ grid-template-columns:1fr; } }
 @media (min-width:1024px){ .act-grid{ grid-template-columns:repeat(3,1fr); } }
 .act-card{
-  background:var(--black-2); padding:34px 28px;
+  background:var(--black-2); padding:28px 24px;
   text-decoration:none; color:inherit;
-  display:flex; flex-direction:column; gap:10px; min-height:198px;
-  position:relative; transition:background 0.25s ease;
+  display:flex; flex-direction:column; gap:8px;
+  position:relative; transition:background 0.25s ease; cursor:default;
 }
-.act-card:hover{ background:#1f1f1f; }
-.act-card .act-ico{
-  width:38px; height:38px; border-radius:50%; background:rgba(30,95,255,0.15);
-  border:1px solid var(--blue); display:flex; align-items:center; justify-content:center;
-  font-size:1rem; margin-bottom:6px;
+.act-card[href]{ cursor:pointer; }
+.act-card:hover{ background:#1a1a1a; }
+.act-num{
+  font-family:var(--ff-display); font-size:2rem; color:rgba(255,255,255,0.06); line-height:1;
+  margin-bottom:4px; letter-spacing:1px;
 }
 .act-title{
-  font-family:var(--ff-head); font-size:16px; font-weight:700; color:var(--white); letter-spacing:0.3px;
+  font-family:var(--ff-head); font-size:15px; font-weight:700; color:var(--white); letter-spacing:0.3px;
 }
-.act-desc{ font-size:0.88rem; line-height:1.85; color:var(--grey); }
-.act-arrow{
-  margin-top:auto; padding-top:10px;
-  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--orange); opacity:0; transform:translateX(-6px);
-  transition:opacity 0.25s ease, transform 0.25s ease;
+.act-desc{ font-size:0.85rem; line-height:1.8; color:var(--grey); }
+.act-tag{
+  margin-top:10px; align-self:flex-start;
+  font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--orange); border:1px solid rgba(255,106,26,0.3); padding:3px 10px; border-radius:2px;
+  opacity:0; transform:translateY(4px); transition:opacity 0.25s ease, transform 0.25s ease;
 }
-.act-card:hover .act-arrow{ opacity:1; transform:translateX(0); }
+.act-card:hover .act-tag{ opacity:1; transform:translateY(0); }
+
+/* ============ SPONSOR ============ */
+#sponsor{ background:var(--black-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.sponsor-inner{
+  display:grid; grid-template-columns:1fr; gap:48px; align-items:center;
+}
+@media (min-width:900px){ .sponsor-inner{ grid-template-columns:1fr 1fr; gap:80px; } }
+.sponsor-plans{
+  display:grid; grid-template-columns:1fr; gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:2px; overflow:hidden;
+}
+.sponsor-plan{
+  background:var(--black); padding:24px 28px;
+  display:flex; flex-direction:column; gap:8px;
+  transition:background 0.25s ease;
+}
+.sponsor-plan:hover{ background:#141414; }
+.sp-num{
+  font-family:var(--ff-display); font-size:3rem; line-height:1;
+  color:rgba(255,106,26,0.12); letter-spacing:2px;
+}
+.sp-label{
+  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--orange); display:inline-block;
+  border:1px solid var(--orange); padding:4px 12px; border-radius:2px; align-self:flex-start;
+}
+.sp-desc{ font-size:0.88rem; line-height:1.85; color:#B0B0B0; margin-top:4px; }
+.sp-note{
+  display:flex; align-items:center; gap:8px;
+  font-size:0.82rem; color:var(--grey); margin-top:6px;
+}
+.sp-note::before{ content:'✦'; color:var(--orange); font-size:0.7rem; }
+.sponsor-cta-wrap{ display:flex; flex-direction:column; gap:20px; }
+.sponsor-cta-wrap p{ font-size:0.95rem; line-height:1.9; color:#B0B0B0; }
+.btn-sponsor{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  font-family:var(--ff-head); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  background:var(--orange); color:var(--black);
+  padding:16px 32px; border-radius:2px; text-decoration:none;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-sponsor:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); }
+.sp-ig{
+  display:flex; align-items:center; gap:10px;
+  font-size:0.85rem; color:var(--grey); text-decoration:none;
+  transition:color 0.2s ease;
+}
+.sp-ig:hover{ color:var(--orange); }
+.sp-ig svg{ width:18px; height:18px; fill:currentColor; flex-shrink:0; }
 
 /* ============ GALLERY ============ */
 #gallery{ background:var(--black-2); overflow:hidden; padding-bottom:0; }
@@ -411,7 +460,96 @@ footer{
 footer .f-name{ font-family:var(--ff-display); font-size:1.8rem; letter-spacing:2px; color:var(--white); }
 footer .f-name b{ color:var(--orange); font-weight:400; }
 footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px; }
+
+/* ============ MODAL ============ */
+.modal-overlay{
+  position:fixed; inset:0; z-index:800;
+  background:rgba(0,0,0,0.75); backdrop-filter:blur(4px);
+  opacity:0; pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.modal-overlay.open{ opacity:1; pointer-events:all; }
+
+.modal-sheet{
+  position:fixed; left:0; right:0; bottom:0; z-index:801;
+  background:var(--black-2); border-top:1px solid var(--line);
+  border-radius:16px 16px 0 0;
+  padding:32px 24px 48px;
+  max-height:92vh; overflow-y:auto;
+  transform:translateY(100%);
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  -webkit-overflow-scrolling:touch;
+}
+@media (min-width:640px){
+  .modal-sheet{ max-width:560px; left:50%; right:auto; transform:translateX(-50%) translateY(100%); border-radius:16px 16px 0 0; }
+}
+.modal-sheet.open{ transform:translateY(0); }
+@media (min-width:640px){ .modal-sheet.open{ transform:translateX(-50%) translateY(0); } }
+
+.modal-handle{
+  width:40px; height:4px; background:var(--line);
+  border-radius:2px; margin:0 auto 24px;
+}
+.modal-title{
+  font-family:var(--ff-display); font-size:1.8rem; letter-spacing:1px;
+  color:var(--white); margin-bottom:6px;
+}
+.modal-sub{
+  font-size:0.85rem; color:var(--grey); margin-bottom:28px;
+  line-height:1.7;
+}
+.modal-close{
+  position:absolute; top:20px; right:20px;
+  background:none; border:none; color:var(--grey);
+  font-size:1.4rem; cursor:pointer; line-height:1;
+  padding:4px 8px;
+  transition:color 0.2s;
+}
+.modal-close:hover{ color:var(--white); }
+
+/* form elements */
+.form-group{ display:flex; flex-direction:column; gap:6px; margin-bottom:18px; }
+.form-group label{
+  font-family:var(--ff-head); font-size:11px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; color:var(--grey);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:var(--black); border:1px solid var(--line);
+  color:var(--white); font-family:var(--ff-body); font-size:0.95rem;
+  padding:13px 16px; border-radius:3px; outline:none;
+  transition:border-color 0.2s ease;
+  width:100%;
+  -webkit-appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{ border-color:var(--blue); }
+.form-group textarea{ resize:vertical; min-height:110px; }
+.form-group select option{ background:var(--black-2); }
+
+.form-submit{
+  width:100%; padding:16px;
+  background:var(--orange); color:var(--black);
+  font-family:var(--ff-head); font-size:13px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  border:none; border-radius:3px; cursor:pointer;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top:8px;
+}
+.form-submit:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); }
+.form-success{
+  display:none; text-align:center; padding:32px 0;
+}
+.form-success .success-icon{ font-size:2.5rem; margin-bottom:12px; }
+.form-success p{ color:#B0B0B0; line-height:1.8; font-size:0.95rem; }
+.form-success strong{ color:var(--white); }
+
+/* act-card clickable style */
+.act-card.clickable{ cursor:pointer; }
 </style>
+
 </head>
 <body>
 
@@ -423,6 +561,7 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <li><a href="#career">Career</a></li>
     <li><a href="#mission">Mission</a></li>
     <li><a href="#activities">Activities</a></li>
+    <li><a href="#sponsor">Sponsor</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -436,6 +575,7 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
   <a href="#career">Career</a>
   <a href="#mission">Mission</a>
   <a href="#activities">Activities</a>
+  <a href="#sponsor">Sponsor</a>
   <a href="#gallery">Gallery</a>
   <a href="#contact">Contact</a>
 </div>
@@ -574,37 +714,79 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     </div>
     <div class="act-grid">
       <div class="act-card reveal">
-        <div class="act-ico">🏆</div>
+        <div class="act-num">01</div>
         <div class="act-title">Fリーグ選手活動</div>
         <div class="act-desc">ボアルース長野所属の現役ゴレイロとして、Fリーグ・ディビジョン1でゴール前に立ち続ける。</div>
       </div>
-      <a href="https://forms.gle/t5UGFewdMrDmwtor6" target="_blank" rel="noopener" class="act-card reveal">
-        <div class="act-ico">🎯</div>
+      <div class="act-card clickable reveal" data-modal="personal">
+        <div class="act-num">02</div>
         <div class="act-title">パーソナルトレーニング</div>
         <div class="act-desc">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</div>
-        <div class="act-arrow">Apply →</div>
-      </a>
-      <a href="https://forms.gle/8wgLZmDzMnyttfuy5" target="_blank" rel="noopener" class="act-card reveal">
-        <div class="act-ico">🤝</div>
+        <div class="act-tag">お申し込み受付中</div>
+      </div>
+      <div class="act-card clickable reveal" data-modal="team">
+        <div class="act-num">03</div>
         <div class="act-title">チームサポート</div>
         <div class="act-desc">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</div>
-        <div class="act-arrow">Inquire →</div>
-      </a>
-      <a href="https://forms.gle/Aiqmtkv8FDaTVj2G8" target="_blank" rel="noopener" class="act-card reveal">
-        <div class="act-ico">💡</div>
+        <div class="act-tag">お問い合わせ受付中</div>
+      </div>
+      <div class="act-card clickable reveal" data-modal="single">
+        <div class="act-num">04</div>
         <div class="act-title">単発指導</div>
         <div class="act-desc">個人・チームへのスポット指導。気軽に一度試してみたい方にも。</div>
-        <div class="act-arrow">Book →</div>
-      </a>
+        <div class="act-tag">随時受付中</div>
+      </div>
       <div class="act-card reveal">
-        <div class="act-ico">📅</div>
+        <div class="act-num">05</div>
         <div class="act-title">練習会開催</div>
         <div class="act-desc">技術向上と交流を目的としたゴレイロ限定の練習会を定期開催。</div>
       </div>
       <div class="act-card reveal">
-        <div class="act-ico">💬</div>
+        <div class="act-num">06</div>
         <div class="act-title">コミュニティ運営</div>
         <div class="act-desc">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSOR -->
+<section id="sponsor">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Sponsor</p>
+      <h2 class="section-title" style="margin-bottom:48px;">SUPPORT<br>ME</h2>
+    </div>
+    <div class="sponsor-inner">
+      <div class="sponsor-plans reveal">
+        <div class="sponsor-plan">
+          <div class="sp-num">01</div>
+          <span class="sp-label">Goods Support</span>
+          <p class="sp-desc">活動に必要な物品（ユニフォーム・グローブ・トレーニング器具など）をご提供いただけるスポンサー様を募集しています。</p>
+          <p class="sp-note">サポート内容は個別にご相談ください</p>
+        </div>
+        <div class="sponsor-plan">
+          <div class="sp-num">02</div>
+          <span class="sp-label">Activity Support</span>
+          <p class="sp-desc">遠征費・移動費・コーチング活動など、競技継続のための活動費をサポートいただける個人・企業様を募集しています。</p>
+          <p class="sp-note">金額・形式はご相談の上で決定します</p>
+        </div>
+        <div class="sponsor-plan">
+          <div class="sp-num">03</div>
+          <span class="sp-label">Community Support</span>
+          <p class="sp-desc">ゴレイロコミュニティの運営・練習会開催を一緒に支えてくださるパートナーを募集しています。</p>
+          <p class="sp-note">協賛・連携など幅広く対応します</p>
+        </div>
+      </div>
+      <div class="sponsor-cta-wrap reveal">
+        <p>現役フットサル選手として、また次世代のゴレイロ育成に取り組む活動として、ご支援・ご協賛いただける方を募集しています。<br><br>内容・金額はすべて個別にご相談の上で決定しますので、まずはお気軽にご連絡ください。</p>
+        <a href="mailto:nishi24.official@gmail.com" class="btn-sponsor" id="sponsorFormBtn" onclick="openModal('sponsor');return false;">
+          個別相談・お問い合わせ →
+        </a>
+        <a href="https://www.instagram.com/futsal_nishi24" target="_blank" rel="noopener" class="sp-ig">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          InstagramのDMでもお問い合わせを受け付けています → @futsal_nishi24
+        </a>
       </div>
     </div>
   </div>
@@ -620,12 +802,21 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
   </div>
   <div class="gallery-track-wrap reveal">
     <div class="gallery-track" id="galleryTrack">
+      <img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/fyCf706j/865D805D-83E8-44AE-A428-7E2344BF11970B5A3818.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/sf4mCtv5/BD4E0775-3993-4752-8A87-41E418ED06F50B5A1620.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/nzDL7jct/2026-04-26-0449.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg" alt="西滉太">
+      <!-- duplicate for seamless loop -->
+      <img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/fyCf706j/865D805D-83E8-44AE-A428-7E2344BF11970B5A3818.jpg" alt="西滉太">
+      <img src="https://i.postimg.cc/sf4mCtv5/BD4E0775-3993-4752-8A87-41E418ED06F50B5A1620.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太">
       <img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="西滉太">
@@ -635,6 +826,7 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     </div>
   </div>
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact">
@@ -660,6 +852,156 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     </div>
   </div>
 </section>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modalOverlay"></div>
+
+<!-- パーソナルトレーニング -->
+<div class="modal-sheet" id="modal-personal">
+  <div class="modal-handle"></div>
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-title">パーソナルトレーニング</div>
+  <p class="modal-sub">対面・オンラインで、個々のレベルに合わせた専門指導を提供します。<br>お気軽にお申し込みください。</p>
+  <div id="success-personal" class="form-success">
+    <div class="success-icon">✅</div>
+    <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
+  </div>
+  <form id="form-personal" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【パーソナルトレーニング お申し込み】">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="">
+    <div class="form-group">
+      <label>お名前 *</label>
+      <input type="text" name="お名前" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label>メールアドレス *</label>
+      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>件名</label>
+      <input type="text" name="件名" value="パーソナルトレーニング お申し込み" readonly style="color:var(--grey);">
+    </div>
+    <div class="form-group">
+      <label>メッセージ *</label>
+      <textarea name="メッセージ" placeholder="ご希望の日程・内容・現在のレベルなど、お気軽にお書きください。" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+</div>
+
+<!-- チームサポート -->
+<div class="modal-sheet" id="modal-team">
+  <div class="modal-handle"></div>
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-title">チームサポート</div>
+  <p class="modal-sub">ゴレイロ育成に悩むチームへ、専門的な知見からサポートします。</p>
+  <div id="success-team" class="form-success">
+    <div class="success-icon">✅</div>
+    <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
+  </div>
+  <form id="form-team" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【チームサポート お問い合わせ】">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <div class="form-group">
+      <label>お名前 *</label>
+      <input type="text" name="お名前" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label>メールアドレス *</label>
+      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>件名</label>
+      <input type="text" name="件名" value="チームサポート お問い合わせ" readonly style="color:var(--grey);">
+    </div>
+    <div class="form-group">
+      <label>メッセージ *</label>
+      <textarea name="メッセージ" placeholder="チーム名・ご状況・ご希望の内容などをお書きください。" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+</div>
+
+<!-- 単発指導 -->
+<div class="modal-sheet" id="modal-single">
+  <div class="modal-handle"></div>
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-title">単発指導</div>
+  <p class="modal-sub">個人・チームへのスポット指導。まずは一度、お気軽にどうぞ。</p>
+  <div id="success-single" class="form-success">
+    <div class="success-icon">✅</div>
+    <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
+  </div>
+  <form id="form-single" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【単発指導 お申し込み】">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <div class="form-group">
+      <label>お名前 *</label>
+      <input type="text" name="お名前" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label>メールアドレス *</label>
+      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>件名</label>
+      <input type="text" name="件名" value="単発指導 お申し込み" readonly style="color:var(--grey);">
+    </div>
+    <div class="form-group">
+      <label>メッセージ *</label>
+      <textarea name="メッセージ" placeholder="ご希望の日程・個人orチーム・現在のレベルなどをお書きください。" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+</div>
+
+<!-- 個人スポンサー -->
+<div class="modal-sheet" id="modal-sponsor">
+  <div class="modal-handle"></div>
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-title">個人スポンサー<br>お問い合わせ</div>
+  <p class="modal-sub">内容・金額はすべて個別にご相談の上で決定します。<br>まずはお気軽にご連絡ください。</p>
+  <div id="success-sponsor" class="form-success">
+    <div class="success-icon">✅</div>
+    <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
+  </div>
+  <form id="form-sponsor" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="【個人スポンサー お問い合わせ】">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <div class="form-group">
+      <label>お名前 *</label>
+      <input type="text" name="お名前" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label>メールアドレス *</label>
+      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+    </div>
+    <div class="form-group">
+      <label>会社名・屋号（任意）</label>
+      <input type="text" name="会社名・屋号" placeholder="株式会社〇〇 / 個人の場合は空欄でOK">
+    </div>
+    <div class="form-group">
+      <label>ご希望のサポート種別 *</label>
+      <select name="サポート種別" required>
+        <option value="" disabled selected>選択してください</option>
+        <option value="物品提供">物品提供</option>
+        <option value="活動費支援">活動費支援</option>
+        <option value="コミュニティ支援">コミュニティ支援</option>
+        <option value="その他">その他</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>ご相談内容・メッセージ *</label>
+      <textarea name="ご相談内容" placeholder="サポート内容・ご希望・ご質問などをお書きください。" required></textarea>
+    </div>
+    <button type="submit" class="form-submit">送信する →</button>
+  </form>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -725,7 +1067,70 @@ function staggerGroup(selector, gap){
 staggerGroup('.career-rail', 110);
 staggerGroup('.act-grid', 70);
 
-// Stat counter animation
+// ── MODAL ──────────────────────────────────────
+const overlay = document.getElementById('modalOverlay');
+let currentModal = null;
+
+function openModal(type) {
+  closeModal();
+  const sheet = document.getElementById('modal-' + type);
+  if (!sheet) return;
+  currentModal = sheet;
+  overlay.classList.add('open');
+  sheet.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  if (currentModal) {
+    currentModal.classList.remove('open');
+    currentModal = null;
+  }
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// clickable act-cards
+document.querySelectorAll('.act-card.clickable').forEach(card => {
+  card.addEventListener('click', () => openModal(card.dataset.modal));
+});
+
+// close on overlay click
+overlay.addEventListener('click', closeModal);
+
+// close on ESC
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// AJAX form submit (stay on page, show success message)
+['personal','team','single','sponsor'].forEach(type => {
+  const form = document.getElementById('form-' + type);
+  if (!form) return;
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = '送信中...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok || res.status === 200) {
+        form.style.display = 'none';
+        document.getElementById('success-' + type).style.display = 'block';
+      } else {
+        btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = '送信に失敗しました。再度お試しください。';
+      btn.disabled = false;
+    }
+  });
+});
+
+
 document.querySelectorAll('.stat-item').forEach(item => {
   const valEl = item.querySelector('.val');
   const smallEl = valEl.querySelector('small');
