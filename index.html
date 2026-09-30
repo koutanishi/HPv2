@@ -39,12 +39,12 @@
 }
 </script>
 <script>
-  /* Motion is opt-in: only when JS runs and the user hasn't asked for reduced motion.
+  /* Motion runs for everyone (including iOS "Reduce Motion" users, by request).
      A failsafe drops the preloader even if the CDN scripts never arrive. */
   (function(){
     var d = document.documentElement;
     d.classList.add('js');
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion');
+    d.classList.add('motion');
     setTimeout(function(){ d.classList.add('is-loaded'); }, 6000);
   })();
 </script>
@@ -91,9 +91,6 @@ html.lenis, html.lenis body{height:auto;}
 .lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain;}
 .lenis.lenis-stopped{overflow:hidden;}
 
-@media (prefers-reduced-motion: reduce){
-  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-}
 
 .container{ max-width:1280px; margin:0 auto; padding:0 var(--gutter); }
 
@@ -1341,7 +1338,7 @@ footer{ position:relative; background:var(--black); border-top:1px solid var(--l
 const root = document.documentElement;
 const $  = (s, c) => (c || document).querySelector(s);
 const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
-const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduced = false; // motion is intentionally shown even with OS-level reduced motion
 const finePointer = matchMedia('(pointer:fine)').matches;
 const hasGsap = !!(window.gsap && window.ScrollTrigger);
 const MOTION = !reduced && hasGsap;
