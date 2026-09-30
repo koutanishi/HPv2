@@ -2,11 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>西 滉太 - 現役フットサル選手 オフィシャルサイト | ボアルース長野</title>
 <meta name="description" content="Fリーグ「ボアルース長野」現役ゴレイロ・西滉太のオフィシャルサイト。パーソナルトレーニング（対面・オンライン）、チームサポート、ゴレイロコミュニティ運営など、ゴレイロの未来を創造する活動を発信中。">
 <meta name="keywords" content="西滉太, フットサル, ゴレイロ, ボアルース長野, Fリーグ, パーソナルトレーニング, ゴレイロ指導, フットサルGK">
 <meta name="author" content="西滉太 Kota Nishi">
+<meta name="theme-color" content="#0A0A0A">
 <meta property="og:title" content="西 滉太 - 現役フットサル選手 オフィシャルサイト">
 <meta property="og:description" content="Fリーグ「ボアルース長野」現役ゴレイロ・西滉太のオフィシャルサイト。パーソナルトレーニング・チームサポート・ゴレイロコミュニティ運営。">
 <meta property="og:type" content="website">
@@ -16,565 +17,796 @@
 <meta name="twitter:title" content="西 滉太 - 現役フットサル選手 オフィシャルサイト">
 <meta name="twitter:description" content="Fリーグ「ボアルース長野」現役ゴレイロ。パーソナルトレーニング・チームサポート・ゴレイロコミュニティ。">
 <meta name="twitter:image" content="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A0A0A'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Impact,Arial Black,sans-serif' font-size='38' fill='%23FF6A1A'%3E24%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.postimg.cc" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" href="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"西 滉太",
+  "alternateName":"Kota Nishi",
+  "birthDate":"2000-05-04",
+  "jobTitle":"フットサル選手（ゴレイロ）",
+  "memberOf":{"@type":"SportsTeam","name":"ボアルース長野","sport":"Futsal"},
+  "url":"https://nishi-official.com",
+  "image":"https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg",
+  "sameAs":["https://www.instagram.com/futsal_nishi24","https://x.com/fafcs_nishi"]
+}
+</script>
+<script>
+  /* Motion is opt-in: only when JS runs and the user hasn't asked for reduced motion.
+     A failsafe drops the preloader even if the CDN scripts never arrive. */
+  (function(){
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('motion');
+    setTimeout(function(){ d.classList.add('is-loaded'); }, 6000);
+  })();
+</script>
 <style>
 /* ============ RESET / TOKENS ============ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 :root{
   --black:    #0A0A0A;
-  --black-2:  #141414;
-  --black-3:  #1C1C1C;
+  --black-2:  #121212;
+  --black-3:  #1A1A1A;
   --blue:     #1E5FFF;
   --blue-dim: #133A9C;
   --orange:   #FF6A1A;
   --white:    #FAFAF8;
   --grey:     #8A8A8A;
+  --grey-2:   #B5B5B5;
   --line:     rgba(255,255,255,0.09);
   --ff-display:'Bebas Neue', sans-serif;
   --ff-head:  'Montserrat', sans-serif;
   --ff-body:  'Noto Sans JP', sans-serif;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --ease-io:  cubic-bezier(0.76,0,0.24,1);
+  --gutter:   24px;
 }
-html,body{background:var(--black);color:var(--white);}
+@media (min-width:768px){ :root{ --gutter:48px; } }
+@media (min-width:1280px){ :root{ --gutter:64px; } }
+
+html,body{background:var(--black);color:var(--white);overflow-x:clip;}
 body{
   font-family:var(--ff-body);
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 img{max-width:100%;display:block;}
 a{color:inherit;}
+button{font:inherit;color:inherit;}
+::selection{background:var(--orange);color:var(--black);}
 
-/* reduced motion */
+/* Lenis */
+html.lenis, html.lenis body{height:auto;}
+.lenis.lenis-smooth{scroll-behavior:auto !important;}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain;}
+.lenis.lenis-stopped{overflow:hidden;}
+
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
 }
 
-.container{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 24px;
-}
-@media (min-width:768px){ .container{padding:0 48px;} }
-@media (min-width:1280px){ .container{padding:0 64px;} }
+.container{ max-width:1280px; margin:0 auto; padding:0 var(--gutter); }
 
-section{ padding:88px 0; position:relative; }
-@media (min-width:768px){ section{ padding:128px 0; } }
-@media (min-width:1280px){ section{ padding:160px 0; } }
+section{ padding:96px 0; position:relative; }
+@media (min-width:768px){ section{ padding:140px 0; } }
+@media (min-width:1280px){ section{ padding:170px 0; } }
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ============ GRAIN / PROGRESS / CURSOR ============ */
+.grain{
+  position:fixed; inset:-50%; z-index:900; pointer-events:none; opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite;
+}
+@keyframes grain{
+  0%{transform:translate(0,0)} 20%{transform:translate(-4%,3%)} 40%{transform:translate(3%,-5%)}
+  60%{transform:translate(-6%,-2%)} 80%{transform:translate(5%,4%)} 100%{transform:translate(0,0)}
+}
+.scroll-progress{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:600;
+  background:linear-gradient(90deg,var(--orange),#FFB26B);
+  transform-origin:0 50%; transform:scaleX(0);
+}
+.cursor{
+  position:fixed; top:0; left:0; z-index:950; pointer-events:none;
+  width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.55);
+  display:none; align-items:center; justify-content:center;
+  transition:width .35s var(--ease-out), height .35s var(--ease-out), margin .35s var(--ease-out),
+             background .3s ease, border-color .3s ease, opacity .3s ease;
+  mix-blend-mode:difference;
+}
+.cursor span{
+  font-family:var(--ff-head); font-size:10px; font-weight:800; letter-spacing:1.5px;
+  color:var(--black); opacity:0; transition:opacity .2s ease;
+}
+@media (pointer:fine){ html.motion .cursor{ display:flex; } }
+.cursor.is-link{ width:64px; height:64px; margin:-32px 0 0 -32px; background:#fff; border-color:#fff; }
+.cursor.is-label{ width:88px; height:88px; margin:-44px 0 0 -44px; background:#fff; border-color:#fff; mix-blend-mode:normal; }
+.cursor.is-label span{ opacity:1; }
+.cursor.is-hidden{ opacity:0; }
+
+/* ============ PRELOADER ============ */
+.preloader{ display:none; }
+html.js.motion .preloader{
+  position:fixed; inset:0; z-index:1000; display:flex; pointer-events:all;
+}
+html.js.is-loaded .preloader{ display:none; }
+.pl-panel{ flex:1; background:var(--black); border-right:1px solid rgba(255,255,255,.03); }
+.pl-content{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between;
+  padding:28px var(--gutter);
+}
+.pl-top, .pl-bottom{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--grey);
+}
+.pl-count{
+  font-family:var(--ff-display); font-size:clamp(6rem,24vw,18rem); line-height:.8; color:var(--white);
+  font-variant-numeric:tabular-nums;
+}
+.pl-count small{ font-size:.3em; color:var(--orange); vertical-align:top; margin-left:.1em; }
+.pl-bar{ position:absolute; left:0; bottom:0; height:3px; width:100%; background:var(--orange); transform-origin:0 50%; transform:scaleX(0); }
 
 /* ============ SHARED LABELS ============ */
 .eyebrow{
   font-family:var(--ff-head); font-weight:700; font-size:11px;
   letter-spacing:3px; text-transform:uppercase; color:var(--orange);
-  display:flex; align-items:center; gap:12px; margin-bottom:18px;
+  display:flex; align-items:center; gap:12px; margin-bottom:20px;
 }
-.eyebrow::before{ content:''; width:28px; height:2px; background:var(--orange); flex-shrink:0; }
+.eyebrow::before{ content:''; width:28px; height:2px; background:var(--orange); flex-shrink:0; transform-origin:0 50%; }
+.eyebrow .idx{ color:var(--grey); margin-left:auto; font-weight:600; }
 
 .section-title{
   font-family:var(--ff-display);
-  font-size:clamp(2.6rem, 8vw, 5.2rem);
-  line-height:0.92; letter-spacing:1px;
+  font-size:clamp(3rem, 10vw, 7.5rem);
+  line-height:0.88; letter-spacing:1px;
   color:var(--white);
 }
+.section-title .o{ color:transparent; -webkit-text-stroke:1.5px var(--white); }
+
+/* split text */
+.ch{ display:inline-block; overflow:hidden; vertical-align:top; padding:.06em 0 .02em; margin:-.06em 0 -.02em; }
+.ch > i{ display:inline-block; font-style:inherit; will-change:transform; }
+.ch.sp{ width:.25em; }
+.wd{ display:inline-block; white-space:nowrap; }
+
+/* ============ BUTTONS ============ */
+.btn{
+  position:relative; display:inline-flex; align-items:center; gap:12px;
+  font-family:var(--ff-head); font-size:12px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:17px 30px; border-radius:100px; overflow:hidden;
+  text-decoration:none; cursor:pointer; border:none; isolation:isolate;
+  transition:box-shadow .3s ease;
+}
+.btn .roll{ position:relative; display:inline-block; overflow:hidden; line-height:1.3; }
+.btn .roll > span{ display:block; transition:transform .5s var(--ease-out); }
+.btn .roll > span::after{ content:attr(data-t); position:absolute; left:0; top:100%; }
+.btn:hover .roll > span, .btn:focus-visible .roll > span{ transform:translateY(-100%); }
+.btn .arr{ width:14px; height:14px; transition:transform .5s var(--ease-out); }
+.btn:hover .arr{ transform:translateX(4px) rotate(-45deg); }
+.btn-solid{ background:var(--orange); color:var(--black); }
+.btn-solid::before{
+  content:''; position:absolute; inset:0; z-index:-1; background:var(--white);
+  border-radius:inherit; transform:translateY(101%); transition:transform .55s var(--ease-out);
+}
+.btn-solid:hover::before{ transform:translateY(0); }
+.btn-solid:hover{ box-shadow:0 12px 36px rgba(255,106,26,.35); }
+.btn-outline{ border:1px solid rgba(255,255,255,0.28); color:var(--white); background:transparent; }
+.btn-outline::before{
+  content:''; position:absolute; inset:0; z-index:-1; background:var(--white);
+  border-radius:inherit; transform:scale(0,1); transform-origin:0 50%; transition:transform .55s var(--ease-out);
+}
+.btn-outline:hover{ color:var(--black); }
+.btn-outline:hover::before{ transform:scale(1,1); }
+.magnetic{ will-change:transform; }
 
 /* ============ NAV ============ */
 nav{
   position:fixed; top:0; left:0; right:0; z-index:500;
   display:flex; align-items:center; justify-content:space-between;
-  padding:18px 24px;
-  background:linear-gradient(to bottom, rgba(10,10,10,0.92), transparent);
-  transition:background 0.3s ease, border-color 0.3s ease;
+  padding:18px var(--gutter);
+  transition:transform .5s var(--ease-out), background .3s ease, border-color .3s ease;
   border-bottom:1px solid transparent;
 }
-nav.scrolled{ background:rgba(10,10,10,0.97); border-bottom-color:var(--line); }
+nav.scrolled{ background:rgba(10,10,10,0.72); backdrop-filter:blur(14px) saturate(1.4); -webkit-backdrop-filter:blur(14px) saturate(1.4); border-bottom-color:var(--line); }
+nav.hidden{ transform:translateY(-100%); }
 .nav-logo{
-  font-family:var(--ff-display); font-size:22px; letter-spacing:2px;
-  text-decoration:none; color:var(--white); flex-shrink:0;
+  font-family:var(--ff-display); font-size:24px; letter-spacing:2px;
+  text-decoration:none; color:var(--white); flex-shrink:0; display:inline-flex; overflow:hidden;
 }
 .nav-logo b{ color:var(--orange); font-weight:400; }
-.nav-links{ display:none; list-style:none; gap:32px; }
+.nav-links{ display:none; list-style:none; gap:30px; }
 .nav-links a{
-  font-family:var(--ff-head); font-size:12px; font-weight:600;
+  font-family:var(--ff-head); font-size:11.5px; font-weight:600;
   letter-spacing:1.5px; text-transform:uppercase; color:var(--grey);
-  text-decoration:none; transition:color 0.2s; position:relative; padding-bottom:4px;
+  text-decoration:none; transition:color 0.2s; position:relative; padding:6px 0;
 }
 .nav-links a::after{
-  content:''; position:absolute; left:0; bottom:0; height:2px; width:0;
-  background:var(--orange); transition:width 0.25s ease;
+  content:''; position:absolute; left:0; bottom:0; height:2px; width:100%;
+  background:var(--orange); transform:scaleX(0); transform-origin:100% 50%; transition:transform .45s var(--ease-out);
 }
-.nav-links a:hover{ color:var(--white); }
-.nav-links a:hover::after{ width:100%; }
-@media (min-width:900px){ .nav-links{ display:flex; } }
+.nav-links a:hover, .nav-links a.active{ color:var(--white); }
+.nav-links a:hover::after, .nav-links a.active::after{ transform:scaleX(1); transform-origin:0 50%; }
+@media (min-width:1000px){ .nav-links{ display:flex; } }
+.nav-cta{ display:none; padding:11px 20px; font-size:11px; }
+@media (min-width:1000px){ .nav-cta{ display:inline-flex; } }
 
 .nav-burger{
-  width:32px; height:22px; position:relative; cursor:pointer; flex-shrink:0;
+  width:44px; height:44px; position:relative; cursor:pointer; flex-shrink:0;
+  background:none; border:1px solid var(--line); border-radius:50%;
 }
 .nav-burger span{
-  position:absolute; left:0; right:0; height:2px; background:var(--white);
-  transition:transform 0.3s ease, opacity 0.3s ease;
+  position:absolute; left:13px; right:13px; height:1.5px; background:var(--white);
+  transition:transform 0.4s var(--ease-out), opacity 0.3s ease;
 }
-.nav-burger span:nth-child(1){ top:0; }
-.nav-burger span:nth-child(2){ top:10px; }
-.nav-burger span:nth-child(3){ top:20px; }
-.nav-burger.open span:nth-child(1){ transform:translateY(10px) rotate(45deg); }
-.nav-burger.open span:nth-child(2){ opacity:0; }
-.nav-burger.open span:nth-child(3){ transform:translateY(-10px) rotate(-45deg); }
-@media (min-width:900px){ .nav-burger{ display:none; } }
+.nav-burger span:nth-child(1){ top:17px; }
+.nav-burger span:nth-child(2){ top:25px; }
+.nav-burger.open span:nth-child(1){ transform:translateY(4px) rotate(45deg); }
+.nav-burger.open span:nth-child(2){ transform:translateY(-4px) rotate(-45deg); }
+@media (min-width:1000px){ .nav-burger{ display:none; } }
 
 .mobile-menu{
   position:fixed; inset:0; z-index:480;
-  background:var(--black);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:28px;
-  transform:translateY(-100%);
-  transition:transform 0.35s cubic-bezier(0.65,0,0.35,1);
+  background:var(--black-2);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:100px var(--gutter) 40px; gap:6px;
+  clip-path:circle(0% at calc(100% - var(--gutter) - 22px) 40px);
+  transition:clip-path .8s var(--ease-io);
+  visibility:hidden;
 }
-.mobile-menu.open{ transform:translateY(0); }
+.mobile-menu.open{ clip-path:circle(150% at calc(100% - var(--gutter) - 22px) 40px); visibility:visible; }
 .mobile-menu a{
-  font-family:var(--ff-display); font-size:32px; letter-spacing:2px;
-  text-decoration:none; color:var(--white);
+  font-family:var(--ff-display); font-size:clamp(2.6rem,11vw,4rem); letter-spacing:1px; line-height:1.05;
+  text-decoration:none; color:var(--white); display:flex; align-items:baseline; gap:14px;
+  transform:translateY(40px); opacity:0; transition:transform .7s var(--ease-out), opacity .7s var(--ease-out), color .2s;
 }
-.mobile-menu a:active{ color:var(--orange); }
+.mobile-menu a small{ font-family:var(--ff-head); font-size:11px; color:var(--orange); letter-spacing:2px; }
+.mobile-menu.open a{ transform:none; opacity:1; }
+.mobile-menu a:active, .mobile-menu a:hover{ color:var(--orange); }
+.mm-foot{ margin-top:36px; font-family:var(--ff-head); font-size:11px; letter-spacing:2px; color:var(--grey); display:flex; gap:20px; }
+.mm-foot a{ font-family:inherit; font-size:inherit; opacity:1; transform:none; color:var(--grey); }
 
 /* ============ HERO ============ */
 #hero{
-  position:relative; min-height:100vh;
-  display:flex; flex-direction:column; justify-content:flex-end;
-  overflow:hidden;
+  position:relative; height:100vh; height:100svh; min-height:620px;
+  padding:0; overflow:hidden;
 }
-.hero-bg{
-  position:absolute; inset:0; z-index:0;
-  background-image:
-    linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,1) 100%),
-    url('https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg');
-  background-size:cover; background-position:center 22%;
-  opacity:0; transition:opacity 1.1s ease;
+.hero-stage{ position:absolute; inset:0; overflow:hidden; transform-origin:50% 0; }
+.hero-slide{
+  position:absolute; inset:0; overflow:hidden;
 }
-.hero-bg.active{ opacity:1; }
+.hero-slide img{
+  width:100%; height:100%; object-fit:cover; object-position:center 25%;
+  transform:scale(1.08); will-change:transform;
+}
+.hero-slide:not(:first-child){ clip-path:inset(0 0 0 100%); }
+.hero-shade{
+  position:absolute; inset:0; z-index:5; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,.1) 30%, rgba(10,10,10,.35) 60%, rgba(10,10,10,.96) 100%),
+    radial-gradient(120% 80% at 80% 30%, transparent 40%, rgba(10,10,10,.55) 100%);
+}
+#netCanvas{
+  position:absolute; inset:0; z-index:6; width:100%; height:100%;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 92%);
+          mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 92%);
+}
+.hero-ghost{
+  position:absolute; z-index:7; right:-2vw; top:50%; transform:translateY(-58%);
+  font-family:var(--ff-display); font-size:clamp(16rem,48vw,46rem); line-height:.8;
+  color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.14);
+  pointer-events:none; user-select:none;
+}
 .hero-content{
-  position:relative; z-index:2;
-  padding:0 24px 64px;
+  position:absolute; z-index:10; left:0; right:0; bottom:0;
+  padding:0 var(--gutter) clamp(40px,8vh,96px);
 }
-@media (min-width:768px){ .hero-content{ padding:0 48px 96px; } }
-@media (min-width:1280px){ .hero-content{ padding:0 64px 110px; } }
-
 .hero-eyebrow{
-  font-family:var(--ff-head); font-weight:700; font-size:clamp(11px,1.4vw,13px);
+  font-family:var(--ff-head); font-weight:700; font-size:clamp(11px,1.3vw,13px);
   letter-spacing:3px; text-transform:uppercase; color:var(--orange);
-  margin-bottom:14px;
-  opacity:0; transform:translateY(16px);
-  animation:fadeUp 0.7s 0.25s forwards;
+  margin-bottom:14px; display:flex; align-items:center; gap:12px;
+  text-shadow:0 1px 12px rgba(0,0,0,.6);
 }
+.hero-eyebrow .live{ width:8px; height:8px; border-radius:50%; background:var(--orange); box-shadow:0 0 0 0 rgba(255,106,26,.6); animation:pulse 2s infinite; }
+@keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(255,106,26,.6)} 70%{box-shadow:0 0 0 12px rgba(255,106,26,0)} 100%{box-shadow:0 0 0 0 rgba(255,106,26,0)} }
 .hero-name{
   font-family:var(--ff-display);
-  font-size:clamp(3.6rem, 15vw, 9.5rem);
-  line-height:0.86; letter-spacing:1px; color:var(--white);
-  opacity:0; transform:translateY(30px);
-  animation:fadeUp 0.85s 0.4s forwards;
+  font-size:clamp(5.2rem, 24vw, 14rem);
+  line-height:0.84; letter-spacing:1px; color:var(--white);
 }
-.hero-name span{ color:transparent; -webkit-text-stroke:2px var(--white); }
-.hero-meta{
-  display:flex; flex-wrap:wrap; align-items:center; gap:14px;
-  margin-top:22px;
-  opacity:0; transform:translateY(16px);
-  animation:fadeUp 0.7s 0.6s forwards;
+.hero-name .o{ color:transparent; -webkit-text-stroke:2px var(--white); }
+.hero-row{
+  display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px;
+  margin-top:28px;
 }
+.hero-meta{ display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
 .hero-tag{
   font-family:var(--ff-head); font-size:11px; font-weight:700;
   letter-spacing:1.5px; text-transform:uppercase;
-  padding:6px 14px; border-radius:3px;
+  padding:7px 15px; border-radius:100px;
   border:1px solid var(--blue); color:var(--white);
-  background:rgba(30,95,255,0.12);
+  background:rgba(30,95,255,0.14); backdrop-filter:blur(6px);
 }
-.hero-tag.alt{ border-color:var(--orange); background:rgba(255,106,26,0.12); }
-.hero-pos{
-  font-family:var(--ff-head); font-size:13px; font-weight:500;
-  letter-spacing:2px; color:var(--grey); text-transform:uppercase;
-}
-.hero-cta-row{
-  margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;
-  opacity:0; transform:translateY(16px);
-  animation:fadeUp 0.7s 0.8s forwards;
-}
-.btn{
-  display:inline-flex; align-items:center; gap:10px;
-  font-family:var(--ff-head); font-size:12px; font-weight:700;
-  letter-spacing:1.5px; text-transform:uppercase;
-  padding:15px 28px; border-radius:3px;
-  text-decoration:none; transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-.btn-solid{ background:var(--orange); color:var(--black); }
-.btn-solid:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); }
-.btn-outline{ border:1px solid rgba(255,255,255,0.25); color:var(--white); }
-.btn-outline:hover{ border-color:var(--white); transform:translateY(-2px); }
+.hero-tag.alt{ border-color:var(--orange); background:rgba(255,106,26,0.14); }
+.hero-pos{ font-size:13px; font-weight:500; letter-spacing:2px; color:var(--grey-2); }
+.hero-cta-row{ display:flex; gap:12px; flex-wrap:wrap; }
 
-@keyframes fadeUp{ to{ opacity:1; transform:translateY(0); } }
+.hero-side{
+  position:absolute; z-index:10; right:var(--gutter); top:50%; transform:translateY(-50%);
+  display:none; flex-direction:column; align-items:flex-end; gap:34px;
+}
+@media (min-width:900px){ .hero-side{ display:flex; } }
+.slide-count{
+  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey-2);
+  display:flex; align-items:center; gap:12px;
+}
+.slide-count .cur{ color:var(--white); display:inline-block; min-width:1.4em; text-align:right; }
+.slide-bar{ width:80px; height:1px; background:rgba(255,255,255,.25); position:relative; overflow:hidden; }
+.slide-bar i{ position:absolute; inset:0; background:var(--orange); transform-origin:0 50%; transform:scaleX(0); }
+
+.badge{
+  position:relative; width:128px; height:128px; display:block; text-decoration:none;
+}
+.badge svg{ width:100%; height:100%; animation:spin 16s linear infinite; }
+.badge text{ font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:2px; fill:var(--white); }
+.badge .core{
+  position:absolute; inset:34px; border-radius:50%; background:var(--orange); color:var(--black);
+  display:flex; align-items:center; justify-content:center; transition:transform .5s var(--ease-out);
+}
+.badge:hover .core{ transform:scale(1.12); }
+.badge .core svg{ width:22px; height:22px; animation:none; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
 
 .scroll-cue{
-  position:absolute; bottom:24px; right:24px; z-index:2;
-  display:flex; flex-direction:column; align-items:center; gap:8px;
+  position:absolute; z-index:10; left:50%; bottom:18px; transform:translateX(-50%);
+  width:1px; height:44px; background:rgba(255,255,255,.18); overflow:hidden;
 }
-.scroll-cue span{
-  font-family:var(--ff-head); font-size:10px; letter-spacing:2px;
-  color:var(--grey); text-transform:uppercase;
-  writing-mode:vertical-rl;
+.scroll-cue::after{
+  content:''; position:absolute; left:0; top:0; width:100%; height:50%; background:var(--orange);
+  animation:cue 1.8s var(--ease-io) infinite;
 }
-.scroll-cue .dash{
-  width:1px; height:36px; background:linear-gradient(to bottom, var(--orange), transparent);
-}
-@media (max-width:600px){ .scroll-cue{ display:none; } }
+@keyframes cue{ 0%{transform:translateY(-100%)} 100%{transform:translateY(200%)} }
+@media (max-width:699px){ .scroll-cue{ display:none; } }
 
-/* ============ REVEAL ============ */
-.reveal{
-  opacity:0; transform:translateY(36px);
-  transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+/* ============ MARQUEE ============ */
+.marquee{
+  position:relative; z-index:2; overflow:hidden; padding:26px 0;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:var(--black);
 }
-.reveal.visible{ opacity:1; transform:translateY(0); }
+.marquee.alt{ background:var(--orange); color:var(--black); border:none; transform:rotate(-2deg) scale(1.04); margin:-20px 0; z-index:3; }
+.mq-track{ display:flex; width:max-content; will-change:transform; }
+.mq-item{
+  display:flex; align-items:center; gap:36px; padding-right:36px;
+  font-family:var(--ff-display); font-size:clamp(2.4rem,7vw,5.5rem); line-height:1; letter-spacing:1px; white-space:nowrap;
+}
+.mq-item .o{ color:transparent; -webkit-text-stroke:1.2px currentColor; }
+.marquee:not(.alt) .mq-item .o{ -webkit-text-stroke-color:rgba(255,255,255,.6); }
+.mq-item svg{ width:.5em; height:.5em; flex-shrink:0; }
 
 /* ============ PROFILE ============ */
-#profile{ background:var(--black-2); }
-.profile-grid{
-  display:grid; grid-template-columns:1fr; gap:48px; align-items:center;
+#profile{ background:var(--black); padding-top:clamp(120px,16vw,220px); }
+.profile-grid{ display:grid; grid-template-columns:1fr; gap:56px; align-items:start; }
+@media (min-width:900px){ .profile-grid{ grid-template-columns:1fr 0.9fr; gap:clamp(56px,7vw,110px); } }
+.profile-lead{
+  font-family:var(--ff-body); font-weight:900; font-size:clamp(1.5rem,3.2vw,2.4rem);
+  line-height:1.5; margin:28px 0 36px; letter-spacing:.02em;
 }
-@media (min-width:900px){
-  .profile-grid{ grid-template-columns:1.05fr 0.95fr; gap:64px; }
-}
-.profile-img-wrap{ position:relative; }
-.profile-img-wrap img{
-  width:100%; border-radius:2px; aspect-ratio:4/5; object-fit:cover; object-position:top;
-  filter:saturate(1.05);
-}
-.profile-img-wrap .corner{
-  position:absolute; width:46px; height:46px; border:3px solid var(--orange);
-}
-.profile-img-wrap .corner.tl{ top:-10px; left:-10px; border-width:3px 0 0 3px; }
-.profile-img-wrap .corner.br{ bottom:-10px; right:-10px; border-width:0 3px 3px 0; }
-
+.profile-lead em{ font-style:normal; color:var(--orange); }
 .profile-text p{
-  font-size:clamp(0.95rem,1.6vw,1.05rem); line-height:2; color:#C2C2C2; margin-bottom:22px;
+  font-size:clamp(0.95rem,1.4vw,1.02rem); line-height:2.05; color:var(--grey-2); margin-bottom:22px;
 }
-.profile-text strong{ color:var(--white); }
+.profile-text strong{ color:var(--white); font-weight:700; }
 
-.stats-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:32px; }
-@media (max-width:480px){ .stats-row{ grid-template-columns:repeat(2,1fr); row-gap:24px; } }
-.stat-item .val{
-  font-family:var(--ff-display); font-size:clamp(1.9rem,4.5vw,2.6rem); color:var(--white); line-height:1;
+.profile-media{ position:relative; }
+@media (min-width:900px){ .profile-media{ position:sticky; top:110px; } }
+.profile-img-wrap{ position:relative; overflow:hidden; border-radius:4px; aspect-ratio:4/5; }
+.profile-img-wrap img{
+  width:100%; height:120%; object-fit:cover; object-position:top;
+  position:absolute; top:-10%; left:0; will-change:transform;
 }
-.stat-item .val small{ font-size:55%; color:var(--orange); margin-left:2px; }
+.profile-caption{
+  display:flex; justify-content:space-between; margin-top:16px;
+  font-family:var(--ff-head); font-size:10.5px; font-weight:700; letter-spacing:2px; color:var(--grey); text-transform:uppercase;
+}
+.profile-stamp{
+  position:absolute; z-index:2; left:-18px; top:28px;
+  background:var(--orange); color:var(--black);
+  font-family:var(--ff-display); font-size:1.4rem; letter-spacing:1px; line-height:1;
+  padding:10px 14px 8px; transform:rotate(-6deg);
+}
+
+.stats-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:44px; border-top:1px solid var(--line); }
+@media (max-width:520px){ .stats-row{ grid-template-columns:repeat(2,1fr); } }
+.stat-item{ padding:22px 0 0; border-right:1px solid var(--line); padding-left:18px; }
+.stat-item:first-child{ padding-left:0; }
+.stat-item:last-child{ border-right:none; }
+@media (max-width:520px){
+  .stat-item:nth-child(2){ border-right:none; }
+  .stat-item:nth-child(3){ padding-left:0; }
+  .stat-item:nth-child(n+3){ border-top:1px solid var(--line); margin-top:22px; }
+}
+.stat-item .val{
+  font-family:var(--ff-display); font-size:clamp(2.4rem,5vw,3.6rem); color:var(--white); line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat-item .val small{ font-size:45%; color:var(--orange); margin-left:3px; }
 .stat-item .lbl{
   font-family:var(--ff-head); font-size:10.5px; font-weight:700; letter-spacing:1.5px;
-  color:var(--grey); text-transform:uppercase; margin-top:6px;
+  color:var(--grey); text-transform:uppercase; margin-top:8px;
 }
 
 /* ============ CAREER ============ */
-#career{ background:var(--black); }
-.career-rail{
-  position:relative; margin-top:40px; padding-left:28px;
-}
-@media (min-width:768px){ .career-rail{ padding-left:0; margin-left:140px; } }
+#career{ background:var(--black-2); overflow:hidden; }
+.career-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px; }
+.career-head > p{ max-width:360px; color:var(--grey); font-size:.92rem; line-height:1.9; }
 
-.career-rail::before{
-  content:''; position:absolute; top:6px; bottom:6px; left:4px; width:2px;
-  background:linear-gradient(to bottom, var(--orange) 0%, var(--blue) 100%);
-  opacity:0.35;
+/* vertical (mobile / default) */
+.career-rail{ position:relative; margin-top:56px; padding-left:34px; }
+.career-rail .rail-line{
+  position:absolute; top:8px; bottom:8px; left:5px; width:2px; background:rgba(255,255,255,.08);
 }
-@media (min-width:768px){ .career-rail::before{ left:-28px; } }
-
-.rail-item{
-  position:relative; padding:0 0 28px 24px;
+.career-rail .rail-line i{
+  position:absolute; inset:0; background:linear-gradient(to bottom, var(--blue), var(--orange));
+  transform-origin:50% 0;
 }
+.rail-item{ position:relative; padding:0 0 44px; }
 .rail-item:last-child{ padding-bottom:0; }
-@media (min-width:768px){ .rail-item{ padding-left:0; display:grid; grid-template-columns:140px 1fr; column-gap:0; } }
-
-.rail-item .ri-node{
-  position:absolute; left:-28px; top:5px; width:10px; height:10px; border-radius:50%;
-  background:var(--black); border:2px solid var(--blue); z-index:2;
-  transition:background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+.ri-node{
+  position:absolute; left:-34px; top:6px; width:12px; height:12px; border-radius:50%;
+  background:var(--black-2); border:2px solid var(--blue); z-index:2;
+  transition:background .4s ease, border-color .4s ease, box-shadow .4s ease;
 }
-@media (min-width:768px){ .rail-item .ri-node{ left:-33px; } }
-.rail-item:hover .ri-node{ background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 4px rgba(255,106,26,0.18); }
-.rail-item.current .ri-node{ background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 5px rgba(255,106,26,0.22); }
-
-.rail-item .ri-year{
-  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:1.5px;
-  color:var(--grey); white-space:nowrap;
-}
+.rail-item.lit .ri-node, .rail-item.current .ri-node{ background:var(--orange); border-color:var(--orange); box-shadow:0 0 0 6px rgba(255,106,26,.18); }
+.ri-year{ font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey); }
 .rail-item.current .ri-year{ color:var(--orange); }
-@media (min-width:768px){
-  .rail-item .ri-year{ position:absolute; left:-140px; top:3px; width:120px; text-align:right; padding-right:20px; }
-}
-
-.rail-item .ri-body{ margin-top:4px; }
-@media (min-width:768px){ .rail-item .ri-body{ margin-top:0; padding-left:32px; } }
-
-.rail-item .ri-club{
-  font-family:var(--ff-display); font-size:clamp(1.3rem,3.5vw,1.75rem); letter-spacing:0.5px;
-  color:var(--white); line-height:1.15; transition:color 0.25s ease;
-}
-.rail-item:hover .ri-club{ color:var(--orange); }
-.rail-item.current .ri-club{ color:var(--white); }
-
-.rail-item .ri-badge{
-  display:inline-block; margin-top:8px;
+.ri-club{ font-family:var(--ff-display); font-size:clamp(2rem,7vw,2.8rem); line-height:1.05; letter-spacing:.5px; margin-top:6px; }
+.ri-chap{ font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,.35); text-transform:uppercase; margin-top:8px; }
+.ri-badge{
+  display:inline-flex; align-items:center; gap:8px; margin-top:12px;
   font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--black); background:var(--orange); padding:3px 9px; border-radius:2px;
+  color:var(--black); background:var(--orange); padding:5px 12px; border-radius:100px;
 }
+.ri-badge::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--black); animation:blink 1.2s infinite; }
+@keyframes blink{ 50%{ opacity:.2; } }
+.ri-bigyear{ display:none; }
+
+/* horizontal (desktop, motion) */
+@media (min-width:1000px){
+  html.motion #career{ padding:0; height:100vh; display:flex; flex-direction:column; justify-content:center; }
+  html.motion #career .career-head{ position:absolute; top:clamp(90px,13vh,140px); left:0; right:0; max-width:1280px; margin:0 auto; padding:0 var(--gutter); }
+  html.motion .career-rail{
+    display:flex; gap:0; margin-top:clamp(120px,16vh,180px); padding-left:var(--gutter);
+    width:max-content; will-change:transform;
+  }
+  html.motion .career-rail .rail-line{
+    top:auto; bottom:auto; left:var(--gutter); right:0; width:auto; height:2px; top:0;
+  }
+  html.motion .career-rail .rail-line i{ transform-origin:0 50%; }
+  html.motion .rail-item{
+    width:clamp(340px,32vw,460px); padding:48px 48px 0 0; flex-shrink:0;
+  }
+  html.motion .rail-item:last-child{ width:clamp(420px,40vw,600px); }
+  html.motion .ri-node{ left:0; top:-5px; }
+  html.motion .ri-bigyear{
+    display:block; font-family:var(--ff-display); font-size:clamp(7rem,12vw,11rem); line-height:.85;
+    color:transparent; -webkit-text-stroke:1.2px rgba(255,255,255,.14); margin-bottom:10px; white-space:nowrap;
+    transition:-webkit-text-stroke-color .5s ease;
+  }
+  html.motion .rail-item.lit .ri-bigyear{ -webkit-text-stroke-color:rgba(255,255,255,.4); }
+  html.motion .rail-item.current .ri-bigyear{ color:var(--orange); -webkit-text-stroke-color:var(--orange); }
+  html.motion .ri-club{ font-size:clamp(2rem,2.8vw,2.8rem); }
+  .career-progress{ position:absolute; left:var(--gutter); right:var(--gutter); bottom:clamp(40px,8vh,80px); display:flex; align-items:center; gap:18px; font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey); }
+  .career-progress .bar{ flex:1; height:1px; background:var(--line); position:relative; }
+  .career-progress .bar i{ position:absolute; inset:0; background:var(--white); transform-origin:0 50%; transform:scaleX(0); }
+}
+.career-progress{ display:none; }
+@media (min-width:1000px){ html.motion .career-progress{ display:flex; } }
 
 /* ============ MISSION ============ */
-#mission{ background:var(--black-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+#mission{ background:var(--black); }
+.mission-pin{ min-height:100vh; min-height:100svh; display:flex; flex-direction:column; justify-content:center; }
 .mission-quote{
-  font-family:var(--ff-display);
-  font-size:clamp(2.1rem,6.5vw,4.2rem); line-height:1.18; letter-spacing:0.5px;
-  color:var(--white); max-width:760px;
+  font-family:var(--ff-body); font-weight:900;
+  font-size:clamp(2.4rem,8.4vw,7.2rem); line-height:1.18; letter-spacing:.01em;
+  color:var(--white);
 }
 .mission-quote em{ color:var(--orange); font-style:normal; }
-.mission-blocks{
-  display:grid; grid-template-columns:1fr; gap:28px; margin-top:56px;
+.mission-en{
+  font-family:var(--ff-display); font-size:clamp(1.4rem,3vw,2.4rem); letter-spacing:2px; color:var(--grey);
+  margin-top:24px;
 }
-@media (min-width:768px){ .mission-blocks{ grid-template-columns:repeat(3,1fr); gap:36px; } }
-.mission-block{ border-left:2px solid var(--blue); padding-left:22px; }
-.mission-block p{ font-size:0.95rem; line-height:1.95; color:#B7B7B7; }
+.mission-en b{ color:var(--white); font-weight:400; }
+.mission-blocks{
+  display:grid; grid-template-columns:1fr; gap:1px; margin-top:80px;
+  background:var(--line); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+}
+@media (min-width:768px){ .mission-blocks{ grid-template-columns:repeat(3,1fr); } }
+.mission-block{ background:var(--black); padding:36px 28px 40px 0; }
+@media (min-width:768px){ .mission-block{ padding:44px 36px 48px; } .mission-block:first-child{ padding-left:0; } }
+.mb-num{ font-family:var(--ff-display); font-size:3.4rem; line-height:1; color:var(--orange); margin-bottom:6px; }
+.mb-title{ font-family:var(--ff-head); font-size:11px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:var(--white); margin-bottom:16px; }
+.mission-block p{ font-size:0.95rem; line-height:2; color:var(--grey-2); }
 
 /* ============ ACTIVITIES ============ */
-#activities{ background:var(--black); }
+#activities{ background:var(--black-2); }
+.act-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px; }
+.act-head > p{ max-width:380px; color:var(--grey); font-size:.92rem; line-height:1.9; }
 .act-grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  background:var(--line); border:1px solid var(--line); margin-top:48px; border-radius:2px; overflow:hidden;
+  display:grid; grid-template-columns:1fr; gap:14px; margin-top:56px;
 }
-@media (max-width:560px){ .act-grid{ grid-template-columns:1fr; } }
-@media (min-width:1024px){ .act-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:640px){ .act-grid{ grid-template-columns:1fr 1fr; } }
+@media (min-width:1024px){ .act-grid{ grid-template-columns:repeat(3,1fr); gap:18px; } }
 .act-card{
-  background:var(--black-2); padding:28px 24px;
-  text-decoration:none; color:inherit;
-  display:flex; flex-direction:column; gap:8px;
-  position:relative; transition:background 0.25s ease; cursor:default;
+  --mx:50%; --my:50%;
+  position:relative; overflow:hidden; isolation:isolate;
+  background:var(--black); border:1px solid var(--line); border-radius:10px;
+  padding:32px 28px 30px; min-height:280px;
+  display:flex; flex-direction:column; gap:10px;
+  color:inherit; text-decoration:none; transform-style:preserve-3d;
+  transition:border-color .4s ease;
 }
-.act-card[href]{ cursor:pointer; }
-.act-card:hover{ background:#1a1a1a; }
-.act-num{
-  font-family:var(--ff-display); font-size:2rem; color:rgba(255,255,255,0.06); line-height:1;
-  margin-bottom:4px; letter-spacing:1px;
+.act-card::before{
+  content:''; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .4s ease;
+  background:radial-gradient(420px circle at var(--mx) var(--my), rgba(255,106,26,.16), transparent 45%);
 }
-.act-title{
-  font-family:var(--ff-head); font-size:15px; font-weight:700; color:var(--white); letter-spacing:0.3px;
-}
-.act-desc{ font-size:0.85rem; line-height:1.8; color:var(--grey); }
-.act-tag{
-  margin-top:10px; align-self:flex-start;
-  font-family:var(--ff-head); font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
-  color:var(--orange); border:1px solid rgba(255,106,26,0.3); padding:3px 10px; border-radius:2px;
-  opacity:0; transform:translateY(4px); transition:opacity 0.25s ease, transform 0.25s ease;
-}
-.act-card:hover .act-tag{ opacity:1; transform:translateY(0); }
-
-/* ============ SPONSOR ============ */
-#sponsor{ background:var(--black-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-.sponsor-inner{
-  display:grid; grid-template-columns:1fr; gap:48px; align-items:center;
-}
-@media (min-width:900px){ .sponsor-inner{ grid-template-columns:1fr 1fr; gap:80px; } }
-.sponsor-plans{
-  display:grid; grid-template-columns:1fr; gap:1px;
-  background:var(--line); border:1px solid var(--line); border-radius:2px; overflow:hidden;
-}
-.sponsor-plan{
-  background:var(--black); padding:24px 28px;
-  display:flex; flex-direction:column; gap:8px;
-  transition:background 0.25s ease;
-}
-.sponsor-plan:hover{ background:#141414; }
-.sp-num{
-  font-family:var(--ff-display); font-size:3rem; line-height:1;
-  color:rgba(255,106,26,0.12); letter-spacing:2px;
-}
-.sp-label{
-  font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-  color:var(--orange); display:inline-block;
-  border:1px solid var(--orange); padding:4px 12px; border-radius:2px; align-self:flex-start;
-}
-.sp-desc{ font-size:0.88rem; line-height:1.85; color:#B0B0B0; margin-top:4px; }
-.sp-note{
-  display:flex; align-items:center; gap:8px;
-  font-size:0.82rem; color:var(--grey); margin-top:6px;
-}
-.sp-note::before{ content:'✦'; color:var(--orange); font-size:0.7rem; }
-.sponsor-cta-wrap{ display:flex; flex-direction:column; gap:20px; }
-.sponsor-cta-wrap p{ font-size:0.95rem; line-height:1.9; color:#B0B0B0; }
-.btn-sponsor{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  font-family:var(--ff-head); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
-  background:var(--orange); color:var(--black);
-  padding:16px 32px; border-radius:2px; text-decoration:none;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
-}
-.btn-sponsor:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); }
-.sp-ig{
-  display:flex; align-items:center; gap:10px;
-  font-size:0.85rem; color:var(--grey); text-decoration:none;
-  transition:color 0.2s ease;
-}
-.sp-ig:hover{ color:var(--orange); }
-.sp-ig svg{ width:18px; height:18px; fill:currentColor; flex-shrink:0; }
-
-/* ============ GALLERY ============ */
-#gallery{ background:var(--black-2); overflow:hidden; padding-bottom:0; }
-#gallery .container{ padding-bottom:48px; }
-.gallery-track-wrap{
-  overflow:hidden;
-  cursor:grab;
-  -webkit-user-select:none; user-select:none;
-}
-.gallery-track-wrap:active{ cursor:grabbing; }
-.gallery-track{
-  display:flex; gap:12px;
-  width:max-content;
-  will-change:transform;
-  /* NO CSS animation — driven by JS */
-}
-.gallery-track img{
-  height:300px; width:230px; flex-shrink:0;
-  border-radius:2px; object-fit:cover; object-position:top;
-  filter:brightness(0.82) saturate(0.95);
-  transition:filter 0.35s ease;
-  pointer-events:none;
-}
-@media (min-width:768px){ .gallery-track img{ height:400px; width:300px; } }
-.gallery-track img:hover{ filter:brightness(1) saturate(1.1); }
-
-/* ============ ACT CARD BUTTON ============ */
+.act-card:hover{ border-color:rgba(255,106,26,.35); }
+.act-card:hover::before{ opacity:1; }
+.act-card.clickable{ cursor:pointer; }
+.act-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:auto; }
+.act-num{ font-family:var(--ff-display); font-size:3.2rem; line-height:.9; color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.28); transition:color .4s ease, -webkit-text-stroke-color .4s ease; }
+.act-card:hover .act-num{ color:var(--orange); -webkit-text-stroke-color:var(--orange); }
+.act-icon{ width:44px; height:44px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--orange); transition:background .4s ease, color .4s ease, transform .6s var(--ease-out); }
+.act-icon svg{ width:20px; height:20px; }
+.act-card:hover .act-icon{ background:var(--orange); color:var(--black); transform:rotate(-45deg); }
+.act-title{ font-family:var(--ff-body); font-size:1.2rem; font-weight:900; color:var(--white); margin-top:40px; }
+.act-desc{ font-size:0.88rem; line-height:1.85; color:var(--grey); }
 .act-cta-btn{
   display:inline-flex; align-items:center; gap:8px;
   margin-top:14px; align-self:flex-start;
   font-family:var(--ff-head); font-size:11px; font-weight:700;
   letter-spacing:1.5px; text-transform:uppercase;
   color:var(--black); background:var(--orange);
-  padding:9px 18px; border-radius:2px;
+  padding:10px 18px; border-radius:100px;
   border:none; cursor:pointer;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
+  transition:transform 0.3s var(--ease-out), box-shadow 0.3s ease, background .3s ease;
 }
-.act-cta-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,106,26,0.35); }
-.act-cta-btn svg{ width:12px; height:12px; fill:currentColor; }
+.act-cta-btn:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); background:var(--white); }
+.act-cta-btn svg{ width:12px; height:12px; }
+
+/* ============ SPONSOR ============ */
+#sponsor{ background:var(--black); }
+.sponsor-inner{ display:grid; grid-template-columns:1fr; gap:48px; align-items:start; margin-top:56px; }
+@media (min-width:900px){ .sponsor-inner{ grid-template-columns:1.1fr .9fr; gap:80px; } }
+.sponsor-plans{ display:flex; flex-direction:column; border-top:1px solid var(--line); }
+.sponsor-plan{
+  position:relative; display:grid; grid-template-columns:auto 1fr; column-gap:24px; row-gap:10px;
+  padding:30px 0; border-bottom:1px solid var(--line); overflow:hidden;
+}
+.sponsor-plan::before{
+  content:''; position:absolute; inset:0; z-index:0; background:linear-gradient(90deg, rgba(255,106,26,.1), transparent 70%);
+  transform:scaleX(0); transform-origin:0 50%; transition:transform .7s var(--ease-out);
+}
+.sponsor-plan:hover::before{ transform:scaleX(1); }
+.sponsor-plan > *{ position:relative; z-index:1; }
+.sp-num{ font-family:var(--ff-display); font-size:3.4rem; line-height:.9; color:transparent; -webkit-text-stroke:1px var(--orange); grid-row:span 3; min-width:2ch; }
+.sp-label{
+  font-family:var(--ff-head); font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+  color:var(--orange); display:inline-block; align-self:flex-start; justify-self:start;
+  border:1px solid rgba(255,106,26,.5); padding:5px 12px; border-radius:100px;
+}
+.sp-desc{ font-size:0.92rem; line-height:1.9; color:var(--grey-2); }
+.sp-note{ display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--grey); }
+.sp-note::before{ content:'✦'; color:var(--orange); font-size:0.7rem; }
+.sponsor-cta-wrap{
+  display:flex; flex-direction:column; gap:24px;
+  padding:36px 32px; border:1px solid var(--line); border-radius:12px; background:var(--black-2);
+  position:relative; overflow:hidden;
+}
+@media (min-width:900px){ .sponsor-cta-wrap{ position:sticky; top:120px; } }
+.sponsor-cta-wrap::after{
+  content:'24'; position:absolute; right:-10px; bottom:-40px; font-family:var(--ff-display); font-size:14rem; line-height:1;
+  color:transparent; -webkit-text-stroke:1px rgba(255,255,255,.06); pointer-events:none;
+}
+.sponsor-cta-wrap p{ font-size:0.95rem; line-height:1.95; color:var(--grey-2); position:relative; z-index:1; }
+.sponsor-cta-wrap .btn{ align-self:flex-start; position:relative; z-index:1; }
+.sp-ig{
+  display:flex; align-items:center; gap:10px; position:relative; z-index:1;
+  font-size:0.85rem; color:var(--grey); text-decoration:none; transition:color 0.2s ease; line-height:1.6;
+}
+.sp-ig:hover{ color:var(--orange); }
+.sp-ig svg{ width:18px; height:18px; fill:currentColor; flex-shrink:0; }
+
+/* ============ GALLERY ============ */
+#gallery{ background:var(--black-2); overflow:hidden; }
+.gallery-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:20px; margin-bottom:56px; }
+.gallery-hint{ font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey); text-transform:uppercase; display:flex; align-items:center; gap:10px; }
+.gallery-hint svg{ width:28px; height:12px; }
+.gallery-track-wrap{ overflow:hidden; cursor:grab; -webkit-user-select:none; user-select:none; touch-action:pan-y; }
+.gallery-track-wrap:active{ cursor:grabbing; }
+.gallery-track{ display:flex; gap:14px; width:max-content; will-change:transform; }
+.g-item{
+  position:relative; flex-shrink:0; height:340px; width:250px; overflow:hidden; border-radius:6px;
+  background:var(--black-3); padding:0; border:none; cursor:inherit;
+}
+.g-item:nth-child(even){ margin-top:40px; }
+@media (min-width:768px){ .g-item{ height:460px; width:340px; } .g-item:nth-child(even){ margin-top:70px; } }
+.g-item img{
+  width:100%; height:100%; object-fit:cover; object-position:top;
+  filter:grayscale(.35) brightness(.8); transform:scale(1.06);
+  transition:filter .6s ease, transform 1s var(--ease-out);
+  pointer-events:none;
+}
+.g-item:hover img{ filter:none; transform:scale(1); }
+.g-item .g-no{ position:absolute; left:14px; bottom:12px; font-family:var(--ff-display); font-size:1.4rem; letter-spacing:1px; color:var(--white); opacity:.8; }
+
+.lightbox{
+  position:fixed; inset:0; z-index:850; display:flex; align-items:center; justify-content:center;
+  background:rgba(5,5,5,.94); opacity:0; pointer-events:none; transition:opacity .45s ease;
+}
+.lightbox.open{ opacity:1; pointer-events:all; }
+.lightbox img{ max-width:min(92vw,1100px); max-height:84vh; object-fit:contain; border-radius:4px; transform:scale(.94); transition:transform .6s var(--ease-out), opacity .3s ease; }
+.lightbox.open img{ transform:scale(1); }
+.lb-btn{
+  position:absolute; width:52px; height:52px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
+  background:rgba(10,10,10,.5); color:var(--white); cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:background .3s ease, border-color .3s ease;
+}
+.lb-btn:hover{ background:var(--orange); border-color:var(--orange); color:var(--black); }
+.lb-btn svg{ width:18px; height:18px; }
+.lb-close{ top:20px; right:20px; }
+.lb-prev{ left:20px; top:50%; transform:translateY(-50%); }
+.lb-next{ right:20px; top:50%; transform:translateY(-50%); }
+.lb-count{ position:absolute; bottom:24px; left:50%; transform:translateX(-50%); font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey-2); }
+@media (max-width:640px){ .lb-prev,.lb-next{ top:auto; bottom:14px; transform:none; } .lb-prev{ left:14px; } .lb-next{ right:14px; } }
 
 /* ============ CONTACT ============ */
-#contact{ background:var(--black); text-align:center; }
-.contact-inner{ max-width:620px; margin:0 auto; }
-.contact-inner .section-title{ margin-bottom:18px; }
-.contact-inner p{ font-size:1rem; line-height:2; color:var(--grey); margin-bottom:44px; }
-.social-row{ display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+#contact{ background:var(--black); text-align:center; overflow:hidden; }
+.contact-inner{ max-width:900px; margin:0 auto; }
+.contact-title{ font-family:var(--ff-display); font-size:clamp(3.6rem,14vw,11rem); line-height:.86; letter-spacing:1px; }
+.contact-title .o{ color:transparent; -webkit-text-stroke:1.5px var(--white); }
+.contact-inner > p{ font-size:1rem; line-height:2; color:var(--grey); max-width:560px; margin:28px auto 40px; }
+.contact-mail{
+  display:inline-block; position:relative; margin-bottom:44px;
+  font-family:var(--ff-head); font-weight:700; font-size:clamp(1rem,3.4vw,2rem); letter-spacing:.5px;
+  text-decoration:none; color:var(--white); padding-bottom:6px; word-break:break-all;
+}
+.contact-mail::after{
+  content:''; position:absolute; left:0; bottom:0; width:100%; height:2px; background:var(--orange);
+  transform-origin:100% 50%; transition:transform .6s var(--ease-out);
+}
+.contact-mail:hover::after{ transform:scaleX(0); }
+.contact-mail:hover{ color:var(--orange); }
+.social-row{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
 .soc-btn{
+  position:relative; overflow:hidden; isolation:isolate;
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--ff-head); font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
   color:var(--white); text-decoration:none;
-  border:1px solid var(--line); padding:13px 24px; border-radius:3px;
-  transition:border-color 0.25s ease, background 0.25s ease;
+  border:1px solid rgba(255,255,255,.2); padding:15px 26px; border-radius:100px;
+  transition:color .4s ease, border-color .4s ease;
 }
-.soc-btn:hover{ border-color:var(--blue); background:rgba(30,95,255,0.1); }
+.soc-btn::before{ content:''; position:absolute; inset:0; z-index:-1; background:var(--white); border-radius:inherit; transform:translateY(101%); transition:transform .5s var(--ease-out); }
+.soc-btn:hover{ color:var(--black); border-color:var(--white); }
+.soc-btn:hover::before{ transform:translateY(0); }
 .soc-btn svg{ width:16px; height:16px; fill:currentColor; }
 
 /* ============ FOOTER ============ */
-footer{
-  padding:48px 24px 32px; text-align:center; border-top:1px solid var(--line); background:var(--black);
+footer{ position:relative; background:var(--black); border-top:1px solid var(--line); overflow:hidden; padding:56px var(--gutter) 28px; }
+.f-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; align-items:flex-start; }
+.f-nav{ display:flex; flex-wrap:wrap; gap:10px 26px; list-style:none; }
+.f-nav a{ font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--grey); text-decoration:none; text-transform:uppercase; transition:color .2s; }
+.f-nav a:hover{ color:var(--orange); }
+.to-top{
+  display:inline-flex; align-items:center; gap:10px; background:none; border:1px solid var(--line); border-radius:100px;
+  padding:10px 18px; cursor:pointer; font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:2px; color:var(--white);
+  transition:border-color .3s, background .3s, color .3s;
 }
-footer .f-name{ font-family:var(--ff-display); font-size:1.8rem; letter-spacing:2px; color:var(--white); }
-footer .f-name b{ color:var(--orange); font-weight:400; }
-footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px; }
+.to-top:hover{ background:var(--orange); border-color:var(--orange); color:var(--black); }
+.to-top svg{ width:12px; height:12px; }
+.f-big{
+  font-family:var(--ff-display); font-size:clamp(5rem,21.5vw,26rem); line-height:.8; letter-spacing:.5px;
+  margin:48px 0 18px; white-space:nowrap; text-align:center;
+}
+.f-big b{ color:var(--orange); font-weight:400; }
+.f-copy{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:11px; color:var(--grey); letter-spacing:1px; font-family:var(--ff-head); }
 
 /* ============ MODAL ============ */
 .modal-overlay{
   position:fixed; inset:0; z-index:800;
-  background:rgba(0,0,0,0.75); backdrop-filter:blur(4px);
-  opacity:0; pointer-events:none;
-  transition:opacity 0.3s ease;
+  background:rgba(0,0,0,0.72); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  opacity:0; pointer-events:none; transition:opacity 0.4s ease;
 }
 .modal-overlay.open{ opacity:1; pointer-events:all; }
-
 .modal-sheet{
   position:fixed; left:0; right:0; bottom:0; z-index:801;
   background:var(--black-2); border-top:1px solid var(--line);
-  border-radius:16px 16px 0 0;
+  border-radius:20px 20px 0 0;
   padding:32px 24px 48px;
   max-height:92vh; overflow-y:auto;
-  transform:translateY(100%);
-  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  transform:translateY(100%); visibility:hidden;
+  transition:transform 0.6s var(--ease-out), visibility 0s .6s;
   -webkit-overflow-scrolling:touch;
 }
 @media (min-width:640px){
-  .modal-sheet{ max-width:560px; left:50%; right:auto; transform:translateX(-50%) translateY(100%); border-radius:16px 16px 0 0; }
+  .modal-sheet{ max-width:580px; left:50%; right:auto; transform:translateX(-50%) translateY(100%); padding:40px 40px 48px; }
 }
-.modal-sheet.open{ transform:translateY(0); }
+.modal-sheet.open{ transform:translateY(0); visibility:visible; transition:transform 0.6s var(--ease-out), visibility 0s 0s; }
 @media (min-width:640px){ .modal-sheet.open{ transform:translateX(-50%) translateY(0); } }
-
-.modal-handle{
-  width:40px; height:4px; background:var(--line);
-  border-radius:2px; margin:0 auto 24px;
-}
-.modal-title{
-  font-family:var(--ff-display); font-size:1.8rem; letter-spacing:1px;
-  color:var(--white); margin-bottom:6px;
-}
-.modal-sub{
-  font-size:0.85rem; color:var(--grey); margin-bottom:28px;
-  line-height:1.7;
-}
+.modal-handle{ width:40px; height:4px; background:rgba(255,255,255,.16); border-radius:2px; margin:0 auto 24px; }
+.modal-title{ font-family:var(--ff-display); font-size:2.2rem; letter-spacing:1px; color:var(--white); margin-bottom:8px; line-height:1.05; }
+.modal-sub{ font-size:0.86rem; color:var(--grey); margin-bottom:28px; line-height:1.75; }
 .modal-close{
-  position:absolute; top:20px; right:20px;
-  background:none; border:none; color:var(--grey);
-  font-size:1.4rem; cursor:pointer; line-height:1;
-  padding:4px 8px;
-  transition:color 0.2s;
+  position:absolute; top:18px; right:18px; width:40px; height:40px; border-radius:50%;
+  background:none; border:1px solid var(--line); color:var(--grey);
+  font-size:1rem; cursor:pointer; line-height:1; transition:color .2s, border-color .2s, transform .4s var(--ease-out);
 }
-.modal-close:hover{ color:var(--white); }
+.modal-close:hover{ color:var(--white); border-color:var(--white); transform:rotate(90deg); }
 
-/* form elements */
 .form-group{ display:flex; flex-direction:column; gap:6px; margin-bottom:18px; }
-.form-group label{
-  font-family:var(--ff-head); font-size:11px; font-weight:700;
-  letter-spacing:1.5px; text-transform:uppercase; color:var(--grey);
-}
-.form-group input,
-.form-group select,
-.form-group textarea{
+.form-group label{ font-family:var(--ff-head); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--grey); }
+.form-group input, .form-group select, .form-group textarea{
   background:var(--black); border:1px solid var(--line);
-  color:var(--white); font-family:var(--ff-body); font-size:0.95rem;
-  padding:13px 16px; border-radius:3px; outline:none;
-  transition:border-color 0.2s ease;
-  width:100%;
-  -webkit-appearance:none;
+  color:var(--white); font-family:var(--ff-body); font-size:16px;
+  padding:14px 16px; border-radius:8px; outline:none;
+  transition:border-color 0.25s ease, box-shadow .25s ease; width:100%;
+  -webkit-appearance:none; appearance:none;
 }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{ border-color:var(--blue); }
-.form-group textarea{ resize:vertical; min-height:110px; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{ border-color:var(--orange); box-shadow:0 0 0 4px rgba(255,106,26,.14); }
+.form-group textarea{ resize:vertical; min-height:120px; }
 .form-group select option{ background:var(--black-2); }
-
 .form-submit{
-  width:100%; padding:16px;
-  background:var(--orange); color:var(--black);
-  font-family:var(--ff-head); font-size:13px; font-weight:700;
-  letter-spacing:2px; text-transform:uppercase;
-  border:none; border-radius:3px; cursor:pointer;
-  transition:transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top:8px;
+  width:100%; padding:17px; background:var(--orange); color:var(--black);
+  font-family:var(--ff-head); font-size:13px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+  border:none; border-radius:100px; cursor:pointer; margin-top:8px;
+  transition:transform 0.3s var(--ease-out), box-shadow 0.3s ease, background .3s ease;
 }
-.form-submit:hover{ transform:translateY(-2px); box-shadow:0 8px 24px rgba(255,106,26,0.35); }
-.form-success{
-  display:none; text-align:center; padding:32px 0;
-}
-.form-success .success-icon{ font-size:2.5rem; margin-bottom:12px; }
-.form-success p{ color:#B0B0B0; line-height:1.8; font-size:0.95rem; }
+.form-submit:hover{ transform:translateY(-2px); box-shadow:0 10px 28px rgba(255,106,26,0.35); background:#ff7d38; }
+.form-submit:disabled{ opacity:.7; cursor:wait; }
+.form-success{ display:none; text-align:center; padding:32px 0; }
+.form-success .success-icon{ width:64px; height:64px; margin:0 auto 18px; border-radius:50%; background:var(--orange); color:var(--black); display:flex; align-items:center; justify-content:center; }
+.form-success .success-icon svg{ width:28px; height:28px; }
+.form-success p{ color:var(--grey-2); line-height:1.8; font-size:0.95rem; }
 .form-success strong{ color:var(--white); }
 
-/* act-card clickable style */
-.act-card.clickable{ cursor:pointer; }
+:focus-visible{ outline:2px solid var(--orange); outline-offset:3px; }
 </style>
-
 </head>
 <body>
 
+<!-- PRELOADER -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-panel"></div><div class="pl-panel"></div><div class="pl-panel"></div><div class="pl-panel"></div>
+  <div class="pl-content">
+    <div class="pl-top"><span>Kota Nishi</span><span>Official Site</span></div>
+    <div class="pl-bottom">
+      <div class="pl-count"><span id="plNum">0</span><small>%</small></div>
+      <span>Goleiro #24</span>
+    </div>
+  </div>
+  <div class="pl-bar" id="plBar"></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor is-hidden" id="cursor" aria-hidden="true"><span id="cursorLabel">DRAG</span></div>
+
 <!-- NAV -->
-<nav id="nav">
-  <a href="#hero" class="nav-logo">NISHI<b>.</b>24</a>
+<nav id="nav" aria-label="メインナビゲーション">
+  <a href="#hero" class="nav-logo" aria-label="トップへ">NISHI<b>.</b>24</a>
   <ul class="nav-links">
     <li><a href="#profile">Profile</a></li>
     <li><a href="#career">Career</a></li>
@@ -584,80 +816,114 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-burger" id="burger" aria-label="メニュー" role="button">
-    <span></span><span></span><span></span>
-  </div>
+  <a href="#activities" class="btn btn-solid nav-cta magnetic"><span class="roll"><span data-t="指導を依頼する">指導を依頼する</span></span></a>
+  <button class="nav-burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span>
+  </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#profile">Profile</a>
-  <a href="#career">Career</a>
-  <a href="#mission">Mission</a>
-  <a href="#activities">Activities</a>
-  <a href="#sponsor">Sponsor</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
+  <a href="#profile"><small>01</small>Profile</a>
+  <a href="#career"><small>02</small>Career</a>
+  <a href="#mission"><small>03</small>Mission</a>
+  <a href="#activities"><small>04</small>Activities</a>
+  <a href="#sponsor"><small>05</small>Sponsor</a>
+  <a href="#gallery"><small>06</small>Gallery</a>
+  <a href="#contact"><small>07</small>Contact</a>
+  <div class="mm-foot">
+    <a href="https://www.instagram.com/futsal_nishi24" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://x.com/fafcs_nishi" target="_blank" rel="noopener">X</a>
+    <a href="mailto:nishi24.official@gmail.com">Email</a>
+  </div>
 </div>
 
+<main>
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">F LEAGUE / BOALUZ NAGANO</p>
-    <h1 class="hero-name">KOTA<br><span>NISHI</span></h1>
-    <div class="hero-meta">
-      <span class="hero-tag">GOLEIRO</span>
-      <span class="hero-tag alt">#24</span>
-      <span class="hero-pos">ボアルース長野</span>
-    </div>
-    <div class="hero-cta-row">
-      <a href="#activities" class="btn btn-solid">指導を依頼する</a>
-      <a href="#profile" class="btn btn-outline">About Me</a>
+<section id="hero" aria-label="Kota Nishi">
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-slide"><img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="ゴール前で構える西滉太" fetchpriority="high"></div>
+    <div class="hero-slide"><img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg" alt="" loading="lazy"></div>
+    <div class="hero-slide"><img src="https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg" alt="" loading="lazy"></div>
+    <div class="hero-shade"></div>
+    <canvas id="netCanvas" aria-hidden="true"></canvas>
+    <div class="hero-ghost" id="heroGhost" aria-hidden="true">24</div>
+  </div>
+
+  <div class="hero-side">
+    <a href="#profile" class="badge" aria-label="プロフィールへスクロール" data-hero>
+      <svg viewBox="0 0 128 128" aria-hidden="true">
+        <defs><path id="circ" d="M64,64 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+        <text><textPath href="#circ" textLength="312" lengthAdjust="spacing">GOLEIRO • BOALUZ NAGANO • #24 • </textPath></text>
+      </svg>
+      <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+    </a>
+    <div class="slide-count" aria-hidden="true"><span class="cur" id="slideCur">01</span><div class="slide-bar"><i id="slideBar"></i></div><span>04</span></div>
+  </div>
+
+  <div class="hero-content" id="heroContent">
+    <p class="hero-eyebrow" data-hero><span class="live"></span>F League / Boaluz Nagano</p>
+    <h1 class="hero-name" data-split data-hero-title>KOTA<br><span class="o">NISHI</span></h1>
+    <div class="hero-row">
+      <div class="hero-meta" data-hero>
+        <span class="hero-tag">Goleiro</span>
+        <span class="hero-tag alt">#24</span>
+        <span class="hero-pos">ボアルース長野</span>
+      </div>
+      <div class="hero-cta-row" data-hero>
+        <a href="#activities" class="btn btn-solid magnetic"><span class="roll"><span data-t="指導を依頼する">指導を依頼する</span></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#profile" class="btn btn-outline magnetic"><span class="roll"><span data-t="About Me">About Me</span></span></a>
+      </div>
     </div>
   </div>
-  <div class="scroll-cue">
-    <span>SCROLL</span>
-    <div class="dash"></div>
-  </div>
+
+  <div class="scroll-cue" aria-hidden="true"></div>
 </section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track" data-marquee="1">
+    <div class="mq-item">GOLEIRO <svg viewBox="0 0 24 24" fill="#FF6A1A"><path d="M12 0l3 9h9l-7 5.5 2.7 9.5L12 18.3 4.3 24 7 14.5 0 9h9z"/></svg> <span class="o">BOALUZ NAGANO</span> <svg viewBox="0 0 24 24" fill="#FF6A1A"><path d="M12 0l3 9h9l-7 5.5 2.7 9.5L12 18.3 4.3 24 7 14.5 0 9h9z"/></svg> F LEAGUE DIVISION 1 <svg viewBox="0 0 24 24" fill="#FF6A1A"><path d="M12 0l3 9h9l-7 5.5 2.7 9.5L12 18.3 4.3 24 7 14.5 0 9h9z"/></svg> <span class="o">NUMBER 24</span> <svg viewBox="0 0 24 24" fill="#FF6A1A"><path d="M12 0l3 9h9l-7 5.5 2.7 9.5L12 18.3 4.3 24 7 14.5 0 9h9z"/></svg></div>
+  </div>
+</div>
 
 <!-- PROFILE -->
 <section id="profile">
   <div class="container">
     <div class="profile-grid">
-      <div class="reveal">
-        <p class="eyebrow">Profile</p>
-        <h2 class="section-title" style="margin-bottom:28px;">ABOUT<br>ME</h2>
+      <div>
+        <p class="eyebrow" data-reveal>Profile <span class="idx">01 / 07</span></p>
+        <h2 class="section-title" data-split>ABOUT <span class="o">ME</span></h2>
+        <p class="profile-lead" data-reveal>元気で、楽しいことが好き。<br>でも、ゴール前に立つ時は<em>誰よりも真剣に。</em></p>
         <div class="profile-text">
-          <p>
+          <p data-reveal>
             <strong>香川県出身。2000年5月4日生まれ。</strong><br>
-            元気で、楽しいことが好き。でも、ゴール前に立つ時は誰よりも真剣に。
             幼い頃からボールを蹴り続け、小学生の頃からGKコーチに恵まれた環境で、ゴレイロとしての道を歩んできました。
           </p>
-          <p>
+          <p data-reveal>
             立川アスレティックFC、しながわシティを経て、
             2026-27シーズンより<strong>ボアルース長野へ期限付き移籍加入</strong>。
             チームを助ける一本のセーブを信じて、今もゴール前に立ち続けています。
           </p>
-          <p>
+          <p data-reveal>
             試合に出られない時期や挫折も経験してきました。
             それでも、何度倒れても立ち上がり、現役選手として結果を追い続ける。
             その姿を通して、応援してくださる方に少しでも力を届けられる存在でありたいです。
           </p>
         </div>
-        <div class="stats-row">
-          <div class="stat-item"><div class="val">171<small>cm</small></div><div class="lbl">Height</div></div>
-          <div class="stat-item"><div class="val">79<small>kg</small></div><div class="lbl">Weight</div></div>
-          <div class="stat-item"><div class="val">24</div><div class="lbl">背番号</div></div>
+        <div class="stats-row" data-reveal>
+          <div class="stat-item"><div class="val" data-count="171">171<small>cm</small></div><div class="lbl">Height</div></div>
+          <div class="stat-item"><div class="val" data-count="79">79<small>kg</small></div><div class="lbl">Weight</div></div>
+          <div class="stat-item"><div class="val" data-count="24">24</div><div class="lbl">背番号</div></div>
           <div class="stat-item"><div class="val">GK</div><div class="lbl">Position</div></div>
         </div>
       </div>
-      <div class="reveal">
-        <div class="profile-img-wrap">
-          <span class="corner tl"></span>
-          <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太">
-          <span class="corner br"></span>
+      <div class="profile-media">
+        <div class="profile-img-wrap" id="profileImg">
+          <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太のポートレート" loading="lazy">
         </div>
+        <span class="profile-stamp" aria-hidden="true">SINCE 2000.05.04</span>
+        <div class="profile-caption"><span>Kota Nishi</span><span>Kagawa → Nagano</span></div>
       </div>
     </div>
   </div>
@@ -665,59 +931,83 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
 
 <!-- CAREER -->
 <section id="career">
-  <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Career</p>
-      <h2 class="section-title">CAREER</h2>
+  <div class="career-head container">
+    <div>
+      <p class="eyebrow" data-reveal>Career <span class="idx">02 / 07</span></p>
+      <h2 class="section-title" data-split>THE <span class="o">PATH</span></h2>
     </div>
-    <div class="career-rail">
-      <div class="rail-item reveal">
-        <span class="ri-node"></span>
-        <span class="ri-year">〜 2018</span>
-        <div class="ri-body"><div class="ri-club">香川県</div></div>
-      </div>
-      <div class="rail-item reveal">
-        <span class="ri-node"></span>
-        <span class="ri-year">2019 – 2021</span>
-        <div class="ri-body"><div class="ri-club">府中アスレティックFC<br>サテライト</div></div>
-      </div>
-      <div class="rail-item reveal">
-        <span class="ri-node"></span>
-        <span class="ri-year">2021 – 2025</span>
-        <div class="ri-body"><div class="ri-club">立川アスレティックFC</div></div>
-      </div>
-      <div class="rail-item reveal">
-        <span class="ri-node"></span>
-        <span class="ri-year">2025 – 2026</span>
-        <div class="ri-body"><div class="ri-club">しながわシティ</div></div>
-      </div>
-      <div class="rail-item reveal current">
-        <span class="ri-node"></span>
-        <span class="ri-year">2026 – 2027</span>
-        <div class="ri-body">
-          <div class="ri-club">ボアルース長野</div>
-          <span class="ri-badge">現所属</span>
-        </div>
-      </div>
+    <p data-reveal>香川から東京、そして長野へ。ゴール前に立ち続けてきた、これまでの歩み。</p>
+  </div>
+  <div class="career-rail" id="careerRail">
+    <div class="rail-line" aria-hidden="true"><i id="railFill"></i></div>
+    <div class="rail-item">
+      <span class="ri-node"></span>
+      <div class="ri-bigyear" aria-hidden="true">2018</div>
+      <span class="ri-year">〜 2018</span>
+      <div class="ri-club">香川県</div>
+      <div class="ri-chap">Chapter 01 — Origin</div>
+    </div>
+    <div class="rail-item">
+      <span class="ri-node"></span>
+      <div class="ri-bigyear" aria-hidden="true">2019</div>
+      <span class="ri-year">2019 – 2021</span>
+      <div class="ri-club">府中アスレティックFC<br>サテライト</div>
+      <div class="ri-chap">Chapter 02</div>
+    </div>
+    <div class="rail-item">
+      <span class="ri-node"></span>
+      <div class="ri-bigyear" aria-hidden="true">2021</div>
+      <span class="ri-year">2021 – 2025</span>
+      <div class="ri-club">立川アスレティックFC</div>
+      <div class="ri-chap">Chapter 03</div>
+    </div>
+    <div class="rail-item">
+      <span class="ri-node"></span>
+      <div class="ri-bigyear" aria-hidden="true">2025</div>
+      <span class="ri-year">2025 – 2026</span>
+      <div class="ri-club">しながわシティ</div>
+      <div class="ri-chap">Chapter 04</div>
+    </div>
+    <div class="rail-item current">
+      <span class="ri-node"></span>
+      <div class="ri-bigyear" aria-hidden="true">2026</div>
+      <span class="ri-year">2026 – 2027</span>
+      <div class="ri-club">ボアルース長野</div>
+      <span class="ri-badge">現所属</span>
     </div>
   </div>
+  <div class="career-progress" aria-hidden="true"><span id="careerIdx">01</span><div class="bar"><i id="careerBar"></i></div><span>05</span></div>
 </section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee alt" aria-hidden="true">
+  <div class="mq-track" data-marquee="-1">
+    <div class="mq-item">ONE SAVE CAN CHANGE THE GAME <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg> ゴール前から、チームを支える。 <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg></div>
+  </div>
+</div>
 
 <!-- MISSION -->
 <section id="mission">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Mission</p>
+    <div class="mission-pin" id="missionPin">
+      <p class="eyebrow" data-reveal>Mission <span class="idx">03 / 07</span></p>
+      <p class="mission-quote" id="missionQuote">ゴール前から、<br><em>チームを支える。</em></p>
+      <p class="mission-en" data-reveal>ONE SAVE <b>CAN CHANGE</b> THE GAME.</p>
     </div>
-    <p class="mission-quote reveal">ゴール前から、<em>チームを支える。</em></p>
     <div class="mission-blocks">
-      <div class="mission-block reveal">
+      <div class="mission-block" data-reveal>
+        <div class="mb-num">01</div>
+        <div class="mb-title">For the team</div>
         <p>まずは一人の現役ゴレイロとして、日々の練習と試合に向き合い、チームの勝利に貢献すること。自分のプレーでチームを助ける瞬間を、何よりも大切にしています。</p>
       </div>
-      <div class="mission-block reveal">
+      <div class="mission-block" data-reveal>
+        <div class="mb-num">02</div>
+        <div class="mb-title">Never give up</div>
         <p>試合に出られない悔しさ、挫折、メンタルの難しさ。そのすべてを経験してきたからこそ、簡単に諦めず、何度でも立ち上がる選手であり続けたい。</p>
       </div>
-      <div class="mission-block reveal">
+      <div class="mission-block" data-reveal>
+        <div class="mb-num">03</div>
+        <div class="mb-title">For the future</div>
         <p>そしていつか、ゴレイロをやりたい子どもたちが増え、日本でも専門的に学べる環境が広がっていくように。現役で得た経験を、未来へ繋げていきます。</p>
       </div>
     </div>
@@ -727,50 +1017,44 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
 <!-- ACTIVITIES -->
 <section id="activities">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Activities</p>
-      <h2 class="section-title">WHAT I DO</h2>
+    <div class="act-head">
+      <div>
+        <p class="eyebrow" data-reveal>Activities <span class="idx">04 / 07</span></p>
+        <h2 class="section-title" data-split>WHAT <span class="o">I DO</span></h2>
+      </div>
+      <p data-reveal>現役選手としての活動に加え、ゴレイロの育成・指導・コミュニティづくりに取り組んでいます。</p>
     </div>
     <div class="act-grid">
-      <div class="act-card reveal">
-        <div class="act-num">01</div>
+      <div class="act-card" data-card>
+        <div class="act-top"><div class="act-num">01</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="13" rx="1"/><path d="M2 10h3v5H2M22 10h-3v5h3M12 6v13"/></svg></div></div>
         <div class="act-title">Fリーグ選手活動</div>
         <div class="act-desc">ボアルース長野所属の現役ゴレイロとして、Fリーグ・ディビジョン1でゴール前に立ち続ける。</div>
       </div>
-      <div class="act-card clickable reveal" data-modal="personal">
-        <div class="act-num">02</div>
+      <div class="act-card clickable" data-card data-modal="personal" tabindex="0" role="button" aria-label="パーソナルトレーニングのお申し込み">
+        <div class="act-top"><div class="act-num">02</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
         <div class="act-title">パーソナルトレーニング</div>
         <div class="act-desc">対面・オンラインで、個々のレベルに合わせた専門指導を提供。</div>
-        <button class="act-cta-btn" onclick="openModal('personal')">
-          お申し込みはこちら
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <span class="act-cta-btn">お申し込みはこちら<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
-      <div class="act-card clickable reveal" data-modal="team">
-        <div class="act-num">03</div>
+      <div class="act-card clickable" data-card data-modal="team" tabindex="0" role="button" aria-label="チームサポートのお問い合わせ">
+        <div class="act-top"><div class="act-num">03</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
         <div class="act-title">チームサポート</div>
         <div class="act-desc">ゴレイロ育成に悩むチームへ、専門的な知見からサポート。</div>
-        <button class="act-cta-btn" onclick="openModal('team')">
-          お問い合わせはこちら
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <span class="act-cta-btn">お問い合わせはこちら<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
-      <div class="act-card clickable reveal" data-modal="single">
-        <div class="act-num">04</div>
+      <div class="act-card clickable" data-card data-modal="single" tabindex="0" role="button" aria-label="単発指導のお申し込み">
+        <div class="act-top"><div class="act-num">04</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
         <div class="act-title">単発指導</div>
         <div class="act-desc">個人・チームへのスポット指導。気軽に一度試してみたい方にも。</div>
-        <button class="act-cta-btn" onclick="openModal('single')">
-          お申し込みはこちら
-          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+        <span class="act-cta-btn">お申し込みはこちら<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
-      <div class="act-card reveal">
-        <div class="act-num">05</div>
+      <div class="act-card" data-card>
+        <div class="act-top"><div class="act-num">05</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 5h-5L8 10z"/></svg></div></div>
         <div class="act-title">練習会開催</div>
         <div class="act-desc">技術向上と交流を目的としたゴレイロ限定の練習会を定期開催。</div>
       </div>
-      <div class="act-card reveal">
-        <div class="act-num">06</div>
+      <div class="act-card" data-card>
+        <div class="act-top"><div class="act-num">06</div><div class="act-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5M15 14.5c2.6-.3 5 1.2 5.6 4.5"/></svg></div></div>
         <div class="act-title">コミュニティ運営</div>
         <div class="act-desc">日本中のゴレイロが繋がり、学び合えるオンラインコミュニティを運営。</div>
       </div>
@@ -781,36 +1065,32 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
 <!-- SPONSOR -->
 <section id="sponsor">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Sponsor</p>
-      <h2 class="section-title" style="margin-bottom:48px;">SUPPORT<br>ME</h2>
-    </div>
+    <p class="eyebrow" data-reveal>Sponsor <span class="idx">05 / 07</span></p>
+    <h2 class="section-title" data-split>SUPPORT <span class="o">ME</span></h2>
     <div class="sponsor-inner">
-      <div class="sponsor-plans reveal">
-        <div class="sponsor-plan">
+      <div class="sponsor-plans">
+        <div class="sponsor-plan" data-reveal>
           <div class="sp-num">01</div>
           <span class="sp-label">Goods Support</span>
           <p class="sp-desc">活動に必要な物品（ユニフォーム・グローブ・トレーニング器具など）をご提供いただけるスポンサー様を募集しています。</p>
           <p class="sp-note">サポート内容は個別にご相談ください</p>
         </div>
-        <div class="sponsor-plan">
+        <div class="sponsor-plan" data-reveal>
           <div class="sp-num">02</div>
           <span class="sp-label">Activity Support</span>
           <p class="sp-desc">遠征費・移動費・コーチング活動など、競技継続のための活動費をサポートいただける個人・企業様を募集しています。</p>
           <p class="sp-note">金額・形式はご相談の上で決定します</p>
         </div>
-        <div class="sponsor-plan">
+        <div class="sponsor-plan" data-reveal>
           <div class="sp-num">03</div>
           <span class="sp-label">Community Support</span>
           <p class="sp-desc">ゴレイロコミュニティの運営・練習会開催を一緒に支えてくださるパートナーを募集しています。</p>
           <p class="sp-note">協賛・連携など幅広く対応します</p>
         </div>
       </div>
-      <div class="sponsor-cta-wrap reveal">
+      <div class="sponsor-cta-wrap" data-reveal>
         <p>現役フットサル選手として、また次世代のゴレイロ育成に取り組む活動として、ご支援・ご協賛いただける方を募集しています。<br><br>内容・金額はすべて個別にご相談の上で決定しますので、まずはお気軽にご連絡ください。</p>
-        <a href="mailto:nishi24.official@gmail.com" class="btn-sponsor" id="sponsorFormBtn" onclick="openModal('sponsor');return false;">
-          個別相談・お問い合わせ →
-        </a>
+        <a href="mailto:nishi24.official@gmail.com" class="btn btn-solid magnetic" data-open-modal="sponsor"><span class="roll"><span data-t="個別相談・お問い合わせ">個別相談・お問い合わせ</span></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="https://www.instagram.com/futsal_nishi24" target="_blank" rel="noopener" class="sp-ig">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           InstagramのDMでもお問い合わせを受け付けています → @futsal_nishi24
@@ -823,56 +1103,48 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
 <!-- GALLERY -->
 <section id="gallery">
   <div class="container">
-    <div class="reveal">
-      <p class="eyebrow">Gallery</p>
-      <h2 class="section-title">SCENES</h2>
+    <div class="gallery-head">
+      <div>
+        <p class="eyebrow" data-reveal>Gallery <span class="idx">06 / 07</span></p>
+        <h2 class="section-title" data-split>SCE<span class="o">NES</span></h2>
+      </div>
+      <p class="gallery-hint" data-reveal><svg viewBox="0 0 28 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h26M5 2L1 6l4 4M23 2l4 4-4 4"/></svg>Drag / Tap to view</p>
     </div>
   </div>
-  <div class="gallery-track-wrap" id="galleryWrap">
+  <div class="gallery-track-wrap" id="galleryWrap" data-cursor="DRAG">
     <div class="gallery-track" id="galleryTrack">
-      <img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/fyCf706j/865D805D-83E8-44AE-A428-7E2344BF11970B5A3818.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/sf4mCtv5/BD4E0775-3993-4752-8A87-41E418ED06F50B5A1620.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/nzDL7jct/2026-04-26-0449.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg" alt="西滉太">
-      <!-- duplicate for seamless loop -->
-      <img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/fyCf706j/865D805D-83E8-44AE-A428-7E2344BF11970B5A3818.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/sf4mCtv5/BD4E0775-3993-4752-8A87-41E418ED06F50B5A1620.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/nzDL7jct/2026-04-26-0449.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg" alt="西滉太">
-      <img src="https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg" alt="西滉太">
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/6560WYvZ/5B27B31D-DDF8-401D-A2F9-043F957381FA0B5A0956.jpg" alt="西滉太 試合写真 1" loading="lazy"><span class="g-no">01</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/NfG4spHH/72DD8979-9043-4120-AA3D-A3658F6F77540B5A1402.jpg" alt="西滉太 試合写真 2" loading="lazy"><span class="g-no">02</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/fyCf706j/865D805D-83E8-44AE-A428-7E2344BF11970B5A3818.jpg" alt="西滉太 試合写真 3" loading="lazy"><span class="g-no">03</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/sf4mCtv5/BD4E0775-3993-4752-8A87-41E418ED06F50B5A1620.jpg" alt="西滉太 試合写真 4" loading="lazy"><span class="g-no">04</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg" alt="西滉太 試合写真 5" loading="lazy"><span class="g-no">05</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/FzXHxr7x/0B5A1356-Original.jpg" alt="西滉太 ポートレート" loading="lazy"><span class="g-no">06</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg" alt="西滉太 試合写真 7" loading="lazy"><span class="g-no">07</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/nzDL7jct/2026-04-26-0449.jpg" alt="西滉太 試合写真 8" loading="lazy"><span class="g-no">08</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg" alt="西滉太 試合写真 9" loading="lazy"><span class="g-no">09</span></button>
+      <button class="g-item" type="button"><img src="https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg" alt="西滉太 試合写真 10" loading="lazy"><span class="g-no">10</span></button>
     </div>
   </div>
 </section>
 
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="contact-inner reveal">
-      <p class="eyebrow" style="justify-content:center;">Contact</p>
-      <h2 class="section-title">GET IN TOUCH</h2>
-      <p>活動の様子や最新情報はSNSで発信中。お仕事のご依頼・ご相談は各種SNSのDM、またはメールにてお気軽にどうぞ。</p>
-      <div class="social-row">
-        <a href="https://www.instagram.com/futsal_nishi24" target="_blank" rel="noopener" class="soc-btn">
+    <div class="contact-inner">
+      <p class="eyebrow" data-reveal style="justify-content:center;">Contact <span class="idx" style="margin-left:12px;">07 / 07</span></p>
+      <h2 class="contact-title" data-split>GET IN<br><span class="o">TOUCH</span></h2>
+      <p data-reveal>活動の様子や最新情報はSNSで発信中。お仕事のご依頼・ご相談は各種SNSのDM、またはメールにてお気軽にどうぞ。</p>
+      <a href="mailto:nishi24.official@gmail.com" class="contact-mail" data-reveal>nishi24.official@gmail.com</a>
+      <div class="social-row" data-reveal>
+        <a href="https://www.instagram.com/futsal_nishi24" target="_blank" rel="noopener" class="soc-btn magnetic">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           Instagram
         </a>
-        <a href="https://x.com/fafcs_nishi" target="_blank" rel="noopener" class="soc-btn">
+        <a href="https://x.com/fafcs_nishi" target="_blank" rel="noopener" class="soc-btn magnetic">
           <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X (Twitter)
         </a>
-        <a href="mailto:nishi24.official@gmail.com" class="soc-btn">
+        <a href="mailto:nishi24.official@gmail.com" class="soc-btn magnetic">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           Email
         </a>
@@ -880,18 +1152,46 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     </div>
   </div>
 </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-top">
+    <ul class="f-nav">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#sponsor">Sponsor</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="to-top" id="toTop" type="button">BACK TO TOP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+  </div>
+  <div class="f-big" id="footBig" data-split>KOTA <b>NISHI</b></div>
+  <div class="f-copy"><span>&copy; 2026 KOTA NISHI. ALL RIGHTS RESERVED.</span><span>GOLEIRO #24 — BOALUZ NAGANO</span></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="ギャラリー">
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="前の写真"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="次の写真"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
 
 <!-- MODALS -->
 <div class="modal-overlay" id="modalOverlay"></div>
 
 <!-- パーソナルトレーニング -->
-<div class="modal-sheet" id="modal-personal">
+<div class="modal-sheet" id="modal-personal" role="dialog" aria-modal="true" aria-labelledby="mt-personal" data-lenis-prevent>
   <div class="modal-handle"></div>
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <div class="modal-title">パーソナルトレーニング</div>
+  <button class="modal-close" data-close-modal aria-label="閉じる">✕</button>
+  <div class="modal-title" id="mt-personal">パーソナルトレーニング</div>
   <p class="modal-sub">対面・オンラインで、個々のレベルに合わせた専門指導を提供します。<br>お気軽にお申し込みください。</p>
   <div id="success-personal" class="form-success">
-    <div class="success-icon">✅</div>
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
   </div>
   <form id="form-personal" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
@@ -900,33 +1200,33 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="">
     <div class="form-group">
-      <label>お名前 *</label>
-      <input type="text" name="お名前" placeholder="山田 太郎" required>
+      <label for="p-name">お名前 *</label>
+      <input id="p-name" type="text" name="お名前" placeholder="山田 太郎" autocomplete="name" required>
     </div>
     <div class="form-group">
-      <label>メールアドレス *</label>
-      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+      <label for="p-mail">メールアドレス *</label>
+      <input id="p-mail" type="email" name="メールアドレス" placeholder="example@email.com" autocomplete="email" required>
     </div>
     <div class="form-group">
-      <label>件名</label>
-      <input type="text" name="件名" value="パーソナルトレーニング お申し込み" readonly style="color:var(--grey);">
+      <label for="p-subj">件名</label>
+      <input id="p-subj" type="text" name="件名" value="パーソナルトレーニング お申し込み" readonly style="color:var(--grey);">
     </div>
     <div class="form-group">
-      <label>メッセージ *</label>
-      <textarea name="メッセージ" placeholder="ご希望の日程・内容・現在のレベルなど、お気軽にお書きください。" required></textarea>
+      <label for="p-msg">メッセージ *</label>
+      <textarea id="p-msg" name="メッセージ" placeholder="ご希望の日程・内容・現在のレベルなど、お気軽にお書きください。" required></textarea>
     </div>
     <button type="submit" class="form-submit">送信する →</button>
   </form>
 </div>
 
 <!-- チームサポート -->
-<div class="modal-sheet" id="modal-team">
+<div class="modal-sheet" id="modal-team" role="dialog" aria-modal="true" aria-labelledby="mt-team" data-lenis-prevent>
   <div class="modal-handle"></div>
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <div class="modal-title">チームサポート</div>
+  <button class="modal-close" data-close-modal aria-label="閉じる">✕</button>
+  <div class="modal-title" id="mt-team">チームサポート</div>
   <p class="modal-sub">ゴレイロ育成に悩むチームへ、専門的な知見からサポートします。</p>
   <div id="success-team" class="form-success">
-    <div class="success-icon">✅</div>
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
   </div>
   <form id="form-team" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
@@ -934,33 +1234,33 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <div class="form-group">
-      <label>お名前 *</label>
-      <input type="text" name="お名前" placeholder="山田 太郎" required>
+      <label for="t-name">お名前 *</label>
+      <input id="t-name" type="text" name="お名前" placeholder="山田 太郎" autocomplete="name" required>
     </div>
     <div class="form-group">
-      <label>メールアドレス *</label>
-      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+      <label for="t-mail">メールアドレス *</label>
+      <input id="t-mail" type="email" name="メールアドレス" placeholder="example@email.com" autocomplete="email" required>
     </div>
     <div class="form-group">
-      <label>件名</label>
-      <input type="text" name="件名" value="チームサポート お問い合わせ" readonly style="color:var(--grey);">
+      <label for="t-subj">件名</label>
+      <input id="t-subj" type="text" name="件名" value="チームサポート お問い合わせ" readonly style="color:var(--grey);">
     </div>
     <div class="form-group">
-      <label>メッセージ *</label>
-      <textarea name="メッセージ" placeholder="チーム名・ご状況・ご希望の内容などをお書きください。" required></textarea>
+      <label for="t-msg">メッセージ *</label>
+      <textarea id="t-msg" name="メッセージ" placeholder="チーム名・ご状況・ご希望の内容などをお書きください。" required></textarea>
     </div>
     <button type="submit" class="form-submit">送信する →</button>
   </form>
 </div>
 
 <!-- 単発指導 -->
-<div class="modal-sheet" id="modal-single">
+<div class="modal-sheet" id="modal-single" role="dialog" aria-modal="true" aria-labelledby="mt-single" data-lenis-prevent>
   <div class="modal-handle"></div>
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <div class="modal-title">単発指導</div>
+  <button class="modal-close" data-close-modal aria-label="閉じる">✕</button>
+  <div class="modal-title" id="mt-single">単発指導</div>
   <p class="modal-sub">個人・チームへのスポット指導。まずは一度、お気軽にどうぞ。</p>
   <div id="success-single" class="form-success">
-    <div class="success-icon">✅</div>
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
   </div>
   <form id="form-single" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
@@ -968,33 +1268,33 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <div class="form-group">
-      <label>お名前 *</label>
-      <input type="text" name="お名前" placeholder="山田 太郎" required>
+      <label for="s-name">お名前 *</label>
+      <input id="s-name" type="text" name="お名前" placeholder="山田 太郎" autocomplete="name" required>
     </div>
     <div class="form-group">
-      <label>メールアドレス *</label>
-      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+      <label for="s-mail">メールアドレス *</label>
+      <input id="s-mail" type="email" name="メールアドレス" placeholder="example@email.com" autocomplete="email" required>
     </div>
     <div class="form-group">
-      <label>件名</label>
-      <input type="text" name="件名" value="単発指導 お申し込み" readonly style="color:var(--grey);">
+      <label for="s-subj">件名</label>
+      <input id="s-subj" type="text" name="件名" value="単発指導 お申し込み" readonly style="color:var(--grey);">
     </div>
     <div class="form-group">
-      <label>メッセージ *</label>
-      <textarea name="メッセージ" placeholder="ご希望の日程・個人orチーム・現在のレベルなどをお書きください。" required></textarea>
+      <label for="s-msg">メッセージ *</label>
+      <textarea id="s-msg" name="メッセージ" placeholder="ご希望の日程・個人orチーム・現在のレベルなどをお書きください。" required></textarea>
     </div>
     <button type="submit" class="form-submit">送信する →</button>
   </form>
 </div>
 
 <!-- 個人スポンサー -->
-<div class="modal-sheet" id="modal-sponsor">
+<div class="modal-sheet" id="modal-sponsor" role="dialog" aria-modal="true" aria-labelledby="mt-sponsor" data-lenis-prevent>
   <div class="modal-handle"></div>
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <div class="modal-title">個人スポンサー<br>お問い合わせ</div>
+  <button class="modal-close" data-close-modal aria-label="閉じる">✕</button>
+  <div class="modal-title" id="mt-sponsor">個人スポンサー<br>お問い合わせ</div>
   <p class="modal-sub">内容・金額はすべて個別にご相談の上で決定します。<br>まずはお気軽にご連絡ください。</p>
   <div id="success-sponsor" class="form-success">
-    <div class="success-icon">✅</div>
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <p><strong>送信が完了しました！</strong><br>内容を確認の上、2〜3営業日以内にご連絡します。</p>
   </div>
   <form id="form-sponsor" action="https://formsubmit.co/nishi24.official@gmail.com" method="POST">
@@ -1002,20 +1302,20 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <div class="form-group">
-      <label>お名前 *</label>
-      <input type="text" name="お名前" placeholder="山田 太郎" required>
+      <label for="sp-name">お名前 *</label>
+      <input id="sp-name" type="text" name="お名前" placeholder="山田 太郎" autocomplete="name" required>
     </div>
     <div class="form-group">
-      <label>メールアドレス *</label>
-      <input type="email" name="メールアドレス" placeholder="example@email.com" required>
+      <label for="sp-mail">メールアドレス *</label>
+      <input id="sp-mail" type="email" name="メールアドレス" placeholder="example@email.com" autocomplete="email" required>
     </div>
     <div class="form-group">
-      <label>会社名・屋号（任意）</label>
-      <input type="text" name="会社名・屋号" placeholder="株式会社〇〇 / 個人の場合は空欄でOK">
+      <label for="sp-co">会社名・屋号（任意）</label>
+      <input id="sp-co" type="text" name="会社名・屋号" placeholder="株式会社〇〇 / 個人の場合は空欄でOK" autocomplete="organization">
     </div>
     <div class="form-group">
-      <label>ご希望のサポート種別 *</label>
-      <select name="サポート種別" required>
+      <label for="sp-type">ご希望のサポート種別 *</label>
+      <select id="sp-type" name="サポート種別" required>
         <option value="" disabled selected>選択してください</option>
         <option value="物品提供">物品提供</option>
         <option value="活動費支援">活動費支援</option>
@@ -1024,223 +1324,670 @@ footer p{ font-size:11px; color:var(--grey); letter-spacing:1px; margin-top:14px
       </select>
     </div>
     <div class="form-group">
-      <label>ご相談内容・メッセージ *</label>
-      <textarea name="ご相談内容" placeholder="サポート内容・ご希望・ご質問などをお書きください。" required></textarea>
+      <label for="sp-msg">ご相談内容・メッセージ *</label>
+      <textarea id="sp-msg" name="ご相談内容" placeholder="サポート内容・ご希望・ご質問などをお書きください。" required></textarea>
     </div>
     <button type="submit" class="form-submit">送信する →</button>
   </form>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="f-name">KOTA <b>NISHI</b></div>
-  <p>&copy; 2026 KOTA NISHI. ALL RIGHTS RESERVED.</p>
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 <script>
-// NAV scroll state
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+(function(){
+'use strict';
 
-// Mobile menu toggle
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  burger.classList.remove('open');
-  mobileMenu.classList.remove('open');
+const root = document.documentElement;
+const $  = (s, c) => (c || document).querySelector(s);
+const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(pointer:fine)').matches;
+const hasGsap = !!(window.gsap && window.ScrollTrigger);
+const MOTION = !reduced && hasGsap;
+if (!MOTION) { root.classList.remove('motion'); root.classList.add('is-loaded'); }
+
+/* ───────────── Smooth scroll (Lenis) ───────────── */
+let lenis = null;
+if (MOTION) {
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis) {
+    lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+}
+function scrollToTarget(target){
+  if (lenis) lenis.scrollTo(target, { duration: 1.6, easing: t => 1 - Math.pow(1 - t, 4) });
+  else {
+    const el = typeof target === 'string' ? $(target) : target;
+    if (el && el.scrollIntoView) el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    else window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  }
+}
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href');
+  if (id.length < 2 || !$(id)) return;
+  e.preventDefault();
+  closeMenu();
+  scrollToTarget(id === '#hero' ? 0 : id);
 }));
+$('#toTop').addEventListener('click', () => scrollToTarget(0));
 
-// Hero background crossfade (no particles, just clean crossfade)
-const heroImgs = [
-  'https://i.postimg.cc/8cgzbpjH/04A30A64-041A-4561-90C9-CA365D0CBD18-W0A1623.jpg',
-  'https://i.postimg.cc/hv8Pykdp/1EE346AE-2CC1-4830-BBAA-9A42FCBACD7B0B5A4898.jpg',
-  'https://i.postimg.cc/Xq6Ygjpd/W0A8349-Original.jpg',
-  'https://i.postimg.cc/L5F8V9nt/W0A8773-Original.jpg'
-];
-const heroBg = document.getElementById('heroBg');
-let bgIdx = 0;
-function setHeroBg(idx){
-  heroBg.style.backgroundImage = `linear-gradient(180deg, rgba(10,10,10,0.25) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,1) 100%), url('${heroImgs[idx]}')`;
+/* ───────────── Nav + mobile menu ───────────── */
+const nav = $('#nav');
+let lastY = 0;
+function onScrollNav(y){
+  nav.classList.toggle('scrolled', y > 40);
+  const menuOpen = mobileMenu.classList.contains('open');
+  nav.classList.toggle('hidden', !menuOpen && y > 400 && y > lastY);
+  lastY = y;
 }
-setHeroBg(0);
-requestAnimationFrame(() => heroBg.classList.add('active'));
-setInterval(() => {
-  bgIdx = (bgIdx + 1) % heroImgs.length;
-  setHeroBg(bgIdx);
-}, 5500);
+const burger = $('#burger');
+const mobileMenu = $('#mobileMenu');
+$$('a', mobileMenu).forEach((a, i) => a.style.transitionDelay = (0.25 + i * 0.05) + 's');
+function closeMenu(){
+  burger.classList.remove('open'); mobileMenu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'メニューを開く');
+  if (lenis && !currentModal) lenis.start();
+}
+burger.addEventListener('click', () => {
+  const open = !mobileMenu.classList.contains('open');
+  burger.classList.toggle('open', open); mobileMenu.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+  if (lenis) open ? lenis.stop() : lenis.start();
+});
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
-    }
+const progress = $('#scrollProgress');
+function onScroll(){
+  const y = window.scrollY;
+  onScrollNav(y);
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+}
+if (lenis) lenis.on('scroll', onScroll); else addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// active nav link
+const navLinks = $$('.nav-links a');
+const sectionObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
   });
-}, { threshold: 0.15 });
-revealEls.forEach(el => revealObs.observe(el));
+}, { rootMargin: '-45% 0px -50% 0px' });
+$$('main section[id]').forEach(s => sectionObs.observe(s));
 
-// Stagger reveal within career/act grids
-function staggerGroup(selector, gap){
-  document.querySelectorAll(selector).forEach(group => {
-    const items = group.querySelectorAll('.reveal');
-    items.forEach((el, i) => { el.style.transitionDelay = (i * gap) + 'ms'; });
+/* ───────────── Split text ───────────── */
+const CJK = /[　-鿿＀-￯]/;
+function splitChars(el){
+  const out = [];
+  (function walk(node){
+    Array.from(node.childNodes).forEach(child => {
+      if (child.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach(tok => {
+          if (!tok) return;
+          if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(' ')); return; }
+          const holder = CJK.test(tok) ? frag : frag.appendChild(Object.assign(document.createElement('span'), { className: 'wd' }));
+          Array.from(tok).forEach(c => {
+            const ch = document.createElement('span'); ch.className = 'ch';
+            const i = document.createElement('i'); i.textContent = c;
+            ch.appendChild(i); holder.appendChild(ch); out.push(i);
+          });
+        });
+        child.replaceWith(frag);
+      } else if (child.nodeType === 1 && child.tagName !== 'BR') walk(child);
+    });
+  })(el);
+  el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+  return out;
+}
+
+/* ───────────── Hero: goal-net canvas ───────────── */
+function initNet(){
+  const canvas = $('#netCanvas');
+  const ctx = canvas.getContext('2d');
+  const hero = $('#hero');
+  let w, h, dpr, pts = [], links = [], running = true, visible = true;
+  const mouse = { x: -9999, y: -9999, px: -9999, py: -9999, active: false };
+  const SP = () => (innerWidth < 700 ? 30 : 38);
+
+  function build(){
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    w = hero.clientWidth; h = hero.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const s = SP(), cols = Math.ceil(w / s) + 2, rows = Math.ceil(h / s) + 2;
+    pts = []; links = [];
+    const grid = [];
+    for (let j = 0; j < rows; j++) {
+      grid[j] = [];
+      for (let i = 0; i < cols; i++) {
+        if ((i + j) % 2) { grid[j][i] = -1; continue; }
+        const x = (i - 1) * s, y = (j - 1) * s;
+        grid[j][i] = pts.length;
+        pts.push({ x0: x, y0: y, x, y, vx: 0, vy: 0, n: [] });
+      }
+    }
+    for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols; i++) {
+      const a = grid[j][i]; if (a < 0) continue;
+      [i - 1, i + 1].forEach(ii => {
+        if (ii < 0 || ii >= cols) return;
+        const b = grid[j + 1][ii]; if (b < 0) return;
+        links.push([a, b]); pts[a].n.push(b); pts[b].n.push(a);
+      });
+    }
+  }
+  function impulse(x, y, power, radius){
+    pts.forEach(p => {
+      const dx = p.x - x, dy = p.y - y, d = Math.hypot(dx, dy);
+      if (d < radius && d > 0.01) {
+        const f = (1 - d / radius) * power;
+        p.vx += (dx / d) * f; p.vy += (dy / d) * f;
+      }
+    });
+  }
+  function step(){
+    const R = 150;
+    if (mouse.active) {
+      const mvx = mouse.x - mouse.px, mvy = mouse.y - mouse.py;
+      const speed = Math.min(Math.hypot(mvx, mvy), 60);
+      pts.forEach(p => {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy;
+        if (d2 < R * R) {
+          const d = Math.sqrt(d2) || 1, f = (1 - d / R);
+          p.vx += (dx / d) * f * 0.9 + mvx * f * 0.06 * (speed / 60);
+          p.vy += (dy / d) * f * 0.9 + mvy * f * 0.06 * (speed / 60);
+        }
+      });
+      mouse.px = mouse.x; mouse.py = mouse.y;
+    }
+    for (let k = 0; k < pts.length; k++) {
+      const p = pts[k];
+      let nx = 0, ny = 0;
+      for (let m = 0; m < p.n.length; m++) { const q = pts[p.n[m]]; nx += (q.x - q.x0); ny += (q.y - q.y0); }
+      const len = p.n.length || 1;
+      const dx = p.x - p.x0, dy = p.y - p.y0;
+      p.vx += -dx * 0.045 + (nx / len - dx) * 0.08;
+      p.vy += -dy * 0.045 + (ny / len - dy) * 0.08;
+      p.vx *= 0.88; p.vy *= 0.88;
+    }
+    for (let k = 0; k < pts.length; k++) { const p = pts[k]; p.x += p.vx; p.y += p.vy; }
+  }
+  function draw(){
+    ctx.clearRect(0, 0, w, h);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.075)';
+    ctx.beginPath();
+    const hot = [];
+    for (let k = 0; k < links.length; k++) {
+      const a = pts[links[k][0]], b = pts[links[k][1]];
+      const e = Math.abs(a.x - a.x0) + Math.abs(a.y - a.y0) + Math.abs(b.x - b.x0) + Math.abs(b.y - b.y0);
+      if (e > 3) { hot.push([a, b, e]); continue; }
+      ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+    }
+    ctx.stroke();
+    for (let k = 0; k < hot.length; k++) {
+      const [a, b, e] = hot[k];
+      ctx.strokeStyle = `rgba(255,106,26,${Math.min(0.12 + e / 60, 0.75)})`;
+      ctx.lineWidth = Math.min(1 + e / 40, 2);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+  }
+  function loop(){
+    if (running && visible && !document.hidden) { step(); draw(); }
+    requestAnimationFrame(loop);
+  }
+  build();
+  addEventListener('resize', () => { clearTimeout(build.t); build.t = setTimeout(build, 150); });
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    if (!mouse.active) { mouse.px = x; mouse.py = y; }
+    mouse.x = x; mouse.y = y; mouse.active = true;
+  });
+  hero.addEventListener('pointerleave', () => { mouse.active = false; });
+  hero.addEventListener('pointerdown', e => {
+    if (e.target.closest('a,button')) return;
+    const r = hero.getBoundingClientRect();
+    impulse(e.clientX - r.left, e.clientY - r.top, 22, 260);
+  });
+  new IntersectionObserver(([en]) => { visible = en.isIntersecting; }).observe(hero);
+  loop();
+  return { impulse: (x, y, p, r) => impulse(x, y, p, r), size: () => ({ w, h }) };
+}
+
+/* ───────────── Hero slideshow ───────────── */
+function initSlides(){
+  const slides = $$('.hero-slide');
+  const imgs = slides.map(s => $('img', s));
+  const cur = $('#slideCur'), bar = $('#slideBar');
+  let idx = 0;
+  const DUR = 5.5;
+  gsap.set(imgs[0], { scale: 1.08 });
+  function kenBurns(i){ gsap.fromTo(imgs[i], { scale: 1.22 }, { scale: 1.04, duration: DUR + 2, ease: 'none', overwrite: true }); }
+  function barRun(){ gsap.fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: DUR, ease: 'none', onComplete: next }); }
+  function next(){
+    const prev = idx; idx = (idx + 1) % slides.length;
+    slides.forEach((s, i) => s.style.zIndex = i === idx ? 3 : i === prev ? 2 : 1);
+    gsap.fromTo(slides[idx], { clipPath: 'inset(0 0 0 100%)' }, { clipPath: 'inset(0 0 0 0%)', duration: 1.5, ease: 'expo.inOut' });
+    gsap.fromTo(imgs[idx], { xPercent: 12 }, { xPercent: 0, duration: 1.5, ease: 'expo.inOut' });
+    gsap.to(imgs[prev], { xPercent: -8, duration: 1.5, ease: 'expo.inOut', onComplete: () => gsap.set(imgs[prev], { xPercent: 0 }) });
+    kenBurns(idx);
+    cur.textContent = String(idx + 1).padStart(2, '0');
+    barRun();
+  }
+  slides.forEach((s, i) => s.style.zIndex = i === 0 ? 3 : 1);
+  return { start(){ kenBurns(0); barRun(); } };
+}
+
+/* ───────────── Marquees (scroll-velocity reactive) ───────────── */
+function initMarquees(){
+  $$('[data-marquee]').forEach(track => {
+    const item = track.firstElementChild;
+    for (let k = 0; k < 3; k++) track.appendChild(item.cloneNode(true));
+    const dir = parseFloat(track.dataset.marquee);
+    let x = 0, boost = 0, w = item.offsetWidth;
+    addEventListener('resize', () => { w = item.offsetWidth; });
+    const vel = () => (lenis ? lenis.velocity : 0);
+    gsap.ticker.add(() => {
+      const v = vel();
+      boost += (Math.abs(v) * 0.9 - boost) * 0.1;
+      const flip = v < -0.5 ? -1 : 1;
+      x -= (1.1 + boost) * dir * flip;
+      if (x <= -w) x += w; if (x > 0) x -= w;
+      track.style.transform = `translate3d(${x}px,0,0)`;
+    });
   });
 }
-staggerGroup('.career-rail', 110);
-staggerGroup('.act-grid', 70);
 
-// ── GALLERY infinite scroll (JS-driven, bulletproof) ──
-(function initGallery() {
-  const wrap  = document.getElementById('galleryWrap');
-  const track = document.getElementById('galleryTrack');
-  if (!wrap || !track) return;
+/* ───────────── Cursor + magnetic ───────────── */
+function initCursor(){
+  if (!finePointer) return;
+  const c = $('#cursor'), label = $('#cursorLabel');
+  const xTo = gsap.quickTo(c, 'x', { duration: 0.45, ease: 'power3' });
+  const yTo = gsap.quickTo(c, 'y', { duration: 0.45, ease: 'power3' });
+  let seen = false;
+  addEventListener('pointermove', e => {
+    if (!seen) { seen = true; gsap.set(c, { x: e.clientX, y: e.clientY }); c.classList.remove('is-hidden'); }
+    xTo(e.clientX); yTo(e.clientY);
+  });
+  document.addEventListener('pointerover', e => {
+    const t = e.target;
+    const lab = t.closest('[data-cursor]');
+    const link = t.closest('a,button,[role="button"],select');
+    const field = t.closest('input,textarea');
+    c.classList.toggle('is-label', !!lab);
+    if (lab) label.textContent = lab.dataset.cursor;
+    c.classList.toggle('is-link', !lab && !!link);
+    c.classList.toggle('is-hidden', !!field);
+  });
+  document.addEventListener('pointerleave', () => c.classList.add('is-hidden'));
+  document.addEventListener('pointerenter', () => { if (seen) c.classList.remove('is-hidden'); });
 
-  // clone all images for seamless loop
-  const imgs = Array.from(track.children);
-  imgs.forEach(img => track.appendChild(img.cloneNode(true)));
+  $$('.magnetic').forEach(el => {
+    const xT = gsap.quickTo(el, 'x', { duration: 0.6, ease: 'power3' });
+    const yT = gsap.quickTo(el, 'y', { duration: 0.6, ease: 'power3' });
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      xT((e.clientX - r.left - r.width / 2) * 0.35);
+      yT((e.clientY - r.top - r.height / 2) * 0.45);
+    });
+    el.addEventListener('pointerleave', () => {
+      gsap.to(el, { x: 0, y: 0, duration: 1, ease: 'elastic.out(1,0.35)', overwrite: true });
+    });
+  });
+}
 
-  const SPEED = 0.55; // px per frame  ← adjust speed here
-  let offset   = 0;
-  let paused   = false;
-  let rafId    = null;
-  let halfW    = 0;
+/* ───────────── Activity cards: spotlight + tilt ───────────── */
+function initCards(){
+  $$('[data-card]').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--mx', px * 100 + '%');
+      card.style.setProperty('--my', py * 100 + '%');
+      if (MOTION && finePointer) gsap.to(card, { rotateY: (px - .5) * 8, rotateX: (.5 - py) * 8, transformPerspective: 900, duration: .6, ease: 'power3' });
+    });
+    card.addEventListener('pointerleave', () => {
+      if (MOTION) gsap.to(card, { rotateX: 0, rotateY: 0, duration: 1, ease: 'elastic.out(1,0.4)' });
+    });
+  });
+}
 
-  function measure() {
-    // half = width of original set (before clone)
-    halfW = imgs.reduce((sum, el) => sum + el.offsetWidth + 12, 0);
-  }
-  measure();
-  window.addEventListener('resize', measure);
+/* ───────────── Count-up ───────────── */
+function countUp(el){
+  const n = parseInt(el.dataset.count, 10);
+  const small = $('small', el); const suffix = small ? small.outerHTML : '';
+  const o = { v: 0 };
+  gsap.to(o, { v: n, duration: 1.6, ease: 'power3.out', onUpdate: () => { el.innerHTML = Math.round(o.v) + suffix; } });
+}
 
-  function tick() {
-    if (!paused) {
-      offset += SPEED;
-      if (offset >= halfW) offset -= halfW;
-      track.style.transform = `translateX(${-offset}px)`;
+/* ───────────── Gallery: infinite drag + velocity skew + lightbox ───────────── */
+function initGallery(){
+  const wrap = $('#galleryWrap'), track = $('#galleryTrack');
+  const originals = $$('.g-item', track);
+  const srcs = originals.map(b => ({ src: $('img', b).src, alt: $('img', b).alt }));
+  originals.forEach(n => { const c = n.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.tabIndex = -1; track.appendChild(c); });
+  const items = $$('.g-item', track);
+  items.forEach((b, i) => b.dataset.idx = i % originals.length);
+
+  let half = 0, offset = 0, vel = 0, dragging = false, startX = 0, startOff = 0, moved = 0, lastX = 0, hover = false;
+  const measure = () => { half = track.scrollWidth / 2; };
+  measure(); addEventListener('resize', measure);
+  $$('img', track).forEach(img => img.addEventListener('load', measure));
+  const imgs = $$('img', track);
+  let skew = 0;
+
+  function frame(){
+    const sv = lenis ? lenis.velocity : 0;
+    if (!dragging) {
+      vel *= 0.94;
+      offset += (reduced ? 0 : (hover ? 0.15 : 0.6)) + vel + Math.abs(sv) * 0.25;
     }
-    rafId = requestAnimationFrame(tick);
+    if (half) offset = ((offset % half) + half) % half;
+    track.style.transform = `translate3d(${-offset}px,0,0)`;
+    const target = Math.max(-10, Math.min(10, (dragging ? vel : sv * 0.6 + vel) * 0.8));
+    skew += (target - skew) * 0.12;
+    if (MOTION) track.style.setProperty('transform', `translate3d(${-offset}px,0,0) skewX(${-skew * 0.5}deg)`);
+    requestAnimationFrame(frame);
   }
-  rafId = requestAnimationFrame(tick);
+  requestAnimationFrame(frame);
 
-  // pause on hover (desktop)
-  wrap.addEventListener('mouseenter', () => { paused = true; });
-  wrap.addEventListener('mouseleave', () => { paused = false; });
+  wrap.addEventListener('pointerenter', () => hover = true);
+  wrap.addEventListener('pointerleave', () => hover = false);
+  wrap.addEventListener('pointerdown', e => {
+    dragging = true; startX = lastX = e.clientX; startOff = offset; moved = 0; vel = 0;
+  });
+  addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX; lastX = e.clientX;
+    moved += Math.abs(dx);
+    vel = -dx;
+    offset = startOff - (e.clientX - startX);
+  });
+  addEventListener('pointerup', () => { dragging = false; });
+  addEventListener('pointercancel', () => { dragging = false; });
 
-  // drag to scrub (touch + mouse)
-  let dragStart = null, dragOffset = 0;
-  function onDragStart(x) { dragStart = x; dragOffset = offset; paused = true; }
-  function onDragMove(x)  {
-    if (dragStart === null) return;
-    const delta = dragStart - x;
-    offset = ((dragOffset + delta) % halfW + halfW) % halfW;
-    track.style.transform = `translateX(${-offset}px)`;
+  // lightbox
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCount = $('#lbCount');
+  let li = 0, lastFocus = null;
+  function show(i){
+    li = (i + srcs.length) % srcs.length;
+    lbImg.style.opacity = 0;
+    const im = new Image(); im.src = srcs[li].src;
+    const done = () => { lbImg.src = srcs[li].src; lbImg.alt = srcs[li].alt; lbImg.style.opacity = 1; };
+    im.complete ? done() : (im.onload = done, im.onerror = done);
+    lbCount.textContent = String(li + 1).padStart(2, '0') + ' / ' + String(srcs.length).padStart(2, '0');
   }
-  function onDragEnd()    { dragStart = null; paused = false; }
+  function openLb(i){ lastFocus = document.activeElement; show(i); lb.classList.add('open'); if (lenis) lenis.stop(); $('#lbClose').focus(); }
+  function closeLb(){ lb.classList.remove('open'); if (lenis) lenis.start(); if (lastFocus) lastFocus.focus(); }
+  track.addEventListener('click', e => {
+    const b = e.target.closest('.g-item'); if (!b) return;
+    if (moved > 8) return;
+    openLb(+b.dataset.idx);
+  });
+  $('#lbClose').addEventListener('click', closeLb);
+  $('#lbPrev').addEventListener('click', () => show(li - 1));
+  $('#lbNext').addEventListener('click', () => show(li + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(li - 1);
+    if (e.key === 'ArrowRight') show(li + 1);
+  });
+}
 
-  wrap.addEventListener('mousedown',  e => onDragStart(e.clientX));
-  window.addEventListener('mousemove', e => { if (dragStart !== null) onDragMove(e.clientX); });
-  window.addEventListener('mouseup',   onDragEnd);
+/* ───────────── Scroll choreography (GSAP) ───────────── */
+function initScrollMotion(){
+  // generic reveals
+  $$('[data-reveal]').forEach(el => {
+    gsap.from(el, {
+      y: 60, autoAlpha: 0, duration: 1.2, ease: 'expo.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+    });
+  });
 
-  wrap.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive:true });
-  wrap.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive:true });
-  wrap.addEventListener('touchend',   onDragEnd);
-})();
+  // split headings (hero handled separately)
+  $$('[data-split]:not([data-hero-title])').forEach(el => {
+    const chars = splitChars(el);
+    gsap.from(chars, {
+      yPercent: 115, rotate: 6, duration: 1.1, ease: 'expo.out', stagger: 0.035,
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+    });
+  });
 
+  // hero scroll-out
+  gsap.timeline({ scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } })
+    .to('#heroStage', { scale: 0.92, borderRadius: 24, yPercent: 8, ease: 'none' }, 0)
+    .to('#heroContent', { yPercent: -35, autoAlpha: 0, ease: 'none' }, 0)
+    .to('#heroGhost', { yPercent: -40, ease: 'none' }, 0);
 
-const overlay = document.getElementById('modalOverlay');
-let currentModal = null;
+  // profile image: clip reveal + parallax
+  gsap.fromTo('#profileImg', { clipPath: 'inset(100% 0% 0% 0%)' }, {
+    clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.inOut',
+    scrollTrigger: { trigger: '#profileImg', start: 'top 85%', once: true }
+  });
+  gsap.fromTo('#profileImg img', { yPercent: -8, scale: 1.15 }, {
+    yPercent: 8, scale: 1, ease: 'none',
+    scrollTrigger: { trigger: '#profileImg', start: 'top bottom', end: 'bottom top', scrub: true }
+  });
+  gsap.from('.profile-stamp', {
+    scale: 0, rotate: -40, duration: 1, ease: 'back.out(2)',
+    scrollTrigger: { trigger: '#profileImg', start: 'top 60%', once: true }
+  });
+  $$('[data-count]').forEach(el => ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => countUp(el) }));
 
-function openModal(type) {
-  closeModal();
-  const sheet = document.getElementById('modal-' + type);
+  // career
+  const mm = gsap.matchMedia();
+  const railItems = $$('.rail-item');
+  mm.add('(min-width:1000px)', () => {
+    const rail = $('#careerRail');
+    const dist = () => rail.scrollWidth - innerWidth + parseFloat(getComputedStyle(root).getPropertyValue('--gutter'));
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#career', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true,
+        onUpdate: self => {
+          const p = self.progress;
+          gsap.set('#careerBar', { scaleX: p });
+          const i = Math.min(railItems.length - 1, Math.floor(p * railItems.length * 0.999 + 0.2));
+          $('#careerIdx').textContent = String(i + 1).padStart(2, '0');
+          railItems.forEach((it, k) => it.classList.toggle('lit', k <= i));
+        }
+      }
+    });
+    tl.to(rail, { x: () => -dist(), ease: 'none' }, 0)
+      .fromTo('#railFill', { scaleX: 0 }, { scaleX: 1, ease: 'none' }, 0);
+    railItems.forEach(it => {
+      gsap.from($('.ri-bigyear', it), {
+        xPercent: 40, ease: 'none',
+        scrollTrigger: { trigger: it, containerAnimation: tl, start: 'left right', end: 'left 30%', scrub: true }
+      });
+    });
+    return () => railItems.forEach(it => it.classList.remove('lit'));
+  });
+  mm.add('(max-width:999px)', () => {
+    gsap.fromTo('#railFill', { scaleY: 0 }, {
+      scaleY: 1, ease: 'none',
+      scrollTrigger: { trigger: '#careerRail', start: 'top 70%', end: 'bottom 60%', scrub: true }
+    });
+    railItems.forEach(it => {
+      gsap.from(it, { x: 40, autoAlpha: 0, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: it, start: 'top 85%', once: true } });
+      ScrollTrigger.create({ trigger: it, start: 'top 65%', onEnter: () => it.classList.add('lit'), onLeaveBack: () => it.classList.remove('lit') });
+    });
+  });
+
+  // mission: pinned char-by-char light up
+  const qChars = splitChars($('#missionQuote'));
+  gsap.set(qChars, { opacity: 0.12 });
+  gsap.timeline({
+    scrollTrigger: { trigger: '#missionPin', start: 'top top', end: '+=120%', pin: true, scrub: 0.6 }
+  })
+    .to(qChars, { opacity: 1, stagger: 0.1, ease: 'none' });
+
+  // activity cards
+  gsap.from('.act-card', {
+    y: 90, autoAlpha: 0, rotateX: -18, transformPerspective: 900, transformOrigin: '50% 0%',
+    duration: 1.3, ease: 'expo.out', stagger: { each: 0.08, grid: 'auto', from: 'start' },
+    scrollTrigger: { trigger: '.act-grid', start: 'top 85%', once: true }
+  });
+
+  // sponsor ghost numbers slide
+  $$('.sp-num').forEach(n => gsap.from(n, {
+    xPercent: -60, autoAlpha: 0, duration: 1.2, ease: 'expo.out',
+    scrollTrigger: { trigger: n, start: 'top 88%', once: true }
+  }));
+
+  // gallery entrance
+  gsap.from('.g-item', {
+    y: 120, autoAlpha: 0, duration: 1.4, ease: 'expo.out', stagger: 0.06,
+    scrollTrigger: { trigger: '#galleryWrap', start: 'top 90%', once: true }
+  });
+
+  // footer giant name
+  gsap.fromTo('#footBig', { yPercent: 30 }, {
+    yPercent: 0, ease: 'none',
+    scrollTrigger: { trigger: 'footer', start: 'top bottom', end: 'bottom bottom', scrub: true }
+  });
+
+  // hero ghost number follows the pointer slightly
+  const hero = $('#hero'), ghost = $('#heroGhost');
+  const gx = gsap.quickTo(ghost, 'x', { duration: 1.2, ease: 'power3' });
+  const gy = gsap.quickTo(ghost, 'y', { duration: 1.2, ease: 'power3' });
+  hero.addEventListener('pointermove', e => {
+    gx((e.clientX / innerWidth - 0.5) * -40);
+    gy((e.clientY / innerHeight - 0.5) * -30);
+  });
+}
+
+/* ───────────── Intro sequence ───────────── */
+function intro(net, slides){
+  const titleChars = splitChars($('[data-hero-title]'));
+  const bits = $$('[data-hero]');
+  gsap.set(titleChars, { yPercent: 115 });
+  gsap.set(bits, { y: 30, autoAlpha: 0 });
+  gsap.set('#heroGhost', { autoAlpha: 0, scale: 0.8 });
+  gsap.set('#heroStage', { scale: 1.25 });
+  gsap.set('.nav-logo, .nav-links li, .nav-cta, .nav-burger', { y: -30, autoAlpha: 0 });
+
+  const num = $('#plNum'), bar = $('#plBar');
+  const firstImg = $('.hero-slide img');
+  const imgReady = new Promise(res => {
+    if (firstImg.complete && firstImg.naturalWidth) return res();
+    firstImg.addEventListener('load', res, { once: true });
+    firstImg.addEventListener('error', res, { once: true });
+    setTimeout(res, 3500);
+  });
+  const fontsReady = document.fonts ? document.fonts.ready.catch(() => {}) : Promise.resolve();
+
+  const counter = { v: 0 };
+  const count = gsap.to(counter, {
+    v: 90, duration: 1.8, ease: 'power2.inOut',
+    onUpdate: () => { num.textContent = Math.round(counter.v); bar.style.transform = `scaleX(${counter.v / 100})`; }
+  });
+
+  if (lenis) lenis.stop();
+  Promise.all([imgReady, fontsReady, new Promise(r => setTimeout(r, 1800))]).then(() => {
+    count.kill();
+    const tl = gsap.timeline({ defaults: { ease: 'expo.inOut' } });
+    tl.to(counter, { v: 100, duration: 0.5, ease: 'power2.out', onUpdate: () => { num.textContent = Math.round(counter.v); bar.style.transform = `scaleX(${counter.v / 100})`; } })
+      .to('.pl-content, .pl-bar', { autoAlpha: 0, y: -40, duration: 0.6, ease: 'power3.in' }, '+=0.1')
+      .to('.pl-panel', { yPercent: -100, duration: 1.1, stagger: 0.07 }, '-=0.2')
+      .to('#heroStage', { scale: 1, duration: 1.8 }, '<')
+      .add(() => { root.classList.add('is-loaded'); if (lenis) lenis.start(); slides.start(); }, '-=0.6')
+      .to(titleChars, { yPercent: 0, duration: 1.3, stagger: 0.05, ease: 'expo.out' }, '-=0.9')
+      .to('#heroGhost', { autoAlpha: 1, scale: 1, duration: 1.8, ease: 'expo.out' }, '<')
+      .to(bits, { y: 0, autoAlpha: 1, duration: 1.1, stagger: 0.08, ease: 'expo.out' }, '-=1.0')
+      .to('.nav-logo, .nav-links li, .nav-cta, .nav-burger', { y: 0, autoAlpha: 1, duration: 1, stagger: 0.04, ease: 'expo.out' }, '<')
+      .add(() => {
+        const s = net.size();
+        net.impulse(s.w * 0.72, s.h * 0.42, 26, 380);
+      }, '-=1.4');
+  });
+}
+
+/* ───────────── Modals ───────────── */
+const overlay = $('#modalOverlay');
+let currentModal = null, modalReturn = null;
+function openModal(type){
+  closeModal(true);
+  const sheet = $('#modal-' + type);
   if (!sheet) return;
+  modalReturn = document.activeElement;
   currentModal = sheet;
   overlay.classList.add('open');
   sheet.classList.add('open');
   document.body.style.overflow = 'hidden';
+  if (lenis) lenis.stop();
+  setTimeout(() => { const f = $('input:not([type=hidden]),textarea', sheet); if (f && finePointer) f.focus({ preventScroll: true }); }, 400);
 }
-
-function closeModal() {
-  if (currentModal) {
-    currentModal.classList.remove('open');
-    currentModal = null;
-  }
+function closeModal(silent){
+  if (currentModal) { currentModal.classList.remove('open'); currentModal = null; }
   overlay.classList.remove('open');
   document.body.style.overflow = '';
+  if (lenis && !mobileMenu.classList.contains('open')) lenis.start();
+  if (!silent && modalReturn) { modalReturn.focus({ preventScroll: true }); modalReturn = null; }
 }
-
-// clickable act-cards
-document.querySelectorAll('.act-card.clickable').forEach(card => {
+$$('.act-card.clickable').forEach(card => {
   card.addEventListener('click', () => openModal(card.dataset.modal));
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.modal); } });
 });
+$$('[data-open-modal]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openModal(a.dataset.openModal); }));
+$$('[data-close-modal]').forEach(b => b.addEventListener('click', () => closeModal()));
+overlay.addEventListener('click', () => closeModal());
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { if (currentModal) closeModal(); else if (mobileMenu.classList.contains('open')) closeMenu(); } });
 
-// close on overlay click
-overlay.addEventListener('click', closeModal);
-
-// close on ESC
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-// AJAX form submit (stay on page, show success message)
 ['personal','team','single','sponsor'].forEach(type => {
-  const form = document.getElementById('form-' + type);
+  const form = $('#form-' + type);
   if (!form) return;
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('.form-submit');
+    const btn = $('.form-submit', form);
     btn.textContent = '送信中...';
     btn.disabled = true;
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok || res.status === 200) {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
         form.style.display = 'none';
-        document.getElementById('success-' + type).style.display = 'block';
+        const ok = $('#success-' + type);
+        ok.style.display = 'block';
+        if (MOTION) gsap.from(ok.children, { y: 24, autoAlpha: 0, scale: .9, duration: .9, stagger: .1, ease: 'back.out(2)' });
       } else {
         btn.textContent = '送信に失敗しました。再度お試しください。';
         btn.disabled = false;
       }
-    } catch {
+    } catch (err) {
       btn.textContent = '送信に失敗しました。再度お試しください。';
       btn.disabled = false;
     }
   });
 });
 
-
-document.querySelectorAll('.stat-item').forEach(item => {
-  const valEl = item.querySelector('.val');
-  const smallEl = valEl.querySelector('small');
-  const suffix = smallEl ? smallEl.outerHTML : '';
-  const raw = valEl.textContent.trim();
-  const num = parseInt(raw.replace(/\D/g, ''), 10);
-  if (isNaN(num) || num <= 1) return; // skip "GK" style text
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      let startTime = null;
-      const duration = 900;
-      function step(ts){
-        if (!startTime) startTime = ts;
-        const p = Math.min((ts - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        valEl.innerHTML = Math.round(eased * num) + suffix;
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      obs.unobserve(item);
-    });
-  }, { threshold: 0.6 });
-  obs.observe(item);
-});
+/* ───────────── Boot ───────────── */
+initCards();
+initGallery();
+if (MOTION) {
+  const net = initNet();
+  const slides = initSlides();
+  initMarquees();
+  initCursor();
+  initScrollMotion();
+  intro(net, slides);
+  addEventListener('load', () => ScrollTrigger.refresh());
+} else {
+  // static fallback: simple crossfade for the hero if motion is allowed but GSAP failed to load
+  if (!reduced) {
+    const slides = $$('.hero-slide');
+    slides.forEach((s, i) => { s.style.clipPath = 'none'; s.style.transition = 'opacity 1.2s ease'; s.style.opacity = i ? 0 : 1; });
+    let i = 0;
+    setInterval(() => { slides[i].style.opacity = 0; i = (i + 1) % slides.length; slides[i].style.opacity = 1; }, 5500);
+  }
+}
+})();
 </script>
 </body>
 </html>
